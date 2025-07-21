@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clean Earth Renewables Website
 
-## Getting Started
+A modern, professional website for Clean Earth Renewables - a company that helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Design**: Clean, minimalist layout with black background, white text, and orange accents
+- **Responsive**: Fully responsive design that works on mobile, tablet, and desktop
+- **Performance**: Built with Next.js 15 and optimized for speed
+- **Accessibility**: Keyboard navigable with proper semantic HTML
+- **Typography**: Uses Bricolage Grotesque font family
+- **Components**: Built with shadcn/ui for consistent, accessible components
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Components**: shadcn/ui
+- **Deployment**: Vercel (ready for deployment)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and color scheme
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Homepage
+├── components/
+│   ├── ui/                  # shadcn/ui components
+│   ├── NavBar.tsx           # Navigation component
+│   ├── Hero.tsx             # Hero section
+│   ├── BenefitsSection.tsx  # Benefits showcase
+│   ├── ServicesSection.tsx  # Services overview
+│   ├── FeaturedProject.tsx  # Featured project showcase
+│   ├── StatsSection.tsx     # Animated statistics
+│   ├── AboutSection.tsx     # About and differentiators
+│   ├── FinalCTA.tsx         # Final call-to-action
+│   └── Footer.tsx           # Footer with links and newsletter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Colors**: 
+  - Background: Black (`oklch(0.05 0 0)`)
+  - Text: White (`oklch(0.98 0 0)`)
+  - Accent: Orange (`oklch(0.6 0.15 45)`)
+- **Typography**: Bricolage Grotesque (Google Fonts)
+- **Spacing**: Consistent padding and margins using Tailwind's spacing scale
+- **Components**: Rounded corners, subtle shadows, and hover effects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Open your browser** and navigate to `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 Pages Structure
 
-## Deploy on Vercel
+- **Home** (`/`) - Landing page with hero, benefits, services, project showcase, stats, about, and CTA
+- **Services** (`/services`) - Overview of all services (planned)
+- **About** (`/about`) - Mission, team, credentials (planned)
+- **Contact** (`/contact`) - Contact form and information (planned)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Key Sections
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Hero Section**: Bold headline with value proposition and CTAs
+2. **Benefits**: Three key benefits (Lower Costs, Carbon Reduced, Turnkey Solutions)
+3. **Services**: Four main services (Wind, Solar, Storage, O&M)
+4. **Featured Project**: Showcase of a 350kW solar farm project
+5. **Stats**: Animated counters showing impact metrics
+6. **About**: Mission statement and key differentiators
+7. **Final CTA**: Energy audit request with trust indicators
+8. **Footer**: Links, contact info, and newsletter signup
+
+## 🔧 Development
+
+- **Type Checking**: `npx tsc --noEmit`
+- **Linting**: `npm run lint`
+- **Build**: `npm run build`
+
+## 🚀 Deployment
+
+The project is ready for deployment on Vercel:
+
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Deploy automatically on push
+
+## 📝 Content Management
+
+Currently using static content in components. Future plans include:
+- MDX for content management
+- CMS integration
+- Dynamic content loading
+
+## 🎨 Customization
+
+- Colors can be modified in `src/app/globals.css`
+- Components are modular and easily customizable
+- Font can be changed by updating the Google Fonts import
+- Icons are SVG and can be replaced with custom designs
+
+---
+
+Built with ❤️ for Clean Earth Renewables

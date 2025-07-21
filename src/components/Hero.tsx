@@ -1,0 +1,78 @@
+import { Button } from "@/components/ui/button";
+import { VideoBackground } from "./VideoBackground";
+
+export function Hero() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      {/* Video Background - positioned to cover hero section */}
+      <div className="absolute inset-0 w-full h-full">
+        <VideoBackground 
+          src="/assets/videos/hero/main.mp4"
+          poster="/assets/images/hero/hero-poster.svg"
+          className="w-full h-full"
+          overlayOpacity={0.4}
+        >
+          <div className="w-full h-full" />
+        </VideoBackground>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Main Headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Powering Your Future with{" "}
+            <span className="text-primary">Clean Energy</span>
+          </h1>
+
+          {/* Sub-headline */}
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Save up to 30% on energy bills & reduce 10k tCO₂/year. 
+            Clean Earth Renewables makes clean energy accessible, low-risk, 
+            and financially beneficial.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+            >
+              Get Started
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-white text-white hover:bg-white hover:text-background px-8 py-4 text-lg font-semibold bg-white/10 backdrop-blur-sm"
+            >
+              Learn More
+            </Button>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="mt-12 pt-8 border-t border-white/20">
+            <p className="text-sm text-white/70 mb-4">Trusted by leading businesses and landowners</p>
+            <div className="flex justify-center items-center space-x-8 opacity-80">
+              <div className="w-16 h-8 bg-white/20 rounded flex items-center justify-center backdrop-blur-sm">
+                <span className="text-xs font-medium text-white">Client 1</span>
+              </div>
+              <div className="w-16 h-8 bg-white/20 rounded flex items-center justify-center backdrop-blur-sm">
+                <span className="text-xs font-medium text-white">Client 2</span>
+              </div>
+              <div className="w-16 h-8 bg-white/20 rounded flex items-center justify-center backdrop-blur-sm">
+                <span className="text-xs font-medium text-white">Client 3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center bg-white/10 backdrop-blur-sm">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  );
+} 
