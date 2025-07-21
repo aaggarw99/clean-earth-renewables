@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
 export function FinalCTA() {
   return (
@@ -37,21 +38,15 @@ export function FinalCTA() {
             <p className="text-sm text-muted-foreground mb-4">No commitment required • Free consultation</p>
             <div className="flex justify-center items-center space-x-6 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <CheckCircleIcon className="w-4 h-4 text-primary" />
                 <span>No upfront costs</span>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <CheckCircleIcon className="w-4 h-4 text-primary" />
                 <span>Expert analysis</span>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <CheckCircleIcon className="w-4 h-4 text-primary" />
                 <span>Customized solutions</span>
               </div>
             </div>

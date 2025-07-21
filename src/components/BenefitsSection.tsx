@@ -1,32 +1,46 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  CurrencyDollarIcon, 
+  GlobeAltIcon, 
+  CheckCircleIcon, 
+  BuildingOffice2Icon,
+  BanknotesIcon,
+  UsersIcon
+} from "@heroicons/react/24/outline";
 
 const benefits = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-      </svg>
-    ),
-    title: "Lower Costs",
-    description: "Save up to 30% on your energy bills with our renewable solutions"
+    icon: <BuildingOffice2Icon className="w-8 h-8" />,
+    title: "End-to-End Project Development",
+    description: "We manage every phase of your renewable project—from land analysis to construction—so you don't have to.",
+    bullets: [
+      "Expert site analysis and acquisition",
+      "Seamless contract negotiation and execution",
+      "Network of experienced developers and EPCs",
+      "Guaranteed zero upfront capital investment"
+    ]
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Carbon Reduced",
-    description: "Reduce your carbon footprint by 10k tCO₂ annually"
+    icon: <BanknotesIcon className="w-8 h-8" />,
+    title: "Flexible, Trusted Financing",
+    description: "Our strong financial partnerships remove the risk and cost barriers to clean energy.",
+    bullets: [
+      "Backed by $2B+ in funding from top-tier institutions",
+      "Custom financing with no upfront risk",
+      "Full support for PPAs, leases, and buy-out options",
+      "We own and operate the asset—so you don't have to"
+    ]
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Turnkey Solutions",
-    description: "Complete renewable energy solutions from design to maintenance"
+    icon: <UsersIcon className="w-8 h-8" />,
+    title: "Community Solar for All",
+    description: "Join a local solar project without installing rooftop panels—and save on energy bills while supporting your community.",
+    bullets: [
+      "Annual electricity savings for renters & homeowners",
+      "No installations or maintenance required",
+      "Easy enrollment in local solar farms",
+      "Shareable clean energy credits for you and your neighbors"
+    ]
   }
 ];
 
@@ -39,8 +53,8 @@ export function BenefitsSection() {
             Why Choose Clean Earth?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We make clean energy accessible, low-risk, and financially beneficial 
-            for businesses, landowners, and individuals.
+          We simplify the transition to clean energy by handling everything from development to
+          financing—so you can focus on saving money, supporting your community, and reducing your carbon footprint.
           </p>
         </div>
 
@@ -56,9 +70,19 @@ export function BenefitsSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-4">
                   {benefit.description}
                 </p>
+                {benefit.bullets && (
+                  <ul className="space-y-2">
+                    {benefit.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircleIcon className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </CardContent>
             </Card>
           ))}

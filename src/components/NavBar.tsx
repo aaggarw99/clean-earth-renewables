@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,11 +14,16 @@ export function NavBar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">CE</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Clean Earth</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/assets/logos/Symbol - Primary.svg"
+              alt="Clean Earth Renewables Symbol"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+              priority
+            />
+            <span className="text-xl font-bold text-foreground">Clean Earth Renewables</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,28 +51,11 @@ export function NavBar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6 text-foreground"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            {isMenuOpen ? (
+              <XMarkIcon className="w-6 h-6 text-foreground" />
+            ) : (
+              <Bars3Icon className="w-6 h-6 text-foreground" />
+            )}
           </button>
         </div>
 

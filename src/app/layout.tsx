@@ -12,6 +12,11 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "Clean Earth Renewables - Powering Your Future with Clean Energy",
   description: "Clean Earth Renewables helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.",
+  icons: {
+    icon: "/assets/logos/Favicon - Primary.png",
+    shortcut: "/assets/logos/Favicon - Primary.png",
+    apple: "/assets/logos/Favicon - Primary.png",
+  },
 };
 
 export default function RootLayout({
