@@ -1,9 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { 
-  ChatBubbleLeftRightIcon, 
-  LinkIcon 
-} from "@heroicons/react/24/outline";
+import { TwitterIcon, LinkedinIcon, FacebookIcon } from "lucide-react";
 
 export function Footer() {
   return (
@@ -24,13 +21,13 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <ChatBubbleLeftRightIcon className="w-5 h-5" />
+                <TwitterIcon className="w-5 h-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <LinkIcon className="w-5 h-5" />
+                <LinkedinIcon className="w-5 h-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <ChatBubbleLeftRightIcon className="w-5 h-5" />
+                <FacebookIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

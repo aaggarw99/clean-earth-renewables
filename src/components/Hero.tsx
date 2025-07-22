@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { VideoBackground } from "./VideoBackground";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -52,16 +53,10 @@ export function Hero() {
           {/* Trust Indicators */}
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-sm text-white/70 mb-4">Trusted by leading businesses and landowners</p>
-            <div className="flex justify-center items-center space-x-8 opacity-80">
-              <div className="w-16 h-8 bg-white/20 rounded flex items-center justify-center backdrop-blur-sm">
-                <span className="text-xs font-medium text-white">Client 1</span>
-              </div>
-              <div className="w-16 h-8 bg-white/20 rounded flex items-center justify-center backdrop-blur-sm">
-                <span className="text-xs font-medium text-white">Client 2</span>
-              </div>
-              <div className="w-16 h-8 bg-white/20 rounded flex items-center justify-center backdrop-blur-sm">
-                <span className="text-xs font-medium text-white">Client 3</span>
-              </div>
+            <div className="flex justify-center items-center space-x-12 opacity-80">
+            <Image src="/assets/images/clients/arcadia.png" alt="Arcadia" width={100} height={100} />
+            <Image src="/assets/images/clients/solstice.png" alt="Solstice" width={100} height={100} />
+            <Image src="/assets/images/clients/windfreesolar.png" alt="Wind Free Solar" width={100} height={100} />
             </div>
           </div>
         </div>
