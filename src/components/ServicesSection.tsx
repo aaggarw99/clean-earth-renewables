@@ -8,6 +8,7 @@ import {
   HomeIcon,
   MapPinIcon
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const services = [
   {
@@ -15,28 +16,32 @@ const services = [
     title: "Residential",
     description: "Subscribe to solar energy without installing panels on your home",
     features: ["Home solar subscriptions", "No upfront costs", "Monthly energy savings"],
-    cta: "Subscribe to a Solar Farm"
+    cta: "Subscribe to a Solar Farm",
+    href: "/services/community-solar-residential"
   },
   {
     icon: <BuildingOfficeIcon className="w-8 h-8" />,
     title: "Businesses (On-Site)",
     description: "Install solar panels on your business rooftop for immediate savings",
     features: ["Commercial rooftop solar", "Energy cost reduction", "Tax incentives"],
-    cta: "Lease My Roof"
+    cta: "Lease My Roof",
+    href: "/services/lease-rooftop-businesses"
   },
   {
     icon: <SunIcon className="w-8 h-8" />,
     title: "Businesses (Off-Site)",
     description: "Subscribe to off-site solar energy for predictable business costs",
     features: ["Off-site solar subscriptions", "Predictable energy costs", "Corporate sustainability"],
-    cta: "Subscribe to a Solar Farm"
+    cta: "Subscribe to a Solar Farm",
+    href: "/services/community-solar-businesses"
   },
   {
     icon: <BoltIcon className="w-8 h-8" />,
     title: "Landowners",
     description: "Earn income by hosting solar farms on your land",
     features: ["Land lease payments", "Agricultural compatibility", "Long-term income"],
-    cta: "Host a Solar Farm"
+    cta: "Host a Solar Farm",
+    href: "/services/host-solar-farm"
   }
 ];
 
@@ -76,12 +81,14 @@ export function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                >
-                  {service.cta}
-                </Button>
+                <Link href={service.href} passHref>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    {service.cta}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
