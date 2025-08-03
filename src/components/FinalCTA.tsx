@@ -1,57 +1,40 @@
-import { Button } from "@/components/ui/button";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
+"use client";
+
+import { ContactForm, FieldConfig } from "./ContactForm";
 
 export function FinalCTA() {
+  // Define which fields to show and which are required
+  const fields: FieldConfig[] = [
+    { type: "customerType", required: true },
+    { type: "utility", required: false },
+    { type: "name", required: true },
+    { type: "email", required: true },
+    { type: "phone", required: false },
+    { type: "state", required: false },
+    { type: "stateText", required: false },
+    { type: "address", required: false },
+    { type: "city", required: false },
+    { type: "companyName", required: false },
+    { type: "message", required: false },
+    { type: "fileUpload", required: false }
+  ];
+
+  const handleSubmit = async (data: any) => {
+    console.log("Form submitted:", data);
+    // Here you would typically send the data to your backend
+    // For now, we'll just log it
+  };
+
   return (
     <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Ready to go clean?
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get a Free Energy Audit Today
-          </p>
-          <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Our experts will analyze your energy usage and provide a customized 
-            renewable energy solution that saves you money while helping the planet.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-            >
-              Request My Audit
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold"
-            >
-              Learn More
-            </Button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-12 pt-8 border-t border-border/20">
-            <p className="text-sm text-muted-foreground mb-4">No commitment required • Free consultation</p>
-            <div className="flex justify-center items-center space-x-6 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="w-4 h-4 text-primary" />
-                <span>No upfront costs</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="w-4 h-4 text-primary" />
-                <span>Expert analysis</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="w-4 h-4 text-primary" />
-                <span>Customized solutions</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ContactForm
+          fields={fields}
+          title="Ready to go clean?"
+          subtitle="Get a Free Energy Audit Today. Our experts will analyze your energy usage and provide a customized renewable energy solution that saves you money while helping the planet."
+          submitText="Request My Audit"
+          onSubmit={handleSubmit}
+        />
       </div>
     </section>
   );

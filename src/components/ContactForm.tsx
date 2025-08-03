@@ -1,0 +1,449 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PaperClipIcon } from "@heroicons/react/24/outline";
+
+// Field types
+export type FieldType = 
+  | "customerType"
+  | "utility"
+  | "name"
+  | "email"
+  | "phone"
+  | "state"
+  | "stateText"
+  | "address"
+  | "city"
+  | "companyName"
+  | "zipCode"
+  | "message"
+  | "fileUpload";
+
+// Field configuration
+export interface FieldConfig {
+  type: FieldType;
+  required?: boolean;
+  label?: string;
+  placeholder?: string;
+}
+
+// Form data interface
+interface FormData {
+  customerType: string;
+  utility: string;
+  name: string;
+  email: string;
+  phone: string;
+  state: string;
+  stateText: string;
+  address: string;
+  city: string;
+  companyName: string;
+  zipCode: string;
+  message: string;
+  fileUpload?: File;
+}
+
+// Options for select fields
+const customerTypes = [
+  "Renter / Homeowner",
+  "Small Business / Non-profit", 
+  "Landowner",
+  "Large Enterprise",
+  "Municipality",
+  "University",
+  "School",
+  "Hospital"
+];
+
+const utilities = [
+  "ACE (NJ)",
+  "Ameren Illinois",
+  "Baltimore Gas & Electric (BGE)",
+  "Central Hudson (NY)",
+  "Central Maine Power (CMP)",
+  "Commonwealth Edison (ComEd)",
+  "Delmarva Power (DE)",
+  "Dominion Power (VA)",
+  "El Paso (NM)",
+  "Eversource (MA - West, East, NSTAR)",
+  "JCPL (NJ)",
+  "National Grid (NY, MA - Central, East)",
+  "NYSEG",
+  "Versant Power (South, Bangor Hydro District)",
+  "Xcel (CO & MN)"
+];
+
+const states = [
+  "Colorado",
+  "Delaware", 
+  "Illinois",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Minnesota",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "Washington D.C.",
+  "Rhode Island",
+  "Virginia"
+];
+
+interface ContactFormProps {
+  fields: FieldConfig[];
+  title?: string;
+  subtitle?: string;
+  submitText?: string;
+  onSubmit?: (data: FormData) => void;
+  className?: string;
+}
+
+export function ContactForm({
+  fields,
+  title = "Get Started",
+  subtitle = "Tell us about your project and we'll get back to you within 24 hours.",
+  submitText = "Submit Request",
+  onSubmit,
+  className = ""
+}: ContactFormProps) {
+  const [formData, setFormData] = useState<FormData>({
+    customerType: "",
+    utility: "",
+    name: "",
+    email: "",
+    phone: "",
+    state: "",
+    stateText: "",
+    address: "",
+    city: "",
+    companyName: "",
+    zipCode: "",
+    message: ""
+  });
+  
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Check if field should be shown
+  const shouldShowField = (type: FieldType): boolean => {
+    return fields.some(field => field.type === type);
+  };
+
+  // Get field config by type
+  const getFieldConfig = (type: FieldType): FieldConfig => {
+    return fields.find(field => field.type === type) || { type, required: false };
+  };
+
+  // Validate form
+  const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {};
+
+    fields.forEach(field => {
+      if (field.required) {
+        const value = formData[field.type];
+        if (!value || (typeof value === 'string' && value.trim() === "")) {
+          newErrors[field.type] = "This field is required";
+        }
+      }
+
+      // Email validation
+      if (field.type === "email" && formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+        newErrors.email = "Please enter a valid email address";
+      }
+
+      // Phone validation
+      if (field.type === "phone" && formData.phone && !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s/g, ""))) {
+        newErrors.phone = "Please enter a valid phone number";
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      if (onSubmit) {
+        await onSubmit(formData);
+      }
+      // Reset form on success
+      setFormData({
+        customerType: "",
+        utility: "",
+        name: "",
+        email: "",
+        phone: "",
+        state: "",
+        stateText: "",
+        address: "",
+        city: "",
+        companyName: "",
+        zipCode: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Handle input changes
+  const handleInputChange = (field: FieldType, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  // Handle file upload
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData(prev => ({ ...prev, fileUpload: file }));
+    }
+  };
+
+  // Render field based on type
+  const renderField = (fieldConfig: FieldConfig) => {
+    const { type, required, label, placeholder } = fieldConfig;
+    const value = formData[type];
+    const error = errors[type];
+
+    const baseInputProps = {
+      id: type,
+      value: typeof value === 'string' ? value : "",
+      onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
+        handleInputChange(type, e.target.value),
+      placeholder: placeholder,
+      className: `w-full px-3 py-2 border-b-2 bg-transparent focus:outline-none focus:border-primary transition-colors ${error ? 'border-red-500' : 'border-gray-300'}`,
+      required
+    };
+
+    switch (type) {
+      case "customerType":
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || "I am a"} {required && <span className="text-red-500">*</span>}
+            </label>
+            <select
+              value={typeof value === 'string' ? value : ""}
+              onChange={(e) => handleInputChange(type, e.target.value)}
+              className={`w-full px-3 py-2 border-b-2 bg-transparent focus:outline-none focus:border-primary transition-colors ${error ? 'border-red-500' : 'border-gray-300'}`}
+              required={required}
+            >
+              <option value="">Select customer type</option>
+              {customerTypes.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case "utility":
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || "Community Solar Approved Utilities"} {required && <span className="text-red-500">*</span>}
+            </label>
+            <select
+              value={typeof value === 'string' ? value : ""}
+              onChange={(e) => handleInputChange(type, e.target.value)}
+              className={`w-full px-3 py-2 border-b-2 bg-transparent focus:outline-none focus:border-primary transition-colors ${error ? 'border-red-500' : 'border-gray-300'}`}
+              required={required}
+            >
+              <option value="">Select your utility</option>
+              {utilities.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case "state":
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || "Community Solar-Approved States"} {required && <span className="text-red-500">*</span>}
+            </label>
+            <select
+              value={typeof value === 'string' ? value : ""}
+              onChange={(e) => handleInputChange(type, e.target.value)}
+              className={`w-full px-3 py-2 border-b-2 bg-transparent focus:outline-none focus:border-primary transition-colors ${error ? 'border-red-500' : 'border-gray-300'}`}
+              required={required}
+            >
+              <option value="">Select your state</option>
+              {states.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case "stateText":
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || "State"} {required && <span className="text-red-500">*</span>}
+            </label>
+            <input
+              {...baseInputProps}
+              type="text"
+            />
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case "message":
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || "Message"} {required && <span className="text-red-500">*</span>}
+            </label>
+            <textarea
+              {...baseInputProps}
+              rows={4}
+              placeholder={placeholder || "Tell us about your project..."}
+            />
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case "fileUpload":
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || "Add File"} {required && <span className="text-red-500">*</span>}
+            </label>
+            <div className="flex items-center space-x-2">
+              <input
+                type="file"
+                id={type}
+                onChange={handleFileChange}
+                className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+              />
+              <PaperClipIcon className="w-5 h-5 text-gray-400" />
+            </div>
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      default:
+        return (
+          <div className="space-y-2">
+            <label htmlFor={type} className="block text-sm font-medium">
+              {label || type.charAt(0).toUpperCase() + type.slice(1)} {required && <span className="text-red-500">*</span>}
+            </label>
+            <input
+              {...baseInputProps}
+              type={type === "email" ? "email" : type === "phone" ? "tel" : "text"}
+            />
+            {error && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
+                <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-red-700 font-medium">{error}</p>
+              </div>
+            )}
+          </div>
+        );
+    }
+  };
+
+  return (
+    <div className={`w-full max-w-4xl mx-auto ${className}`}>
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{title}</h2>
+        {subtitle && <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
+      </div>
+      <div className="bg-background/50 backdrop-blur-sm rounded-xl p-8 border border-border/20">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {shouldShowField("name") && renderField(getFieldConfig("name"))}
+            {shouldShowField("email") && renderField(getFieldConfig("email"))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {shouldShowField("customerType") && renderField(getFieldConfig("customerType"))}
+            {shouldShowField("utility") && renderField(getFieldConfig("utility"))}
+            {shouldShowField("state") && renderField(getFieldConfig("state"))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {shouldShowField("address") && renderField(getFieldConfig("address"))}
+            {shouldShowField("city") && renderField(getFieldConfig("city"))}
+            {shouldShowField("stateText") && renderField(getFieldConfig("stateText"))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {shouldShowField("companyName") && renderField(getFieldConfig("companyName"))}
+            {shouldShowField("phone") && renderField(getFieldConfig("phone"))}
+          </div>
+
+          {shouldShowField("message") && renderField(getFieldConfig("message"))}
+          {shouldShowField("fileUpload") && renderField(getFieldConfig("fileUpload"))}
+
+          <Button 
+            type="submit" 
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : submitText}
+          </Button>
+        </form>
+      </div>
+    </div>
+  );
+} 
