@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { NavBar } from "@/components/NavBar";
 import Image from "next/image";
@@ -5,12 +7,37 @@ import { AlternatingCardRow } from "@/components/AlternatingCardRow";
 import { VerticalTimeline } from "@/components/VerticalTimeline";
 import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
 import { SunIcon, BuildingOfficeIcon } from "@heroicons/react/24/outline";
+import { ContactForm, FieldConfig } from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
 
 export default function LeaseRooftopBusinessesPage() {
+
+  const fields: FieldConfig[] = [
+    { type: "customerType", required: true },
+    { type: "utility", required: false },
+    { type: "name", required: true },
+    { type: "email", required: true },
+    { type: "phone", required: false },
+    { type: "state", required: false },
+    { type: "stateText", required: false },
+    { type: "address", required: false },
+    { type: "city", required: false },
+    { type: "companyName", required: false, label: "Company Name" },
+    { type: "zipCode", required: false, label: "Zip Code" },
+    { type: "message", required: false },
+    { type: "fileUpload", required: false }
+  ];
+
+  const handleSubmit = async (data: any) => {
+    console.log("Contact form submitted:", data);
+    // Here you would typically send the data to your backend
+    // For now, we'll just log it
+  };
+
   return (
     <div className="min-h-screen">
       <NavBar />
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/assets/images/backgrounds/rooftop-solar-background.png"
@@ -92,21 +119,20 @@ export default function LeaseRooftopBusinessesPage() {
           ]}
         />
       </section>
-      <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+
+      {/* Contact Form Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's assess your roof's solar potential. Fill out a quick form or connect with our solar advisor to start the eligibility process.
-            </p>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
-              Request a Free Site Assessment
-            </Button>
-          </div>
+          <ContactForm
+            fields={fields}
+            submitText="Send Message"
+            onSubmit={handleSubmit}
+          />
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 } 

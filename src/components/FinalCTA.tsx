@@ -14,7 +14,8 @@ export function FinalCTA() {
     { type: "stateText", required: false },
     { type: "address", required: false },
     { type: "city", required: false },
-    { type: "companyName", required: false },
+    { type: "companyName", required: false, label: "Company Name" },
+    { type: "zipCode", required: false, label: "Zip Code" },
     { type: "message", required: false },
     { type: "fileUpload", required: false }
   ];

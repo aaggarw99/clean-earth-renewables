@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 
 interface Step {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon?: ReactNode;
+  image?: string;
 }
 
 interface VerticalTimelineCenteredProps {
@@ -40,7 +42,18 @@ export function VerticalTimelineCentered({ steps }: VerticalTimelineCenteredProp
             </div>
             {/* Right icon/image column */}
             <div className="col-span-4 flex justify-center items-center">
-              {step.icon}
+              {step.image ? (
+                <div className="w-32 h-32 relative rounded-lg overflow-hidden">
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                step.icon
+              )}
             </div>
           </li>
         ))}

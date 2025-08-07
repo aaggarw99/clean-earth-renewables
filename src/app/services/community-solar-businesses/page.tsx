@@ -1,12 +1,71 @@
+"use client";
+
 import { NavBar } from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
+import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
+import { FeaturedProject } from "@/components/FeaturedProject";
+import { ContactForm, FieldConfig } from "@/components/ContactForm";
+import { FAQ } from "@/components/FAQ";
+import { Footer } from "@/components/Footer";
 import Image from "next/image";
 
 export default function CommunitySolarBusinessesPage() {
+  // Timeline steps data
+  const timelineSteps = [
+    {
+      step: 1,
+      title: "Solar Farm Goes Live",
+      description: "A local solar farm becomes operational and begins delivering clean energy to your utility's power grid.",
+      image: "/assets/images/services/solar-farm-person.png"
+    },
+    {
+      step: 2,
+      title: "Connect your utility account",
+      description: "Join the community solar program by connecting your utility account. In some service areas, there's no change to your utility bill or payment method.",
+      image: "/assets/images/backgrounds/plant.png"
+    },
+    {
+      step: 3,
+      title: "Start Saving Monthly",
+      description: "Receive credits on your utility bill and track your clean energy savings.",
+      image: "/assets/images/services/cost-reduction.png"
+    },
+    {
+      step: 4,
+      title: "Move or Cancel Anytime",
+      description: "Flexible subscription that adapts to your business needs - relocate or cancel without penalties.",
+      image: "/assets/images/services/trucks-onsite.png"
+    }
+  ];
+
+  // Contact form fields for businesses
+  const contactFields: FieldConfig[] = [
+    { type: "customerType", required: true },
+    { type: "utility", required: false },
+    { type: "name", required: true },
+    { type: "email", required: true },
+    { type: "phone", required: false },
+    { type: "state", required: false },
+    { type: "stateText", required: false },
+    { type: "address", required: false },
+    { type: "city", required: false },
+    { type: "companyName", required: false, label: "Company Name" },
+    { type: "zipCode", required: false, label: "Zip Code" },
+    { type: "message", required: false },
+    { type: "fileUpload", required: false }
+  ];
+
+  const handleSubmit = async (data: any) => {
+    console.log("Business contact form submitted:", data);
+    // Here you would typically send the data to your backend
+  };
+
   return (
     <div className="min-h-screen">
       <NavBar />
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      
+      {/* Hero Section */}
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/assets/images/backgrounds/solar-energy-concept-atlanta-1.png"
@@ -29,19 +88,47 @@ export default function CommunitySolarBusinessesPage() {
           </Button>
         </div>
       </section>
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">
-            Benefits for Your Business
-          </h2>
-          <ul className="space-y-4 text-lg text-muted-foreground">
-            <li>✔️ No on-site construction or maintenance</li>
-            <li>✔️ Predictable, lower energy costs</li>
-            <li>✔️ Supports corporate sustainability goals</li>
-            <li>✔️ Flexible subscription options for all business sizes</li>
-          </ul>
+
+      {/* How It Works Timeline */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              How Business Community Solar Works
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Simple steps to start saving on your energy costs
+            </p>
+          </div>
+          <VerticalTimelineCentered steps={timelineSteps} />
         </div>
       </section>
+
+      {/* Featured Project */}
+      <FeaturedProject />
+
+      {/* Contact Form */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <ContactForm
+            fields={contactFields}
+            title="Get Started with Business Community Solar"
+            subtitle="Tell us about your business and we'll help you find the perfect community solar solution."
+            submitText="Request Business Consultation"
+            onSubmit={handleSubmit}
+          />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <FAQ />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 } 

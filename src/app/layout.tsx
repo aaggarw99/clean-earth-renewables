@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
-import { ThemeProvider } from "@/contexts/ThemeContext";
+import { ClientThemeProvider } from "@/components/ClientThemeProvider";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`min-h-screen bg-background font-sans antialiased ${bricolage.variable}`}>
-        <ThemeProvider>
+        <ClientThemeProvider>
           {children}
-        </ThemeProvider>
+        </ClientThemeProvider>
       </body>
     </html>
   );

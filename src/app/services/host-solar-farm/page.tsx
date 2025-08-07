@@ -1,12 +1,13 @@
 import { NavBar } from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/Footer";
 import Image from "next/image";
 
 export default function HostSolarFarmPage() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/assets/images/backgrounds/solar-energy-concept-atlanta-1.png"
@@ -42,6 +43,9 @@ export default function HostSolarFarmPage() {
           </ul>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 } 

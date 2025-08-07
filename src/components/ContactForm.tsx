@@ -103,8 +103,8 @@ interface ContactFormProps {
 
 export function ContactForm({
   fields,
-  title = "Get Started",
-  subtitle = "Tell us about your project and we'll get back to you within 24 hours.",
+  title,
+  subtitle,
   submitText = "Submit Request",
   onSubmit,
   className = ""
@@ -363,14 +363,14 @@ export function ContactForm({
             <label htmlFor={type} className="block text-sm font-medium">
               {label || "Add File"} {required && <span className="text-red-500">*</span>}
             </label>
-            <div className="flex items-center space-x-2">
+            <div className="relative">
               <input
                 type="file"
                 id={type}
                 onChange={handleFileChange}
-                className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+                className="w-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
               />
-              <PaperClipIcon className="w-5 h-5 text-gray-400" />
+              <PaperClipIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             </div>
             {error && (
               <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
@@ -404,10 +404,12 @@ export function ContactForm({
 
   return (
     <div className={`w-full max-w-4xl mx-auto ${className}`}>
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{title}</h2>
-        {subtitle && <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
-      </div>
+      {(title || subtitle) && (
+        <div className="text-center mb-8">
+          {title && <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{title}</h2>}
+          {subtitle && <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
+        </div>
+      )}
       <div className="bg-background/50 backdrop-blur-sm rounded-xl p-8 border border-border/20">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -427,9 +429,10 @@ export function ContactForm({
             {shouldShowField("stateText") && renderField(getFieldConfig("stateText"))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {shouldShowField("companyName") && renderField(getFieldConfig("companyName"))}
             {shouldShowField("phone") && renderField(getFieldConfig("phone"))}
+            {shouldShowField("zipCode") && renderField(getFieldConfig("zipCode"))}
           </div>
 
           {shouldShowField("message") && renderField(getFieldConfig("message"))}

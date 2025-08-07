@@ -10,60 +10,64 @@ export function FeaturedProject() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Featured Project
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             See how we're transforming energy production across the country
           </p>
         </div>
 
         <div className="relative">
-          {/* Project Image Placeholder */}
-          <div className="relative h-96 md:h-[500px] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+          {/* Project Image Background */}
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: "url('/assets/images/backgrounds/panels-grass-overview.png')" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
             
             {/* Project Info Overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="max-w-4xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
                   {/* Project Details */}
-                  <div className="space-y-4">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                      350kW Solar Farm in Texas
+                  <div className="space-y-4 p-6 rounded-xl bg-white/20 backdrop-blur-sm">
+                    <h3 className="text-2xl md:text-3xl font-bold text-black drop-shadow-lg">
+                      Solar for All Subscriber in Skokie
                     </h3>
-                    <p className="text-muted-foreground text-lg">
-                      A large-scale solar installation providing clean energy to over 200 homes
+                    <p className="text-black/80 text-lg font-medium drop-shadow-md">
+                      Projected to save $480 per year when their community solar project goes live
                     </p>
                     <Button 
                       size="lg"
-                      className="bg-primary text-primary-foreground hover:bg-primary/90"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
                     >
-                      View Project Case Study
+                      Read Story
                     </Button>
                   </div>
 
                   {/* Project Metrics */}
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-4 p-6 rounded-xl bg-white/20 backdrop-blur-sm">
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
-                        350
+                      <div className="text-2xl md:text-3xl font-bold text-black mb-1 drop-shadow-lg">
+                        $200
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        kW Installed
+                      <div className="text-sm text-black/70 font-medium drop-shadow-md">
+                        Monthly Electric Bill
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
-                        10k
+                      <div className="text-2xl md:text-3xl font-bold text-black mb-1 drop-shadow-lg">
+                        $40
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        tCO₂ Saved/Year
+                      <div className="text-sm text-black/70 font-medium drop-shadow-md">
+                        Monthly Credits (20%)
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
-                        Texas
+                      <div className="text-2xl md:text-3xl font-bold text-black mb-1 drop-shadow-lg">
+                        $480
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        Location
+                      <div className="text-sm text-black/70 font-medium drop-shadow-md">
+                        Annual Savings
                       </div>
                     </div>
                   </div>

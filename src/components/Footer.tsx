@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { TwitterIcon, LinkedinIcon, FacebookIcon } from "lucide-react";
+import { TwitterIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -9,25 +10,30 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">CE</span>
-              </div>
-              <span className="text-xl font-bold text-foreground">Clean Earth</span>
-            </div>
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/assets/logos/Symbol - Primary.svg"
+                alt="Clean Earth Renewables Symbol"
+                width={32}
+                height={32}
+                className="h-8 w-8"
+                priority
+              />
+              <span className="text-xl font-bold text-foreground">CER</span>
+            </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Making clean energy accessible, low-risk, and financially beneficial 
               for businesses, landowners, and individuals.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                 <TwitterIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/company/clean-earth-renewables" target="_blank"className="text-muted-foreground hover:text-primary transition-colors">
                 <LinkedinIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <FacebookIcon className="w-5 h-5" />
+              <a href="https://www.instagram.com/cleanearthrenewables" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                <InstagramIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
