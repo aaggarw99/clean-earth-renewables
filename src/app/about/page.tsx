@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -8,16 +10,40 @@ import {
 import Image from "next/image";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { ContactForm, FieldConfig } from "@/components/ContactForm";
 
 export default function AboutPage() {
+
+  const fields: FieldConfig[] = [
+    { type: "customerType", required: true },
+    { type: "utility", required: false },
+    { type: "name", required: true },
+    { type: "email", required: true },
+    { type: "phone", required: false },
+    { type: "state", required: false },
+    { type: "stateText", required: false },
+    { type: "address", required: false },
+    { type: "city", required: false },
+    { type: "companyName", required: false, label: "Company Name" },
+    { type: "zipCode", required: false, label: "Zip Code" },
+    { type: "message", required: false },
+    { type: "fileUpload", required: false }
+  ];
+
+  const handleSubmit = async (data: any) => {
+    console.log("Contact form submitted:", data);
+    // Here you would typically send the data to your backend
+    // For now, we'll just log it
+  };
+
   return (
     <div className="min-h-screen">
       <NavBar />
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/solar-energy-concept-atlanta-1.png"
+            src="/assets/images/backgrounds/chicago-overview.png"
             alt="Solar panels with city background"
             fill
             className="object-cover"
@@ -164,29 +190,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+      {/* Contact Form Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Let's Build a Cleaner Future Together
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-              >
-                Contact Us
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold"
-              >
-                Schedule a Call
-              </Button>
-            </div>
-          </div>
+          <ContactForm
+            title="Let's Build a Cleaner Future Together"
+            subtitle="We're here to help you achieve your clean energy goals. Fill out the form below and we'll get back to you as soon as possible."
+            fields={fields}
+            submitText="Send Message"
+            onSubmit={handleSubmit}
+          />
         </div>
       </section>
 

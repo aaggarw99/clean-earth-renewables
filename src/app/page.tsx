@@ -6,6 +6,7 @@ import { FeaturedProject } from "@/components/FeaturedProject";
 import { StatsSection } from "@/components/StatsSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FinalCTA } from "@/components/FinalCTA";
+import { TestimonialsExample } from "@/components/TestimonialsExample";
 import { Footer } from "@/components/Footer";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
@@ -20,8 +21,9 @@ export default function Home() {
       <StatsSection />
       <AboutSection />
       <FinalCTA />
+      <TestimonialsExample />
       <Footer />
       <ThemeSwitcher />
-    </main>
+      </main>
   );
 }

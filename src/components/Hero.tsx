@@ -1,8 +1,12 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { VideoBackground } from "./VideoBackground";
+import { scrollToSectionWithNavbar } from "@/utils/navigation";
 import Image from "next/image";
 
 export function Hero() {
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Video Background - positioned to cover hero section */}
@@ -38,13 +42,15 @@ export function Hero() {
             <Button 
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+              onClick={() => scrollToSectionWithNavbar('contact-form')}
             >
-              Get Started
+              Get Energy Quote
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-2 border-white text-white hover:bg-white hover:text-background px-8 py-4 text-lg font-semibold bg-white/10 backdrop-blur-sm"
+              onClick={() => scrollToSectionWithNavbar('services-section')}
             >
               Learn More
             </Button>

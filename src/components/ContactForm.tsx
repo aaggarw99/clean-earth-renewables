@@ -175,26 +175,48 @@ export function ContactForm({
     setIsSubmitting(true);
     
     try {
-      if (onSubmit) {
-        await onSubmit(formData);
-      }
-      // Reset form on success
-      setFormData({
-        customerType: "",
-        utility: "",
-        name: "",
-        email: "",
-        phone: "",
-        state: "",
-        stateText: "",
-        address: "",
-        city: "",
-        companyName: "",
-        zipCode: "",
-        message: ""
+      // Send form data to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Success - reset form and show success message
+        setFormData({
+          customerType: "",
+          utility: "",
+          name: "",
+          email: "",
+          phone: "",
+          state: "",
+          stateText: "",
+          address: "",
+          city: "",
+          companyName: "",
+          zipCode: "",
+          message: ""
+        });
+        
+        // Show success message (you can add a toast notification here)
+        alert('Thank you! Your message has been sent successfully.');
+        
+        // Call onSubmit callback if provided
+        if (onSubmit) {
+          await onSubmit(formData);
+        }
+      } else {
+        // Error - show error message
+        alert(`Error: ${result.error || 'Failed to send message. Please try again.'}`);
+      }
     } catch (error) {
       console.error("Form submission error:", error);
+      alert('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }

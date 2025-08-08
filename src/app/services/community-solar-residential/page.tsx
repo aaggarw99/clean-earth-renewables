@@ -7,6 +7,7 @@ import { TabSwitcher } from "@/components/TabSwitcher";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { Footer } from "@/components/Footer";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
+import { scrollToSectionWithNavbar } from "@/utils/navigation";
 import { 
   CurrencyDollarIcon, 
   NoSymbolIcon, 
@@ -82,7 +83,7 @@ export default function CommunitySolarResidentialPage() {
                     <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CurrencyDollarIcon className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-muted-foreground">Up to 20% savings on your electricity supply costs</span>
+                    <span className="text-muted-foreground">Up to 20% savings on your entire electricity bill</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -94,7 +95,7 @@ export default function CommunitySolarResidentialPage() {
                     <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <BoltIcon className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-muted-foreground">Flexible payment options and billing arrangements</span>
+                    <span className="text-muted-foreground">Tenant friendly</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -181,7 +182,7 @@ export default function CommunitySolarResidentialPage() {
                       <CurrencyDollarIcon className="w-4 h-4 text-primary" />
                     </div>
                     <div>
-                      <h5 className="font-semibold text-foreground">Save 10-15% Annually</h5>
+                      <h5 className="font-semibold text-foreground">Save 10% Annually</h5>
                       <p className="text-sm text-muted-foreground">Reduce your electricity costs with guaranteed savings on every bill</p>
                     </div>
                   </div>
@@ -257,7 +258,11 @@ export default function CommunitySolarResidentialPage() {
           <p className="text-lg md:text-xl mb-6">
             Enjoy clean energy savings without installing rooftop panels. Join a local solar project and start saving today!
           </p>
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
+          <Button 
+            size="lg" 
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+            onClick={() => scrollToSectionWithNavbar('choose-your-program')}
+          >
             Get Started
           </Button>
         </div>
@@ -281,11 +286,13 @@ export default function CommunitySolarResidentialPage() {
             tabs={tabs}
             title="Choose Your Program"
             subtitle="Select the option that best fits your needs"
+            id="choose-your-program"
           />
         </div>
       </section>
 
       {/* Featured Project */}
+      {/* TODO: Add residential statistics here! */}
       <FeaturedProject />
 
       {/* Footer */}

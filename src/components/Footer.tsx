@@ -36,6 +36,8 @@ export function Footer() {
                 <InstagramIcon className="w-5 h-5" />
               </a>
             </div>
+            
+
           </div>
 
           {/* Services */}
@@ -117,7 +119,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               © 2024 Clean Earth Renewables. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm text-muted-foreground">
+            <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <Link href="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
@@ -127,6 +129,20 @@ export function Footer() {
               <Link href="/sitemap" className="hover:text-primary transition-colors">
                 Sitemap
               </Link>
+              <a 
+                href="https://www.bbb.org/us/il/chicago/profile/renewable-energy/clean-earth-renewables-0654-1000114301" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/assets/logos/bbb-logo-text.svg"
+                  alt="Better Business Bureau Accredited Business"
+                  width={80}
+                  height={20}
+                  className="h-5 w-auto"
+                />
+              </a>
             </div>
           </div>
         </div>

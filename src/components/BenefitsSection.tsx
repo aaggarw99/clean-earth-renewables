@@ -76,9 +76,9 @@ export function BenefitsSection() {
                 {benefit.bullets && (
                   <ul className="space-y-2">
                     {benefit.bullets.map((bullet, bulletIndex) => (
-                      <li key={bulletIndex} className="flex items-center text-sm text-muted-foreground">
-                        <CheckCircleIcon className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                        {bullet}
+                      <li key={bulletIndex} className="flex items-start text-sm text-muted-foreground">
+                        <CheckCircleIcon className="w-4 h-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-left">{bullet}</span>
                       </li>
                     ))}
                   </ul>

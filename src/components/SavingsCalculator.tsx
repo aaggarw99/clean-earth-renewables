@@ -62,7 +62,7 @@ export function SavingsCalculator({
     // This can be enhanced with zip code specific rates later
 
     // TODO: Add zip code specific rates
-    const monthlySavings = bill * 0.12;
+    const monthlySavings = bill * 0.1;
     const annualSavings = monthlySavings * 12;
     
     return `$${annualSavings.toFixed(0)}`;

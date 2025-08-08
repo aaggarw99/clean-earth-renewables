@@ -14,24 +14,39 @@ export function NavBar() {
 
   const services = [
     {
-      title: "Community Solar - Residential",
-      description: "Save on your home energy bills",
-      href: "/services/community-solar-residential"
+      category: "Community Solar",
+      items: [
+        {
+          title: "Residential",
+          description: "Save on your home energy bills",
+          href: "/services/community-solar-residential"
+        },
+        {
+          title: "Businesses",
+          description: "Off-site solar for your business",
+          href: "/services/community-solar-businesses"
+        }
+      ]
     },
     {
-      title: "Community Solar - Businesses",
-      description: "Off-site solar for your business",
-      href: "/services/community-solar-businesses"
+      category: "Lease Your Rooftop",
+      items: [
+        {
+          title: "Commercial Buildings",
+          description: "Earn money from your business roof",
+          href: "/services/lease-rooftop-businesses"
+        }
+      ]
     },
     {
-      title: "Lease Your Rooftop",
-      description: "Earn money from your business roof",
-      href: "/services/lease-rooftop-businesses"
-    },
-    {
-      title: "Host a Solar Farm",
-      description: "Landowner opportunities",
-      href: "/services/host-solar-farm"
+      category: "Host a Solar Farm",
+      items: [
+        {
+          title: "Landowners",
+          description: "Convert unused land into profit",
+          href: "/services/host-solar-farm"
+        }
+      ]
     }
   ];
 
@@ -79,10 +94,6 @@ export function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors">
-              Home
-            </Link>
-            
             {/* Services Dropdown */}
             <div 
               className="relative"
@@ -101,20 +112,29 @@ export function NavBar() {
                   <div className="absolute top-full left-0 w-full h-2 bg-transparent" />
                   
                   <div className="absolute top-full left-0 mt-2 w-80 bg-card border border-border rounded-lg shadow-lg overflow-hidden">
-                    <div className="p-2">
-                      {services.map((service, index) => (
-                        <Link
-                          key={index}
-                          href={service.href}
-                          className="block p-3 rounded-md hover:bg-muted/50 transition-colors group"
-                        >
-                          <div className="font-medium text-foreground group-hover:text-primary transition-colors">
-                            {service.title}
+                    <div className="p-4">
+                      {services.map((category, categoryIndex) => (
+                        <div key={categoryIndex} className={categoryIndex > 0 ? "mt-4 pt-4 border-t border-border/40" : ""}>
+                          <h3 className="text-sm font-semibold text-primary mb-3 px-2 uppercase tracking-wide">
+                            {category.category}
+                          </h3>
+                          <div className="space-y-1">
+                            {category.items.map((item, itemIndex) => (
+                              <Link
+                                key={itemIndex}
+                                href={item.href}
+                                className="block p-3 rounded-lg hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-all duration-200 group transform hover:scale-[1.02] hover:shadow-md"
+                              >
+                                <div className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">
+                                  {item.title}
+                                </div>
+                                <div className="text-sm text-muted-foreground mt-1 group-hover:text-muted-foreground/80 transition-colors duration-200">
+                                  {item.description}
+                                </div>
+                              </Link>
+                            ))}
                           </div>
-                          <div className="text-sm text-muted-foreground mt-1">
-                            {service.description}
-                          </div>
-                        </Link>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -128,9 +148,11 @@ export function NavBar() {
             <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </Link>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Get Energy Quote
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Get Energy Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -170,15 +192,22 @@ export function NavBar() {
                 </button>
                 {isServicesOpen && (
                   <div className="ml-4 mt-1 space-y-1">
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        href={service.href}
-                        className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {service.title}
-                      </Link>
+                    {services.map((category, categoryIndex) => (
+                      <div key={categoryIndex}>
+                        <div className="px-3 py-1 text-xs font-semibold text-foreground/70 uppercase tracking-wide">
+                          {category.category}
+                        </div>
+                        {category.items.map((item, itemIndex) => (
+                          <Link
+                            key={itemIndex}
+                            href={item.href}
+                            className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 )}
@@ -199,9 +228,11 @@ export function NavBar() {
                 Contact
               </Link>
               <div className="px-3 py-2">
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                  Get Energy Quote
-                </Button>
+                <Link href="/contact" className="w-full">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    Get Energy Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

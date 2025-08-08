@@ -12,13 +12,14 @@ interface TabSwitcherProps {
   tabs: Tab[];
   title?: string;
   subtitle?: string;
+  id?: string;
 }
 
-export function TabSwitcher({ tabs, title, subtitle }: TabSwitcherProps) {
+export function TabSwitcher({ tabs, title, subtitle, id }: TabSwitcherProps) {
   const [activeTab, setActiveTab] = useState(tabs[0]?.id || "");
 
   return (
-    <div className="w-full">
+    <div className="w-full" id={id}>
       {(title || subtitle) && (
         <div className="text-center mb-8">
           {title && <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{title}</h2>}

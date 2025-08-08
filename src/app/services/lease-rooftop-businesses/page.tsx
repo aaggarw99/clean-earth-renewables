@@ -125,6 +125,8 @@ export default function LeaseRooftopBusinessesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ContactForm
             fields={fields}
+            title="Get Started with Leasing Your Rooftop"
+            subtitle="We'll help you evaluate your roof's potential and get you started on the path to passive income."
             submitText="Send Message"
             onSubmit={handleSubmit}
           />

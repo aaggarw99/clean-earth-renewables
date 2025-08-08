@@ -23,9 +23,9 @@ export default function ContactPage() {
   ];
 
   const handleSubmit = async (data: any) => {
-    console.log("Contact form submitted:", data);
-    // Here you would typically send the data to your backend
-    // For now, we'll just log it
+    // This callback is called after successful email sending
+    // You can add additional logic here if needed
+    console.log("Contact form submitted successfully:", data);
   };
 
   return (

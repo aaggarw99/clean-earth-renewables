@@ -27,7 +27,7 @@ export function FinalCTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+    <section id="contact-form" className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ContactForm
           fields={fields}
