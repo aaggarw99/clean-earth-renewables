@@ -31,8 +31,25 @@ const stats = [
   }
 ];
 
-export function StatsSection() {
-  const [counts, setCounts] = useState(stats.map(() => 0));
+interface StatsSectionProps {
+  title?: string;
+  subtitle?: string;
+  stats?: Array<{
+    icon: React.ReactNode;
+    value: number;
+    prefix: string;
+    suffix: string;
+    label: string;
+  }>;
+}
+
+export function StatsSection({ 
+  title = "Our Impact",
+  subtitle = "Clean Earth Renewables is making a difference across the country",
+  stats: customStats
+}: StatsSectionProps) {
+  const displayStats = customStats || stats;
+  const [counts, setCounts] = useState(displayStats.map(() => 0));
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
@@ -57,7 +74,7 @@ export function StatsSection() {
   }, [hasAnimated]);
 
   const animateCounters = () => {
-    stats.forEach((stat, index) => {
+    displayStats.forEach((stat, index) => {
       const duration = 2000; // 2 seconds
       const steps = 60;
       const increment = stat.value / steps;
@@ -83,15 +100,15 @@ export function StatsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our Impact
+            {title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Clean Earth Renewables is making a difference across the country
+            {subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
+          {displayStats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-6">
                 {stat.icon}

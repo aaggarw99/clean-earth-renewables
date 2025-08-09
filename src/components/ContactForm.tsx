@@ -65,13 +65,15 @@ const utilities = [
   "Central Hudson (NY)",
   "Central Maine Power (CMP)",
   "Commonwealth Edison (ComEd)",
-  "Delmarva Power (DE)",
+  "Delmarva Power (DE, MA)",
   "Dominion Power (VA)",
   "El Paso (NM)",
-  "Eversource (MA - West, East, NSTAR)",
+  "Eversource (MA - West, East, NSTAR, NH)",
   "JCPL (NJ)",
+  "Orange & Rockland Utility",
   "National Grid (NY, MA - Central, East)",
   "NYSEG",
+  "Rochester Gas & Electric",
   "Versant Power (South, Bangor Hydro District)",
   "Xcel (CO & MN)"
 ];

@@ -4,6 +4,7 @@ import { NavBar } from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
 import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
 import { FeaturedProject } from "@/components/FeaturedProject";
+import { ClientLogoCarousel } from "@/components/ClientLogoCarousel";
 import { ContactForm, FieldConfig } from "@/components/ContactForm";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
@@ -60,6 +61,64 @@ export default function CommunitySolarBusinessesPage() {
     // Here you would typically send the data to your backend
   };
 
+  // Client logos data
+  const clientLogos = [
+    {
+      src: "/assets/images/clients/dq.png",
+      alt: "Dairy Queen",
+      width: 120,
+      height: 60
+    },
+    {
+      src: "/assets/images/clients/daysinn.png",
+      alt: "Days Inn",
+      width: 120,
+      height: 60
+    },
+    {
+      src: "/assets/images/clients/dunkindonuts.png",
+      alt: "Dunkin' Donuts",
+      width: 120,
+      height: 60
+    },
+    {
+      src: "/assets/images/clients/mapleandash.png",
+      alt: "Dunkin' Donuts",
+      width: 100,
+      height: 50
+    },
+    {
+      src: "/assets/images/clients/econolodge.png",
+      alt: "Econo Lodge",
+      width: 100,
+      height: 50
+    },
+    {
+      src: "/assets/images/clients/hamptoninn.png",
+      alt: "Hampton Inn",
+      width: 120,
+      height: 60
+    },
+    {
+      src: "/assets/images/clients/sleepinn.png",
+      alt: "Sleep Inn",
+      width: 100,
+      height: 50
+    },
+    {
+      src: "/assets/images/clients/subway.png",
+      alt: "Subway",
+      width: 120,
+      height: 60
+    },
+    {
+      src: "/assets/images/clients/super8.png",
+      alt: "Super 8",
+      width: 120,
+      height: 60
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <NavBar />
@@ -106,6 +165,15 @@ export default function CommunitySolarBusinessesPage() {
 
       {/* Featured Project */}
       <FeaturedProject />
+
+      {/* Client Logo Carousel */}
+      <ClientLogoCarousel 
+        logos={clientLogos}
+        title="Trusted by Leading Businesses"
+        subtitle="Join hundreds of businesses already saving with community solar"
+        speed={15}
+        gap={64}
+      />
 
       {/* Contact Form */}
       <section className="py-20 bg-muted/30">

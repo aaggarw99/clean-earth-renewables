@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { HorizontalTimeline } from "@/components/HorizontalTimeline";
 import { TabSwitcher } from "@/components/TabSwitcher";
 import { FeaturedProject } from "@/components/FeaturedProject";
+import { StatsSection } from "@/components/StatsSection";
 import { Footer } from "@/components/Footer";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { scrollToSectionWithNavbar } from "@/utils/navigation";
@@ -16,7 +17,9 @@ import {
   MagnifyingGlassIcon, 
   UserGroupIcon, 
   ClipboardDocumentCheckIcon, 
-  BanknotesIcon 
+  BanknotesIcon,
+  BuildingOfficeIcon,
+  GlobeAltIcon
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
@@ -225,7 +228,7 @@ export default function CommunitySolarResidentialPage() {
           <div className="text-center">
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-              onClick={() => window.open('https://app.solstice.us/ref/cleanearth/humansathelp', '_blank')}
+              onClick={() => window.open('https://www.arcadia.com/community-solar/ceril', '_blank')}
             >
               Enroll in Community Solar
             </Button>
@@ -292,8 +295,36 @@ export default function CommunitySolarResidentialPage() {
       </section>
 
       {/* Featured Project */}
-      {/* TODO: Add residential statistics here! */}
       <FeaturedProject />
+
+      {/* Stats Section */}
+      <StatsSection 
+        title="Residential Community Solar Impact"
+        subtitle="See how community solar is transforming homes across Illinois"
+        stats={[
+          {
+            icon: <BoltIcon className="w-8 h-8" />,
+            value: 3000,
+            prefix: "",
+            suffix: " MWh",
+            label: "LMI savings over 20 years"
+          },
+          {
+            icon: <BuildingOfficeIcon className="w-8 h-8" />,
+            value: 6.8,
+            prefix: "$",
+            suffix: "M",
+            label: "in savings for local businesses and subscribers"
+          },
+          {
+            icon: <GlobeAltIcon className="w-8 h-8" />,
+            value: 8500,
+            prefix: "",
+            suffix: "",
+            label: "Metric Tons of CO2 avoided through commercial subscriptions"
+          }
+        ]}
+      />
 
       {/* Footer */}
       <Footer />
