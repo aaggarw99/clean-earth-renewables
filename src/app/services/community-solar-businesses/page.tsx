@@ -9,6 +9,7 @@ import { ContactForm, FieldConfig } from "@/components/ContactForm";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import Image from "next/image";
+import { scrollToSectionWithNavbar } from "@/utils/navigation";
 
 export default function CommunitySolarBusinessesPage() {
   // Timeline steps data
@@ -142,14 +143,18 @@ export default function CommunitySolarBusinessesPage() {
           <p className="text-lg md:text-xl mb-6">
             Lower your business's energy costs and carbon footprint by subscribing to a local solar project—no on-site installation required.
           </p>
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
+          <Button
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+            onClick={() => scrollToSectionWithNavbar('how-it-works')}
+          >
             Learn More
           </Button>
         </div>
       </section>
 
       {/* How It Works Timeline */}
-      <section className="py-20 bg-background">
+      <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

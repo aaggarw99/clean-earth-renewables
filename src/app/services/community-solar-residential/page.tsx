@@ -230,8 +230,11 @@ export default function CommunitySolarResidentialPage() {
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
               onClick={() => window.open('https://www.arcadia.com/community-solar/ceril', '_blank')}
             >
-              Enroll in Community Solar
+              Enroll Now
             </Button>
+            <p className="text-sm text-muted-foreground mt-2">
+                We partner with Arcadia to provide enhanced LMI programs and support.
+            </p>
           </div>
         </div>
       )
