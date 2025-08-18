@@ -9,7 +9,6 @@ import Image from "next/image";
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isServicesHovered, setIsServicesHovered] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const services = [
@@ -55,12 +54,10 @@ export function NavBar() {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    setIsServicesHovered(true);
     setIsServicesOpen(true);
   };
 
   const handleMouseLeave = () => {
-    setIsServicesHovered(false);
     timeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
     }, 150); // 150ms delay

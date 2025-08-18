@@ -22,7 +22,21 @@ export default function ContactPage() {
     { type: "fileUpload", required: false }
   ];
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: {
+    customerType: string;
+    utility: string;
+    name: string;
+    email: string;
+    phone: string;
+    state: string;
+    stateText: string;
+    address: string;
+    city: string;
+    companyName: string;
+    zipCode: string;
+    message: string;
+    fileUpload?: File;
+  }) => {
     // This callback is called after successful email sending
     // You can add additional logic here if needed
     console.log("Contact form submitted successfully:", data);

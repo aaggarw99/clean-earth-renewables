@@ -1,7 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  CurrencyDollarIcon, 
-  GlobeAltIcon, 
   CheckCircleIcon, 
   BuildingOffice2Icon,
   BanknotesIcon,

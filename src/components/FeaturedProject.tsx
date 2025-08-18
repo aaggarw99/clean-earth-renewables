@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { SunIcon } from "@heroicons/react/24/outline";
 
 export function FeaturedProject() {
@@ -11,7 +10,7 @@ export function FeaturedProject() {
             Featured Project
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto">
-            See how we're transforming energy production across the country
+            See how we&apos;re transforming energy production across the country
           </p>
         </div>
 

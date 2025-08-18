@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect, useCallback } from "react";
 
 interface CalculatorField {
   id: string;
@@ -14,7 +13,6 @@ interface CalculatorField {
 
 interface SavingsCalculatorProps {
   fields?: CalculatorField[];
-  onCalculate?: (values: Record<string, string>) => void;
   className?: string;
 }
 
@@ -45,11 +43,9 @@ export function SavingsCalculator({
       required: false
     }
   ],
-  onCalculate,
   className = ""
 }: SavingsCalculatorProps) {
   const [calculatorFields, setCalculatorFields] = useState<CalculatorField[]>(fields);
-  const [isCalculating, setIsCalculating] = useState(false);
 
   // Calculate savings based on zip code and monthly bill
   const calculateSavings = (zipCode: string, monthlyBill: string): string => {
@@ -69,12 +65,12 @@ export function SavingsCalculator({
   };
 
   // Handle field value changes
-  const handleFieldChange = (id: string, value: string) => {
+  const handleFieldChange = useCallback((id: string, value: string) => {
     const updatedFields = calculatorFields.map(field => 
       field.id === id ? { ...field, value } : field
     );
     setCalculatorFields(updatedFields);
-  };
+  }, [calculatorFields]);
 
   // Auto-calculate when zip code or monthly bill changes
   useEffect(() => {
@@ -88,25 +84,7 @@ export function SavingsCalculator({
         handleFieldChange("annualSavings", savings);
       }
     }
-  }, [calculatorFields]);
-
-  // Handle manual calculation
-  const handleCalculate = () => {
-    setIsCalculating(true);
-    
-    // Simulate calculation delay for better UX
-    setTimeout(() => {
-      const values = calculatorFields.reduce((acc, field) => {
-        acc[field.id] = field.value;
-        return acc;
-      }, {} as Record<string, string>);
-      
-      if (onCalculate) {
-        onCalculate(values);
-      }
-      setIsCalculating(false);
-    }, 500);
-  };
+  }, [calculatorFields, handleFieldChange]);
 
   return (
     <div className={`w-full ${className}`}>
@@ -155,11 +133,11 @@ export function SavingsCalculator({
               readOnly
               className="w-full px-4 py-3 bg-muted border border-border rounded-lg text-lg font-semibold text-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
-            {isCalculating && (
+            {/* isCalculating && (
               <div className="absolute inset-0 flex items-center justify-center bg-muted/80 rounded-lg">
                 <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
               </div>
-            )}
+            ) */}
           </div>
         </div>
       ))}

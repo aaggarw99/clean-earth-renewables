@@ -166,12 +166,7 @@ export default function CommunitySolarResidentialPage() {
                   </p>
                 </div>
                 
-                <SavingsCalculator
-                  onCalculate={(values) => {
-                    console.log("Calculator values:", values);
-                    // Here you could send the data to your backend or analytics
-                  }}
-                />
+                <SavingsCalculator />
               </div>
             </div>
             

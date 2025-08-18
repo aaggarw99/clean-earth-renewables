@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { 
-  BuildingOfficeIcon, 
+  UsersIcon, 
   BoltIcon, 
   GlobeAltIcon 
 } from "@heroicons/react/24/outline";
 
 const stats = [
   {
-    icon: <BuildingOfficeIcon className="w-8 h-8" />,
-    value: 200,
+    icon: <UsersIcon className="w-10 h-10" />,
+    value: 10000,
     prefix: "",
     suffix: "+",
     label: "Local Community Solar Projects in our Marketplace"
@@ -20,7 +20,7 @@ const stats = [
     value: 3,
     prefix: "$",
     suffix: "M+",
-    label: "Subscribers’ estimated annual savings"
+    label: "Subscribers' estimated annual savings"
   },
   {
     icon: <GlobeAltIcon className="w-8 h-8" />,
@@ -52,28 +52,7 @@ export function StatsSection({
   const [counts, setCounts] = useState(displayStats.map(() => 0));
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            animateCounters();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const element = document.getElementById("stats-section");
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  const animateCounters = () => {
+  const animateCounters = useCallback(() => {
     displayStats.forEach((stat, index) => {
       const duration = 2000; // 2 seconds
       const steps = 60;
@@ -93,7 +72,28 @@ export function StatsSection({
         });
       }, duration / steps);
     });
-  };
+  }, [displayStats]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCounters();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById("stats-section");
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated, animateCounters]);
 
   return (
     <section id="stats-section" className="py-20 bg-background">

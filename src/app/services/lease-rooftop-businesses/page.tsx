@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import { NavBar } from "@/components/NavBar";
 import Image from "next/image";
 import { AlternatingCardRow } from "@/components/AlternatingCardRow";
-import { VerticalTimeline } from "@/components/VerticalTimeline";
 import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
-import { SunIcon, BuildingOfficeIcon } from "@heroicons/react/24/outline";
+import { BuildingOfficeIcon } from "@heroicons/react/24/outline";
 import { ContactForm, FieldConfig } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
@@ -28,7 +27,21 @@ export default function LeaseRooftopBusinessesPage() {
     { type: "fileUpload", required: false }
   ];
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: {
+    customerType: string;
+    utility: string;
+    name: string;
+    email: string;
+    phone: string;
+    state: string;
+    stateText: string;
+    address: string;
+    city: string;
+    companyName: string;
+    zipCode: string;
+    message: string;
+    fileUpload?: File;
+  }) => {
     console.log("Contact form submitted:", data);
     // Here you would typically send the data to your backend
     // For now, we'll just log it

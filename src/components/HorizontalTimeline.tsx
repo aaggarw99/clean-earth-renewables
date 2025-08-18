@@ -65,7 +65,7 @@ export function HorizontalTimeline({ steps, title, subtitle }: HorizontalTimelin
                 {/* Requirements */}
                 {step.requirements && step.requirements.length > 0 && (
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-foreground text-center">What you'll need:</p>
+                    <p className="text-sm font-medium text-foreground text-center">What you&apos;ll need:</p>
                     <ul className="text-xs text-muted-foreground space-y-1">
                       {step.requirements.map((req, reqIndex) => (
                         <li key={reqIndex} className="flex items-center justify-center">

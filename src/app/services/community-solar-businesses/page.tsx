@@ -57,7 +57,21 @@ export default function CommunitySolarBusinessesPage() {
     { type: "fileUpload", required: false }
   ];
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: {
+    customerType: string;
+    utility: string;
+    name: string;
+    email: string;
+    phone: string;
+    state: string;
+    stateText: string;
+    address: string;
+    city: string;
+    companyName: string;
+    zipCode: string;
+    message: string;
+    fileUpload?: File;
+  }) => {
     console.log("Business contact form submitted:", data);
     // Here you would typically send the data to your backend
   };
@@ -141,7 +155,7 @@ export default function CommunitySolarBusinessesPage() {
             Community Solar for Businesses (Off Site)
           </h1>
           <p className="text-lg md:text-xl mb-6">
-            Lower your business's energy costs and carbon footprint by subscribing to a local solar project—no on-site installation required.
+            Lower your business&apos;s energy costs and carbon footprint by subscribing to a local solar project—no on-site installation required.
           </p>
           <Button
             size="lg"

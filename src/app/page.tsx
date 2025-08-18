@@ -30,7 +30,21 @@ export default function Home() {
     { type: "fileUpload", required: false }
   ];
 
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: {
+    customerType: string;
+    utility: string;
+    name: string;
+    email: string;
+    phone: string;
+    state: string;
+    stateText: string;
+    address: string;
+    city: string;
+    companyName: string;
+    zipCode: string;
+    message: string;
+    fileUpload?: File;
+  }) => {
     console.log("Form submitted:", data);
     // Here you would typically send the data to your backend
   };

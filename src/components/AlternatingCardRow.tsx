@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ReactNode } from "react";
-import { Button } from "@/components/ui/button";
 import { CheckIcon } from "@heroicons/react/24/outline";
 
 interface AlternatingCardRowProps {
