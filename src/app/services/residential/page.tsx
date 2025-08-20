@@ -45,7 +45,7 @@ export default function CommunitySolarResidentialPage() {
       description: "Complete your application online with no credit check or upfront fees required.",
       icon: <ClipboardDocumentCheckIcon className="w-8 h-8" />,
       timeframe: "10-15 minutes",
-      requirements: ["Basic contact info", "Utility account details", "Electronic signature"]
+      requirements: ["Basic contact info", "Utility account details"]
     },
     {
       title: "Start Saving",
@@ -244,7 +244,7 @@ export default function CommunitySolarResidentialPage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/chicago-river.png"
+            src="/assets/images/backgrounds/subdivision.png"
             alt="Community Solar Residential Hero"
             fill
             className="object-cover"

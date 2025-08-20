@@ -2,32 +2,41 @@
 
 import { NavBar } from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
-import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
+import { AlternatingTimeline } from "@/components/AlternatingTimeline";
 import { ContactForm, FieldConfig } from "@/components/ContactForm";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import Image from "next/image";
 
-export default function HostSolarFarmPage() {
+export default function LandownersPage() {
   // Timeline steps data
   const timelineSteps = [
     {
-      step: 1,
+      number: 1,
       title: "Utility Infrastructure Identification",
       description: "The first and most important factor to qualifying your land is being located near existing utility infrastructure with potential interconnection capacity. Our team will assess this for you within the same day from you submitting your land to us. We will revert back to you with an initial thumbs up to proceed with the review of your land.",
-      image: "/assets/images/services/solar-farm-person.png"
+      imageSrc: "/assets/images/backgrounds/plant.png",
+      imageAlt: "Solar farm person",
+      timeframe: "Same day assessment",
+      requirements: ["Land submission", "Utility infrastructure nearby"]
     },
     {
-      step: 2,
+      number: 2,
       title: "Topography and Zoning Analysis",
       description: "Once we've identified your land is nearby existing energy infrastructure, the next step is to analyze the topography and zoning of your land and determine buildable acreage for the community solar project while adhering to local zoning ordinances.",
-      image: "/assets/images/backgrounds/plant.png"
+      imageSrc: "/assets/images/services/topology.png",
+      imageAlt: "Plant background",
+      timeframe: "1-2 weeks",
+      requirements: ["6+ acres of land", "Zoning compliance"]
     },
     {
-      step: 3,
+      number: 3,
       title: "Interconnection Analysis",
       description: "Lastly, once we've completed the first two steps, we must work closely with your utility and determine interconnection feasibility. This study can take anywhere from three months to two years — and unfortunately we have no control of this timeline as this is due to the utility company managing the interconnection study process. To ensure the fastest timeline, work with us to promptly submit your land for an initial review, at no risk to you or your land.",
-      image: "/assets/images/services/cost-reduction.png"
+      imageSrc: "/assets/images/services/energy-lines.png",
+      imageAlt: "Cost reduction illustration",
+      timeframe: "3 months - 2 years",
+      requirements: ["Utility cooperation", "Patience during study period"]
     }
   ];
 
@@ -75,10 +84,10 @@ export default function HostSolarFarmPage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/solar-energy-concept-atlanta-1.png"
+            src="/assets/images/backgrounds/panels-bg.png"
             alt="Host a Solar Farm Hero"
             fill
-            className="object-cover"
+            className="object-cover object-bottom"
             priority
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -91,7 +100,7 @@ export default function HostSolarFarmPage() {
             Got 6+ acres of land? Lease it to us for solar and kick back and enjoy 20-40 years of above-market rental income.
           </p>
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
-            See If You Qualify
+            See if My Land is Eligible
           </Button>
         </div>
       </section>
@@ -107,7 +116,7 @@ export default function HostSolarFarmPage() {
               Our comprehensive process ensures your land is suitable for community solar development
             </p>
           </div>
-          <VerticalTimelineCentered steps={timelineSteps} />
+          <AlternatingTimeline steps={timelineSteps} />
         </div>
       </section>
 

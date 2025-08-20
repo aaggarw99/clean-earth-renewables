@@ -18,12 +18,12 @@ export function NavBar() {
         {
           title: "Residential",
           description: "Save on your home energy bills",
-          href: "/services/community-solar-residential"
+          href: "/services/residential"
         },
         {
           title: "Businesses",
           description: "Off-site solar for your business",
-          href: "/services/community-solar-businesses"
+          href: "/services/businesses-offsite"
         }
       ]
     },
@@ -33,7 +33,7 @@ export function NavBar() {
         {
           title: "Commercial Buildings",
           description: "Earn money from your business roof",
-          href: "/services/lease-rooftop-businesses"
+          href: "/services/businesses-onsite"
         }
       ]
     },
@@ -43,7 +43,7 @@ export function NavBar() {
         {
           title: "Landowners",
           description: "Convert unused land into profit",
-          href: "/services/host-solar-farm"
+          href: "/services/landowners"
         }
       ]
     }
@@ -142,6 +142,12 @@ export function NavBar() {
             <Link href="/about" className="text-foreground hover:text-primary transition-colors">
               About
             </Link>
+            <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
+              Blog
+            </Link>
+            <Link href="/resources" className="text-foreground hover:text-primary transition-colors">
+              Resources
+            </Link>
             <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </Link>
@@ -216,6 +222,20 @@ export function NavBar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                href="/blog"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/resources"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Resources
               </Link>
               <Link
                 href="/contact"

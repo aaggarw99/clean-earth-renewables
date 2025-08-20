@@ -45,23 +45,23 @@ export function Footer() {
             <h3 className="text-lg font-semibold text-foreground">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link href="/services/residential" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Residential
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Businesses
+                <Link href="/services/businesses-offsite" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Businesses (Off Site)
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link href="/services/businesses-onsite" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Businesses (On Site)
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/landowners" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Landowners
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  REITs
                 </Link>
               </li>
             </ul>
@@ -77,13 +77,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Projects
+                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Blog
+                <Link href="/resources" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Resources
                 </Link>
               </li>
               <li>

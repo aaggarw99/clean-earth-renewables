@@ -2,7 +2,7 @@
 
 import { NavBar } from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
-import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
+import { AlternatingTimeline } from "@/components/AlternatingTimeline";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { ClientLogoCarousel } from "@/components/ClientLogoCarousel";
 import { ContactForm, FieldConfig } from "@/components/ContactForm";
@@ -15,28 +15,40 @@ export default function CommunitySolarBusinessesPage() {
   // Timeline steps data
   const timelineSteps = [
     {
-      step: 1,
+      number: 1,
       title: "Solar Farm Goes Live",
       description: "A local solar farm becomes operational and begins delivering clean energy to your utility's power grid.",
-      image: "/assets/images/services/solar-farm-person.png"
+      imageSrc: "/assets/images/services/solar-farm-person.png",
+      imageAlt: "Solar farm person",
+      timeframe: "Immediate",
+      requirements: ["No action required", "Automatic enrollment available"]
     },
     {
-      step: 2,
+      number: 2,
       title: "Connect your utility account",
       description: "Join the community solar program by connecting your utility account. In some service areas, there's no change to your utility bill or payment method.",
-      image: "/assets/images/backgrounds/plant.png"
+      imageSrc: "/assets/images/backgrounds/plant.png",
+      imageAlt: "Plant background",
+      timeframe: "5-10 minutes",
+      requirements: ["Utility account number", "Business information"]
     },
     {
-      step: 3,
+      number: 3,
       title: "Start Saving Monthly",
       description: "Receive credits on your utility bill and track your clean energy savings.",
-      image: "/assets/images/services/cost-reduction.png"
+      imageSrc: "/assets/images/services/cost-reduction.png",
+      imageAlt: "Cost reduction illustration",
+      timeframe: "1-2 billing cycles",
+      requirements: ["No additional action needed", "Credits appear automatically"]
     },
     {
-      step: 4,
+      number: 4,
       title: "Move or Cancel Anytime",
       description: "Flexible subscription that adapts to your business needs - relocate or cancel without penalties.",
-      image: "/assets/images/services/trucks-onsite.png"
+      imageSrc: "/assets/images/services/trucks-onsite.png",
+      imageAlt: "Trucks onsite",
+      timeframe: "Flexible",
+      requirements: ["No penalties", "Easy cancellation process"]
     }
   ];
 
@@ -142,7 +154,7 @@ export default function CommunitySolarBusinessesPage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/solar-energy-concept-atlanta-1.png"
+            src="/assets/images/backgrounds/panels-on-business.png"
             alt="Community Solar Businesses Hero"
             fill
             className="object-cover"
@@ -178,7 +190,7 @@ export default function CommunitySolarBusinessesPage() {
               Simple steps to start saving on your energy costs
             </p>
           </div>
-          <VerticalTimelineCentered steps={timelineSteps} />
+          <AlternatingTimeline steps={timelineSteps} />
         </div>
       </section>
 

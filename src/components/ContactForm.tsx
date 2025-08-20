@@ -433,7 +433,7 @@ export function ContactForm({
           {subtitle && <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
         </div>
       )}
-      <div className="bg-background/50 backdrop-blur-sm rounded-xl p-8 border border-border/20">
+      <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-8 border border-border/20">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {shouldShowField("name") && renderField(getFieldConfig("name"))}

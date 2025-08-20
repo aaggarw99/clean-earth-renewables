@@ -1,15 +1,12 @@
 'use client'
 
-import { Button } from "@/components/ui/button";
 import { NavBar } from "@/components/NavBar";
 import Image from "next/image";
-import { AlternatingCardRow } from "@/components/AlternatingCardRow";
-import { VerticalTimelineCentered } from "@/components/VerticalTimelineCentered";
-import { BuildingOfficeIcon } from "@heroicons/react/24/outline";
+import { AlternatingTimeline } from "@/components/AlternatingTimeline";
 import { ContactForm, FieldConfig } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
-export default function LeaseRooftopBusinessesPage() {
+export default function BusinessesOnsitePage() {
 
   const fields: FieldConfig[] = [
     { type: "customerType", required: true },
@@ -47,6 +44,37 @@ export default function LeaseRooftopBusinessesPage() {
     // For now, we'll just log it
   };
 
+  // Timeline steps data
+  const timelineSteps = [
+    {
+      number: 1,
+      title: "Utility Interconnection Analysis",
+      description: "We evaluate feasibility and secure capacity rights to interconnect a community solar project on your property.",
+      imageSrc: "/assets/images/services/energy-lines.png",
+      imageAlt: "Business onsite panels",
+      timeframe: "2-4 weeks",
+      requirements: ["Roof access", "Utility account information"]
+    },
+    {
+      number: 2,
+      title: "Project Design & Engineering",
+      description: "Our team ensures the roof layout, structure, and size meet technical requirements for optimal solar output.",
+      imageSrc: "/assets/images/services/project-design.png",
+      imageAlt: "Trucks onsite",
+      timeframe: "4-6 weeks",
+      requirements: ["Structural assessment", "Roof specifications"]
+    },
+    {
+      number: 3,
+      title: "Project Finance & Lease Terms",
+      description: "Once approved by our underwriting team, we'll present your custom lease agreement with terms & payout schedule for execution.",
+      imageSrc: "/assets/images/services/project-finance-analysis.png",
+      imageAlt: "Cost reduction illustration",
+      timeframe: "1-2 weeks",
+      requirements: ["Business documentation", "Lease agreement review"]
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <NavBar />
@@ -70,66 +98,12 @@ export default function LeaseRooftopBusinessesPage() {
           </p>
         </div>
       </section>
-      {/* Section 1: Why Lease Your Roof? */}
-      <AlternatingCardRow
-        title="Why Lease Your Roof?"
-        subtitle={
-          "Join Rooftop Community Solar — Save Up to 20%"
-        }
-        bullets={[
-          "Host a solar farm with zero upfront investment",
-          "Become a local clean energy producer",
-          "Offer renewable energy as an amenity to tenants",
-          "Generate passive income through lease payments"
-        ]}
-        imageSrc="/assets/images/services/business-onsite-panels.png"
-        cta={
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
-            See if My Roof is Eligible
-          </Button>
-        }
-        background="white"
-      />
-      {/* Section 2: Featured Case Study */}
-      <AlternatingCardRow
-        title="Featured Case Study"
-        subtitle={
-          "How a Chicago Business Turned Its Rooftop Into a Profit Center\nLearn how a mid-size commercial building in Chicago saved money, supported sustainability goals, and increased tenant retention through rooftop solar."
-        }
-        imageSrc="/assets/images/services/trucks-onsite.png"
-        reverse
-        cta={
-          <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold">
-            Read Full Case Study
-          </Button>
-        }
-        background="gray"
-      />
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10 text-center">
           How the Process Works
         </h2>
-        <VerticalTimelineCentered
-          steps={[
-            {
-              title: "Utility Interconnection Analysis",
-              description:
-                "We evaluate feasibility and secure capacity rights to interconnect a community solar project on your property.",
-              icon: <BuildingOfficeIcon className="w-8 h-8" />
-            },
-            {
-              title: "Project Design & Engineering",
-              description:
-                "Our team ensures the roof layout, structure, and size meet technical requirements for optimal solar output.",
-              icon: <BuildingOfficeIcon className="w-8 h-8" />
-            },
-            {
-              title: "Project Finance & Lease Terms",
-              description:
-                "Once approved by our underwriting team, we'll present your custom lease agreement with terms & payout schedule for execution.",
-              icon: <BuildingOfficeIcon className="w-8 h-8" />
-            },
-          ]}
+        <AlternatingTimeline
+          steps={timelineSteps}
         />
       </section>
 

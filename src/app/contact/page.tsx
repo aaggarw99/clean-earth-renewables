@@ -48,7 +48,7 @@ export default function ContactPage() {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+        <section className="pt-32 pb-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">

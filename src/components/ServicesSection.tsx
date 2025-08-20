@@ -16,7 +16,7 @@ const services = [
     description: "Subscribe to solar energy without installing panels on your home",
     features: ["Home solar subscriptions", "No upfront costs", "Monthly energy savings"],
     cta: "Subscribe to a Solar Farm",
-    href: "/services/community-solar-residential"
+    href: "/services/residential"
   },
   {
     icon: <BuildingOfficeIcon className="w-8 h-8" />,
@@ -24,7 +24,7 @@ const services = [
     description: "Install solar panels on your business rooftop for immediate savings",
     features: ["Commercial rooftop solar", "Energy cost reduction", "Tax incentives"],
     cta: "Lease My Roof",
-    href: "/services/lease-rooftop-businesses"
+    href: "/services/businesses-onsite"
   },
   {
     icon: <SunIcon className="w-8 h-8" />,
@@ -32,7 +32,7 @@ const services = [
     description: "Subscribe to off-site solar energy for predictable business costs",
     features: ["Off-site solar subscriptions", "Predictable energy costs", "Corporate sustainability"],
     cta: "Subscribe to a Solar Farm",
-    href: "/services/community-solar-businesses"
+    href: "/services/businesses-offsite"
   },
   {
     icon: <BoltIcon className="w-8 h-8" />,
@@ -40,7 +40,7 @@ const services = [
     description: "Earn income by hosting solar farms on your land",
     features: ["Land lease payments", "Agricultural compatibility", "Long-term income"],
     cta: "Host a Solar Farm",
-    href: "/services/host-solar-farm"
+    href: "/services/landowners"
   }
 ];
 
