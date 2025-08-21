@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { PaperClipIcon } from "@heroicons/react/24/outline";
+import { useToast } from "@/components/ui/toast";
 
 // Field types
 export type FieldType = 
@@ -110,6 +111,7 @@ export function ContactForm({
   onSubmit,
   className = ""
 }: ContactFormProps) {
+  const { addToast } = useToast();
   const [formData, setFormData] = useState<FormData>({
     customerType: "",
     utility: "",
@@ -176,13 +178,24 @@ export function ContactForm({
     setIsSubmitting(true);
     
     try {
+      // Create FormData to handle file uploads
+      const formDataToSend = new FormData();
+      
+      // Add all form fields to FormData
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') {
+          if (key === 'fileUpload' && value instanceof File) {
+            formDataToSend.append(key, value);
+          } else if (typeof value === 'string') {
+            formDataToSend.append(key, value);
+          }
+        }
+      });
+
       // Send form data to API
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend, // Don't set Content-Type header - let browser set it with boundary
       });
 
       const result = await response.json();
@@ -204,8 +217,18 @@ export function ContactForm({
           message: ""
         });
         
-        // Show success message (you can add a toast notification here)
-        alert('Thank you! Your message has been sent successfully.');
+        // Reset file input
+        const fileInput = document.getElementById('fileUpload') as HTMLInputElement;
+        if (fileInput) {
+          fileInput.value = '';
+        }
+        
+        // Show success message
+        addToast({
+          type: "success",
+          title: "Message sent successfully!",
+          message: "Thank you for contacting us. We'll get back to you soon."
+        });
         
         // Call onSubmit callback if provided
         if (onSubmit) {
@@ -213,11 +236,19 @@ export function ContactForm({
         }
       } else {
         // Error - show error message
-        alert(`Error: ${result.error || 'Failed to send message. Please try again.'}`);
+        addToast({
+          type: "error",
+          title: "Failed to send message",
+          message: result.error || 'Please try again or contact us directly.'
+        });
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      alert('Network error. Please check your connection and try again.');
+      addToast({
+        type: "error",
+        title: "Network error",
+        message: "Please check your connection and try again."
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -236,7 +267,47 @@ export function ContactForm({
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Check file size (10MB limit)
+      const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+      if (file.size > maxSize) {
+        addToast({
+          type: "error",
+          title: "File too large",
+          message: "File size must be less than 10MB. Please choose a smaller file."
+        });
+        e.target.value = ''; // Clear the input
+        return;
+      }
+
+      // Check file type (allow common document and image types)
+      const allowedTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'text/plain',
+        'image/jpeg',
+        'image/jpg',
+        'image/png',
+        'image/gif'
+      ];
+
+      if (!allowedTypes.includes(file.type)) {
+        addToast({
+          type: "error",
+          title: "Invalid file type",
+          message: "Please upload a valid file type: PDF, Word, Excel, text, or image files (JPEG, PNG, GIF)."
+        });
+        e.target.value = ''; // Clear the input
+        return;
+      }
+
       setFormData(prev => ({ ...prev, fileUpload: file }));
+      // Clear any file-related errors
+      if (errors.fileUpload) {
+        setErrors(prev => ({ ...prev, fileUpload: "" }));
+      }
     }
   };
 
@@ -391,10 +462,22 @@ export function ContactForm({
                 type="file"
                 id={type}
                 onChange={handleFileChange}
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.jpg,.jpeg,.png,.gif"
                 className="w-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
               />
               <PaperClipIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             </div>
+            <p className="text-xs text-muted-foreground">
+              Accepted formats: PDF, Word, Excel, text, images (JPEG, PNG, GIF). Max size: 10MB.
+            </p>
+            {formData.fileUpload && (
+              <div className="flex items-center space-x-2 mt-2 p-2 bg-green-50 border border-green-200 rounded-md">
+                <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                <p className="text-sm text-green-700 font-medium">
+                  File selected: {formData.fileUpload.name} ({(formData.fileUpload.size / 1024 / 1024).toFixed(2)} MB)
+                </p>
+              </div>
+            )}
             {error && (
               <div className="flex items-center space-x-2 mt-2 p-2 bg-red-50 border border-red-200 rounded-md">
                 <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>

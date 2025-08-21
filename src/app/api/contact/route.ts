@@ -24,11 +24,27 @@ interface ContactFormData {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const formData: ContactFormData = body;
+    const formData = await request.formData();
+    
+    // Convert FormData to ContactFormData object
+    const contactData: ContactFormData = {
+      customerType: formData.get('customerType') as string || '',
+      utility: formData.get('utility') as string || '',
+      name: formData.get('name') as string || '',
+      email: formData.get('email') as string || '',
+      phone: formData.get('phone') as string || '',
+      state: formData.get('state') as string || '',
+      stateText: formData.get('stateText') as string || '',
+      address: formData.get('address') as string || '',
+      city: formData.get('city') as string || '',
+      companyName: formData.get('companyName') as string || '',
+      zipCode: formData.get('zipCode') as string || '',
+      message: formData.get('message') as string || '',
+      fileUpload: formData.get('fileUpload') as File || undefined
+    };
 
     // Validate required fields
-    if (!formData.name || !formData.email || !formData.customerType) {
+    if (!contactData.name || !contactData.email || !contactData.customerType) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -37,19 +53,52 @@ export async function POST(request: NextRequest) {
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!emailRegex.test(contactData.email)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
         { status: 400 }
       );
     }
 
+    // Validate file upload if present
+    if (contactData.fileUpload) {
+      // Check file size (10MB limit)
+      const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+      if (contactData.fileUpload.size > maxSize) {
+        return NextResponse.json(
+          { error: 'File size must be less than 10MB' },
+          { status: 400 }
+        );
+      }
+
+      // Check file type
+      const allowedTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'text/plain',
+        'image/jpeg',
+        'image/jpg',
+        'image/png',
+        'image/gif'
+      ];
+
+      if (!allowedTypes.includes(contactData.fileUpload.type)) {
+        return NextResponse.json(
+          { error: 'Invalid file type. Please upload PDF, Word, Excel, text, or image files.' },
+          { status: 400 }
+        );
+      }
+    }
+
     // Create email content
-    const emailContent = createEmailContent(formData);
+    const emailContent = createEmailContent(contactData);
 
     // Send email using Resend (recommended for Next.js)
     if (EMAIL_API_KEY) {
-      const emailResponse = await sendEmailWithResend(emailContent);
+      const emailResponse = await sendEmailWithResend(emailContent, contactData.fileUpload);
       
       if (emailResponse.ok) {
         return NextResponse.json(
@@ -66,6 +115,9 @@ export async function POST(request: NextRequest) {
     } else {
       // Fallback: log the email content (for development)
       console.log('Email would be sent:', emailContent);
+      if (contactData.fileUpload) {
+        console.log('File attachment:', contactData.fileUpload.name);
+      }
       return NextResponse.json(
         { message: 'Email logged (development mode)' },
         { status: 200 }
@@ -205,20 +257,34 @@ Submission Time: ${new Date().toLocaleString()}
   };
 }
 
-async function sendEmailWithResend(emailContent: { subject: string; html: string; text: string }) {
+async function sendEmailWithResend(emailContent: { subject: string; html: string; text: string }, fileUpload?: File) {
+  const emailData: any = {
+    from: FROM_EMAIL,
+    to: TO_EMAIL,
+    subject: emailContent.subject,
+    html: emailContent.html,
+    text: emailContent.text,
+  };
+
+  // Add file attachment if provided
+  if (fileUpload) {
+    const fileBuffer = await fileUpload.arrayBuffer();
+    const base64File = Buffer.from(fileBuffer).toString('base64');
+    
+    emailData.attachments = [{
+      filename: fileUpload.name,
+      content: base64File,
+      content_type: fileUpload.type || 'application/octet-stream'
+    }];
+  }
+
   const response = await fetch(EMAIL_SERVICE_URL, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${EMAIL_API_KEY}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      from: FROM_EMAIL,
-      to: TO_EMAIL,
-      subject: emailContent.subject,
-      html: emailContent.html,
-      text: emailContent.text,
-    }),
+    body: JSON.stringify(emailData),
   });
 
   return response;
