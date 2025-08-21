@@ -258,7 +258,18 @@ Submission Time: ${new Date().toLocaleString()}
 }
 
 async function sendEmailWithResend(emailContent: { subject: string; html: string; text: string }, fileUpload?: File) {
-  const emailData: any = {
+  const emailData: {
+    from: string;
+    to: string;
+    subject: string;
+    html: string;
+    text: string;
+    attachments?: Array<{
+      filename: string;
+      content: string;
+      content_type: string;
+    }>;
+  } = {
     from: FROM_EMAIL,
     to: TO_EMAIL,
     subject: emailContent.subject,
