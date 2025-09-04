@@ -32,9 +32,7 @@ export function Hero() {
 
           {/* Sub-headline */}
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Save up to 30% on energy bills & reduce 10k tCO₂/year. 
-            Clean Earth Renewables makes clean energy accessible, low-risk, 
-            and financially beneficial.
+            Save up to 20% on electricity costs. Clean Earth Renewables brings environmental and economic benefits to your neighborhood.
           </p>
 
           {/* CTA Buttons */}
