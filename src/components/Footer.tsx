@@ -1,15 +1,76 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TwitterIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
 import Image from "next/image";
+import { useToast } from "@/components/ui/toast";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { addToast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      addToast({
+        type: 'error',
+        title: 'Email required',
+        message: 'Please enter your email address.',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email: email.trim(), 
+          source: 'footer' 
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        addToast({
+          type: 'success',
+          title: 'Subscribed successfully!',
+          message: data.message || 'Thank you for subscribing to our newsletter.',
+        });
+        setEmail("");
+      } else {
+        addToast({
+          type: 'error',
+          title: 'Subscription failed',
+          message: data.error || 'Something went wrong. Please try again.',
+        });
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      addToast({
+        type: 'error',
+        title: 'Subscription failed',
+        message: 'Unable to subscribe. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-3">
             <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/assets/logos/Symbol - Primary.svg"
@@ -26,9 +87,6 @@ export function Footer() {
               for businesses, landowners, and individuals.
             </p>
             <div className="flex space-x-4">
-              <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
-                <TwitterIcon className="w-5 h-5" />
-              </a>
               <a href="https://www.linkedin.com/company/clean-earth-renewables" target="_blank"className="text-muted-foreground hover:text-primary transition-colors">
                 <LinkedinIcon className="w-5 h-5" />
               </a>
@@ -41,7 +99,7 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-2">
             <h3 className="text-lg font-semibold text-foreground">Services</h3>
             <ul className="space-y-2">
               <li>
@@ -68,7 +126,7 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-1">
             <h3 className="text-lg font-semibold text-foreground">Company</h3>
             <ul className="space-y-2">
               <li>
@@ -94,22 +152,54 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Trustpilot */}
+          <div className="space-y-4 md:col-span-3 text-center">
+            <h3 className="text-lg font-semibold text-foreground">Customer Reviews</h3>
+            <p className="text-muted-foreground text-sm">
+              See what our customers say about us.
+            </p>
+            <div className="flex justify-center">
+              <a 
+                href="https://www.trustpilot.com/review/clean-earth.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/assets/icons/trustpilot/trustpilot.png"
+                  alt="Trustpilot Reviews - 4.0 out of 5 stars"
+                  width={160}
+                  height={60}
+                  className="h-16 w-auto"
+                />
+              </a>
+            </div>
+          </div>
+
           {/* Newsletter */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-3 md:ml-4">
             <h3 className="text-lg font-semibold text-foreground">Stay Informed</h3>
             <p className="text-muted-foreground text-sm">
               Get the latest updates on energy trends and renewable solutions.
             </p>
-            <div className="space-y-2">
+            <form onSubmit={handleNewsletterSubmit} className="space-y-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                required
               />
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                Subscribe
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 
@@ -120,15 +210,6 @@ export function Footer() {
               © 2025 Clean Earth Renewables. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-              <Link href="/privacy" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/sitemap" className="hover:text-primary transition-colors">
-                Sitemap
-              </Link>
               <a 
                 href="https://www.bbb.org/us/il/chicago/profile/renewable-energy/clean-earth-renewables-0654-1000114301" 
                 target="_blank" 

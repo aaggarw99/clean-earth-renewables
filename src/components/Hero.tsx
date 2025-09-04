@@ -32,9 +32,7 @@ export function Hero() {
 
           {/* Sub-headline */}
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Save up to 30% on energy bills & reduce 10k tCO₂/year. 
-            Clean Earth Renewables makes clean energy accessible, low-risk, 
-            and financially beneficial.
+            Save up to 20% on electricity costs. Clean Earth Renewables brings environmental and economic benefits to your neighborhood.
           </p>
 
           {/* CTA Buttons */}
@@ -60,8 +58,8 @@ export function Hero() {
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-sm text-white/70 mb-4">Trusted by leading businesses and landowners</p>
             <div className="flex justify-center items-center space-x-12 opacity-80">
+            <Image src="/assets/images/clients/summit-ridge-energy.jpg" alt="Summit Ridge Energy" width={100} height={100} />
             <Image src="/assets/images/clients/arcadia.png" alt="Arcadia" width={100} height={100} />
-            <Image src="/assets/images/clients/summit-ridge-logo.png" alt="Summit Ridge" width={100} height={100} />
             <Image src="/assets/images/clients/solstice.png" alt="Solstice" width={100} height={100} />
             </div>
           </div>
@@ -69,7 +67,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center bg-white/10 backdrop-blur-sm">
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>

@@ -46,14 +46,17 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background">
       <NavBar />
       
-      <main className="pt-16">
+      <main className="pt-8">
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                Connect with us for your next clean energy project
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Connect With Us!
               </h1>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                We&apos;re here to help you with your clean energy project.
+              </p>
             </div>
           </div>
         </section>

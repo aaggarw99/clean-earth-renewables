@@ -156,4 +156,61 @@
   .animate-scroll {
     animation: scroll linear infinite;
   }
+  
+  /* Blog content styling */
+  .blog-content {
+    @apply text-base leading-relaxed;
+  }
+  
+  .blog-content h1 {
+    @apply text-3xl font-bold text-foreground mt-8 mb-6;
+  }
+  
+  .blog-content h2 {
+    @apply text-2xl font-bold text-foreground mt-8 mb-4;
+  }
+  
+  .blog-content h3 {
+    @apply text-xl font-bold text-foreground mt-6 mb-3;
+  }
+  
+  .blog-content p {
+    @apply text-muted-foreground leading-relaxed mb-4;
+  }
+  
+  .blog-content strong {
+    @apply font-semibold text-foreground;
+  }
+  
+  .blog-content a {
+    @apply text-primary hover:text-primary/80 underline hover:no-underline;
+  }
+  
+  .blog-content ul {
+    @apply list-disc pl-6 my-4;
+  }
+  
+  .blog-content ol {
+    @apply list-decimal pl-6 my-4;
+  }
+  
+  .blog-content li {
+    @apply mb-2 text-muted-foreground;
+  }
+  
+  .blog-content blockquote {
+    @apply border-l-4 border-primary pl-4 italic my-6 text-muted-foreground bg-muted/30 py-4 pr-4 rounded-r;
+  }
+  
+  .blog-content figure {
+    @apply my-8;
+  }
+  
+  .blog-content figcaption {
+    @apply text-center text-sm text-muted-foreground italic mt-2;
+  }
+  
+  .blog-content img {
+    @apply rounded-lg shadow-md w-full h-auto;
+  }
 }
