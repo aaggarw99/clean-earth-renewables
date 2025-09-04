@@ -1,9 +1,70 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TwitterIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
 import Image from "next/image";
+import { useToast } from "@/components/ui/toast";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { addToast } = useToast();
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      addToast({
+        type: 'error',
+        title: 'Email required',
+        message: 'Please enter your email address.',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email: email.trim(), 
+          source: 'footer' 
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        addToast({
+          type: 'success',
+          title: 'Subscribed successfully!',
+          message: data.message || 'Thank you for subscribing to our newsletter.',
+        });
+        setEmail("");
+      } else {
+        addToast({
+          type: 'error',
+          title: 'Subscription failed',
+          message: data.error || 'Something went wrong. Please try again.',
+        });
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      addToast({
+        type: 'error',
+        title: 'Subscription failed',
+        message: 'Unable to subscribe. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -100,16 +161,24 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               Get the latest updates on energy trends and renewable solutions.
             </p>
-            <div className="space-y-2">
+            <form onSubmit={handleNewsletterSubmit} className="space-y-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+                className="w-full px-3 py-2 bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                required
               />
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                Subscribe
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 
