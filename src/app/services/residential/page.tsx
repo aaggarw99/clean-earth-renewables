@@ -64,7 +64,7 @@ export default function CommunitySolarResidentialPage() {
       content: (
         <div className="space-y-6">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Special Programs for LMI Residents</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-4">Solar For All Program for Low-to-Moderate (LMI) income subscribers.</h3>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Enhanced savings and support designed specifically for low-to-moderate income households.
             </p>
@@ -104,7 +104,7 @@ export default function CommunitySolarResidentialPage() {
                     <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CheckCircleIcon className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-muted-foreground">Dedicated support team for LMI participants</span>
+                    <span className="text-muted-foreground">Dedicated support team for LMI subscribers</span>
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function CommunitySolarResidentialPage() {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-foreground mb-4">Standard Community Solar Program</h3>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Join our standard community solar program and start saving on your electricity bills while supporting renewable energy.
+              As a renter or homeowner, join our community solar program and start saving on your electricity bills while supporting renewable energy.
             </p>
           </div>
           
@@ -228,7 +228,7 @@ export default function CommunitySolarResidentialPage() {
               Enroll Now
             </Button>
             <p className="text-sm text-muted-foreground mt-2">
-                We partner with Arcadia to provide enhanced LMI programs and support.
+              We partner with Arcadia to provide enhanced community solar offers and 24/7 billing support and customer service.
             </p>
           </div>
         </div>
@@ -309,17 +309,17 @@ export default function CommunitySolarResidentialPage() {
           },
           {
             icon: <BuildingOfficeIcon className="w-8 h-8" />,
-            value: 6.8,
+            value: 1,
             prefix: "$",
             suffix: "M",
-            label: "in savings for local businesses and subscribers"
+            label: "in annual savings for local residents"
           },
           {
             icon: <GlobeAltIcon className="w-8 h-8" />,
             value: 8500,
             prefix: "",
             suffix: "",
-            label: "Metric Tons of CO2 avoided through commercial subscriptions"
+            label: "Metric Tons of CO2 avoided through residential subscriptions"
           }
         ]}
       />

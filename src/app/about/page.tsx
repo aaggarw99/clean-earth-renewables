@@ -70,7 +70,7 @@ export default function AboutPage() {
             Empowering Communities Through Clean Energy
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            10,000+ customers served across residential, commercial, and community solar.
+            250+ customers served across residential, commercial and community solar.
           </p>
           <Button 
             size="lg" 
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 Diana Krytsak
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Diana brings over 15 years of experience in renewable energy development and community engagement. Her passion for creating sustainable solutions that benefit local communities drives our mission to make clean energy accessible to everyone.
+              Diana is the co-founder of Clean Earth Renewables, a native Ukrainian turned local Chicagoan, Diana is a clean energy executive with over 8 years of renewable energy deal execution & sustainable advisory experience. She specializes in the hospitality and industrial sectors, unlocking millions of dollars in operating income for businesses across the midwest and northeast regions. Diana is responsible for partnerships with Hilton branded hotels, Dunkin' Donuts, Subway, and Dairy Queen, among many other notable subscriber partnerships at CER.
               </p>
             </div>
 
@@ -128,12 +128,12 @@ export default function AboutPage() {
                 David Emsheimer
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                David specializes in renewable energy financing and project development. With expertise in structuring innovative financial solutions, he ensures that our projects deliver both environmental impact and strong returns for our partners.
+              Under David&apos;s leadership, CER has evolved from an early-stage greenfield & subscriber aggregator to deploying scalable, construction-ready solar solutions in land-constrained urban and suburban environments. By partnering with both building and landowners, CER unlocks new revenue streams for its real estate partners while expanding access to affordable, renewable energy for local communities and businesses.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </section>  
 
       {/* Core Values Section */}
       <section className="py-20 bg-card">

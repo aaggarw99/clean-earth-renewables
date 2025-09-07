@@ -184,10 +184,10 @@ export default function CommunitySolarBusinessesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              How Business Community Solar Works
+              How to Participate in Community Solar as a Business
             </h2>
             <p className="text-lg text-muted-foreground">
-              Simple steps to start saving on your energy costs
+              Lower your business&apos;s Scope 2 emissions and electricity costs with no on-site changes or investment required.
             </p>
           </div>
           <AlternatingTimeline steps={timelineSteps} />
@@ -211,8 +211,8 @@ export default function CommunitySolarBusinessesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ContactForm
             fields={contactFields}
-            title="Get Started with Business Community Solar"
-            subtitle="Tell us about your business and we'll help you find the perfect community solar solution."
+            title="Get Started with Community Solar for Your Business"
+            subtitle="Tell us about your business and we'll customize a community solar solution to your specific energy needs."
             submitText="Request Business Consultation"
             onSubmit={handleSubmit}
           />
