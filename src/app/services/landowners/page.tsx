@@ -84,10 +84,10 @@ export default function LandownersPage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/panels-bg.png"
+            src="/assets/images/backgrounds/solar-panels-in-rows.jpeg"
             alt="Host a Solar Farm Hero"
             fill
-            className="object-cover object-bottom"
+            className="object-cover object-top"
             priority
           />
           <div className="absolute inset-0 bg-black/40" />

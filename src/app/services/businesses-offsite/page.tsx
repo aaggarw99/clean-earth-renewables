@@ -154,7 +154,7 @@ export default function CommunitySolarBusinessesPage() {
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/panels-on-business.png"
+            src="/assets/images/backgrounds/solar-farm-bg.png"
             alt="Community Solar Businesses Hero"
             fill
             className="object-cover"
