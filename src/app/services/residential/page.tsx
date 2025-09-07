@@ -319,7 +319,7 @@ export default function CommunitySolarResidentialPage() {
             value: 8500,
             prefix: "",
             suffix: "",
-            label: "Metric Tons of CO2 avoided through residential subscriptions"
+            label: "metric Tons of CO2 avoided through residential subscriptions"
           }
         ]}
       />

@@ -21,7 +21,7 @@ const benefits = [
   {
     icon: <BanknotesIcon className="w-8 h-8" />,
     title: "Project Financing",
-    description: "Our strong financial partnerships remove the risk and investment requirement to deploying distributed energy resources at-scale for businesses and communities.",
+    description: "Our strong financial partnerships remove the risk and investment requirement in deploying distributed energy resources at-scale for businesses and communities.",
     bullets: [
       "Leverage $2B+ in financing from industry-leading IPP's and Financiers",
       "Access a community or enterprise-scale behind-the-meter or front-of-the-meter on-site solar system with zero out-of-pocket investment",
