@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { TwitterIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
+import { LinkedinIcon, InstagramIcon, PhoneIcon, MailIcon, ClockIcon, MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import { useToast } from "@/components/ui/toast";
 
@@ -70,7 +70,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Company Info */}
-          <div className="space-y-4 md:col-span-3">
+          <div className="space-y-4 md:col-span-2">
             <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/assets/logos/Symbol - Primary.svg"
@@ -94,8 +94,6 @@ export function Footer() {
                 <InstagramIcon className="w-5 h-5" />
               </a>
             </div>
-            
-
           </div>
 
           {/* Services */}
@@ -126,7 +124,7 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <div className="space-y-4 md:col-span-1">
+          <div className="space-y-4 md:col-span-2">
             <h3 className="text-lg font-semibold text-foreground">Company</h3>
             <ul className="space-y-2">
               <li>
@@ -152,13 +150,39 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Contact Information */}
+          <div className="space-y-4 md:col-span-2">
+            <h3 className="text-lg font-semibold text-foreground">Contact</h3>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-start space-x-2">
+                <MapPinIcon className="w-4 h-4 mt-0.5" />
+                <div>
+                  <div>77 W Wacker Dr #4500</div>
+                  <div>Chicago, IL 60601</div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <PhoneIcon className="w-4 h-4" />
+                <a href="tel:+16308853500" className="hover:text-primary transition-colors">(630) 885-3500</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MailIcon className="w-4 h-4" />
+                <a href="mailto:devteam@clean-earth.org" className="hover:text-primary transition-colors">devteam@clean-earth.org</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <ClockIcon className="w-4 h-4" />
+                <span>Mon - Fri, 9 AM - 5 PM</span>
+              </div>
+            </div>
+          </div>
+
           {/* Trustpilot */}
-          <div className="space-y-4 md:col-span-3 text-center">
+          <div className="space-y-4 md:col-span-2">
             <h3 className="text-lg font-semibold text-foreground">Customer Reviews</h3>
             <p className="text-muted-foreground text-sm">
               See what our customers say about us.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-start">
               <a 
                 href="https://www.trustpilot.com/review/clean-earth.org" 
                 target="_blank" 
@@ -177,7 +201,7 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="space-y-4 md:col-span-3 md:ml-4">
+          <div className="space-y-4 md:col-span-2">
             <h3 className="text-lg font-semibold text-foreground">Stay Informed</h3>
             <p className="text-muted-foreground text-sm">
               Get the latest updates on energy trends and renewable solutions.

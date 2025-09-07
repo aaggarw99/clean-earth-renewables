@@ -109,7 +109,7 @@ export default function AboutPage() {
                 Diana Krytsak
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-              Diana is the co-founder of Clean Earth Renewables, a native Ukrainian turned local Chicagoan, Diana is a clean energy executive with over 8 years of renewable energy deal execution & sustainable advisory experience. She specializes in the hospitality and industrial sectors, unlocking millions of dollars in operating income for businesses across the midwest and northeast regions. Diana is responsible for partnerships with Hilton branded hotels, Dunkin' Donuts, Subway, and Dairy Queen, among many other notable subscriber partnerships at CER.
+              Diana is the co-founder of Clean Earth Renewables, a native Ukrainian turned local Chicagoan, Diana is a clean energy executive with over 8 years of renewable energy deal execution & sustainable advisory experience. She specializes in the hospitality and industrial sectors, unlocking millions of dollars in operating income for businesses across the midwest and northeast regions. Diana is responsible for partnerships with Hilton branded hotels, Dunkin&apos; Donuts, Subway, and Dairy Queen, among many other notable subscriber partnerships at CER.
               </p>
             </div>
 
