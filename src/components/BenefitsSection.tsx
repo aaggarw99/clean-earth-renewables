@@ -9,35 +9,35 @@ import {
 const benefits = [
   {
     icon: <BuildingOffice2Icon className="w-8 h-8" />,
-    title: "End-to-End Project Development",
+    title: "Project Development",
     description: "We manage every phase of your renewable project—from land analysis to construction—so you don't have to.",
     bullets: [
-      "Expert site analysis and acquisition",
-      "Seamless contract negotiation and execution",
-      "Network of experienced developers and EPCs",
-      "Guaranteed zero upfront capital investment"
+      "Site analysis & acquisition",
+      "Utility interconnection",
+      "Initial layout, system design & permitting",
+      "Construction & commissioning"
     ]
   },
   {
     icon: <BanknotesIcon className="w-8 h-8" />,
-    title: "Flexible, Trusted Financing",
-    description: "Our strong financial partnerships remove the risk and cost barriers to clean energy.",
+    title: "Project Financing",
+    description: "Our strong financial partnerships remove the risk and investment requirement in deploying distributed energy resources at-scale for businesses and communities.",
     bullets: [
-      "Backed by $2B+ in funding from top-tier institutions",
-      "Custom financing with no upfront risk",
-      "Full support for PPAs, leases, and buy-out options",
-      "We own and operate the asset—so you don't have to"
+      "Leverage $2B+ in financing from industry-leading IPP's and Financiers",
+      "Access a community or enterprise-scale behind-the-meter or front-of-the-meter on-site solar system with zero out-of-pocket investment",
+      "Secure full operations & maintenance for the entire operating life of the project",
+      "PPA financing & roof lease ROI analysis included"
     ]
   },
   {
     icon: <UsersIcon className="w-8 h-8" />,
-    title: "Community Solar for All",
-    description: "Join a local solar project without installing rooftop panels—and save on energy bills while supporting your community.",
+    title: "Community Solar",
+    description: "Join a local solar project without installing rooftop panels—and save on energy bills while supporting your community's clean energy goals.",
     bullets: [
-      "Annual electricity savings for renters & homeowners",
-      "No installations or maintenance required",
-      "Easy enrollment in local solar farms",
-      "Shareable clean energy credits for you and your neighbors"
+      "Earn a share of clean energy savings that's proven to lower your electric bill",
+      "Fast & easy enrollment process",
+      "Higher discounts for income-driven households",
+      "No installation, no utility change, and no equipment required"
     ]
   }
 ];
@@ -51,8 +51,8 @@ export function BenefitsSection() {
             Why Choose Clean Earth?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          We simplify the transition to clean energy by handling everything from development to
-          financing—so you can focus on saving money, supporting your community, and reducing your carbon footprint.
+          Clean Earth Renewables is a community solar provider serving all major community solar markets across the U.S.,
+          unlocking access to clean energy savings for electricity customers.
           </p>
         </div>
 

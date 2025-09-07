@@ -10,24 +10,24 @@ import {
 const stats = [
   {
     icon: <UsersIcon className="w-10 h-10" />,
-    value: 10000,
+    value: 500,
     prefix: "",
     suffix: "+",
-    label: "Local Community Solar Projects in our Marketplace"
+    label: "local community solar projects in the marketplace"
   },
   {
     icon: <BoltIcon className="w-8 h-8" />,
     value: 3,
     prefix: "$",
     suffix: "M+",
-    label: "Subscribers' estimated annual savings"
+    label: "subscribers' estimated annual savings"
   },
   {
     icon: <GlobeAltIcon className="w-8 h-8" />,
-    value: 500,
+    value: 250,
     prefix: "",
     suffix: "+",
-    label: "Subscribes on the marketplace"
+    label: "active subscribers and growing"
   }
 ];
 
