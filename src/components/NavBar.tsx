@@ -86,7 +86,7 @@ export function NavBar() {
               className="h-8 w-8"
               priority
             />
-            <span className="text-xl font-bold text-foreground">CER</span>
+            <span className="text-xl font-bold text-foreground">Clean Earth Renewables</span>
           </Link>
 
           {/* Desktop Navigation */}
