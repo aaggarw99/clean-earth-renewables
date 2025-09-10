@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import { ClientThemeProvider } from "@/components/ClientThemeProvider";
 import { ToastProvider } from "@/components/ui/toast";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -42,6 +43,7 @@ export default function RootLayout({
             {children}
           </ToastProvider>
         </ClientThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
