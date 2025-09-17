@@ -293,7 +293,17 @@ export default function CommunitySolarResidentialPage() {
       </section>
 
       {/* Featured Project */}
-      <FeaturedProject />
+      <FeaturedProject 
+        backgroundImage="/assets/images/backgrounds/panels-grass-overview.png"
+        title="Solar for All Subscriber in Skokie"
+        description="Projected to save $480 per year when their community solar project goes live"
+        readStoryLink="/contact"
+        metrics={[
+          { value: "$200", label: "Monthly Electric Bill" },
+          { value: "$40", label: "Monthly Credits (20%)" },
+          { value: "$480", label: "Annual Savings" }
+        ]}
+      />
 
       {/* Stats Section */}
       <StatsSection 
