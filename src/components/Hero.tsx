@@ -58,9 +58,9 @@ export function Hero() {
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-sm text-white/70 mb-4">Trusted by leading businesses and landowners</p>
             <div className="flex justify-center items-center space-x-12 opacity-80">
-            <Image src="/assets/images/clients/summit-ridge-energy.jpg" alt="Summit Ridge Energy" width={100} height={100} />
-            <Image src="/assets/images/clients/arcadia.png" alt="Arcadia" width={100} height={100} />
-            <Image src="/assets/images/clients/solstice.png" alt="Solstice" width={100} height={100} />
+            <Image src="/assets/images/clients/hamptoninn.png" alt="Hampton Inn" width={100} height={100} />
+            <Image src="/assets/images/clients/dq.png" alt="Dairy Queen" width={100} height={100} />
+            <Image src="/assets/images/clients/subway.png" alt="Subway" width={100} height={100} />
             </div>
           </div>
         </div>

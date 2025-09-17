@@ -195,7 +195,19 @@ export default function CommunitySolarBusinessesPage() {
       </section>
 
       {/* Featured Project */}
-      <FeaturedProject />
+      <FeaturedProject
+        sectionTitle="Featured Subscriber"
+        sectionSubtitle="See how America&apos;s leading Hospitality company is transforming their energy consumption habits with Clean Earth Renewables"
+        backgroundImage="/assets/images/backgrounds/hamptoninn.png"
+        title="Hilton Hotel Subscriber in Colombia, IL"
+        description="Projected to save $6,840+ per year from local community solar farm in Ameren Illinois utility service area"
+        readStoryLink="/contact"
+        metrics={[
+          { value: "$11,400", label: "Monthly Electric Bill" },
+          { value: "$570", label: "Monthly Credits (10%)" },
+          { value: "$6,840", label: "Annual Savings" }
+        ]}
+      />
 
       {/* Client Logo Carousel */}
       <ClientLogoCarousel 

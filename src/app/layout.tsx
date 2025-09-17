@@ -19,6 +19,28 @@ export const metadata: Metadata = {
     shortcut: "/assets/logos/Favicon - Primary.png",
     apple: "/assets/logos/Favicon - Primary.png",
   },
+  openGraph: {
+    title: "Clean Earth Renewables - Powering Your Future with Clean Energy",
+    description: "Clean Earth Renewables helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.",
+    url: "https://clean-earth.org",
+    siteName: "Clean Earth Renewables",
+    images: [
+      {
+        url: "/assets/logos/Symbol - Primary.svg",
+        width: 1200,
+        height: 630,
+        alt: "Clean Earth Renewables Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clean Earth Renewables - Powering Your Future with Clean Energy",
+    description: "Clean Earth Renewables helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.",
+    images: ["/assets/logos/Symbol - Primary.svg"],
+  },
 };
 
 export default function RootLayout({
