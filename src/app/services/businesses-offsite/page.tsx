@@ -139,8 +139,8 @@ export default function CommunitySolarBusinessesPage() {
       height: 60
     },
     {
-      src: "/assets/images/clients/super8.png",
-      alt: "Super 8",
+      src: "/assets/images/clients/bp.png",
+      alt: "BP",
       width: 120,
       height: 60
     }
