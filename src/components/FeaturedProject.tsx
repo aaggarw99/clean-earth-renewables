@@ -40,29 +40,30 @@ export function FeaturedProject({
 
         <div className="relative">
           {/* Project Image Background */}
-          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
+          <div className="relative h-[600px] md:h-[500px] rounded-2xl overflow-hidden">
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url('${backgroundImage}')` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
             
             {/* Project Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
               <div className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+                {/* Mobile: Stack vertically with better spacing */}
+                <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8 items-end">
                   {/* Project Details */}
-                  <div className="space-y-4 p-6 rounded-xl bg-white/20 backdrop-blur-sm">
-                    <h3 className="text-2xl md:text-3xl font-bold text-black drop-shadow-lg">
+                  <div className="space-y-3 md:space-y-4 p-4 md:p-6 rounded-xl bg-white/25 backdrop-blur-sm order-2 md:order-1">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black drop-shadow-lg">
                       {title}
                     </h3>
-                    <p className="text-black/80 text-lg font-medium drop-shadow-md">
+                    <p className="text-black/80 text-base md:text-lg font-medium drop-shadow-md">
                       {description}
                     </p>
                     <Link href={readStoryLink}>
                       <Button 
                         size="lg"
-                        className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
+                        className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg w-full md:w-auto"
                       >
                         Read Story
                       </Button>
@@ -70,17 +71,17 @@ export function FeaturedProject({
                   </div>
 
                   {/* Project Metrics */}
-                  <div className={`grid gap-4 p-6 rounded-xl bg-white/20 backdrop-blur-sm ${
+                  <div className={`grid gap-3 md:gap-4 p-4 md:p-6 rounded-xl bg-white/25 backdrop-blur-sm order-1 md:order-2 ${
                     metrics.length === 3 ? 'grid-cols-3' : 
                     metrics.length === 2 ? 'grid-cols-2' : 
                     'grid-cols-1'
                   }`}>
                     {metrics.map((metric, index) => (
                       <div key={index} className="text-center">
-                        <div className="text-2xl md:text-3xl font-bold text-black mb-1 drop-shadow-lg">
+                        <div className="text-lg md:text-2xl lg:text-3xl font-bold text-black mb-1 drop-shadow-lg">
                           {metric.value}
                         </div>
-                        <div className="text-sm text-black/70 font-medium drop-shadow-md">
+                        <div className="text-xs md:text-sm text-black/70 font-medium drop-shadow-md">
                           {metric.label}
                         </div>
                       </div>

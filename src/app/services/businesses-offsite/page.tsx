@@ -97,8 +97,8 @@ export default function CommunitySolarBusinessesPage() {
       height: 60
     },
     {
-      src: "/assets/images/clients/daysinn.png",
-      alt: "Days Inn",
+      src: "/assets/images/clients/wyndham.png",
+      alt: "Wyndham",
       width: 120,
       height: 60
     },
@@ -115,20 +115,14 @@ export default function CommunitySolarBusinessesPage() {
       height: 50
     },
     {
-      src: "/assets/images/clients/econolodge.png",
-      alt: "Econo Lodge",
+      src: "/assets/images/clients/choice-hotels.png",
+      alt: "Choice Hotels",
       width: 100,
       height: 50
     },
     {
       src: "/assets/images/clients/hamptoninn.png",
       alt: "Hampton Inn",
-      width: 120,
-      height: 60
-    },
-    {
-      src: "/assets/images/clients/sleepinn.png",
-      alt: "Sleep Inn",
       width: 100,
       height: 50
     },
