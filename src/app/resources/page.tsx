@@ -6,37 +6,61 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
   DocumentTextIcon, 
-  GlobeAltIcon
+  GlobeAltIcon,
+  BuildingOfficeIcon,
+  HomeIcon,
+  TruckIcon,
+  HeartIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export default function ResourcesPage() {
-  const resources = [
+  const contractsAndAgreements = [
     {
       title: "Power Purchase Agreement (PPA)",
       description: "Learn about Power Purchase Agreements and how they can benefit your business or organization.",
       icon: <DocumentTextIcon className="w-8 h-8" />,
       href: "/resources/ppa",
-      category: "Contracts & Agreements"
-    },
+      external: false
+    }
+  ];
+
+  const tools = [
     {
       title: "EPA GHG Equivalencies Calculator",
       description: "Convert emissions or energy data into concrete terms you can understand using the EPA's official calculator.",
       icon: <GlobeAltIcon className="w-8 h-8" />,
       href: "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator",
-      category: "Tools",
       external: true
     }
   ];
 
-  // Group resources by category
-  const groupedResources = resources.reduce((acc, resource) => {
-    if (!acc[resource.category]) {
-      acc[resource.category] = [];
+  const industries = [
+    {
+      name: "Hospitality",
+      description: "Hotels, restaurants, and hospitality businesses reducing energy costs",
+      icon: <HomeIcon className="w-6 h-6" />,
+      href: "/case-studies/hospitality"
+    },
+    {
+      name: "Franchise",
+      description: "Franchise operations scaling clean energy across multiple locations",
+      icon: <BuildingOfficeIcon className="w-6 h-6" />,
+      href: "/case-studies/franchise"
+    },
+    {
+      name: "Non-Profits",
+      description: "Non-profit organizations maximizing savings for their missions",
+      icon: <HeartIcon className="w-6 h-6" />,
+      href: "/case-studies/non-profits"
+    },
+    {
+      name: "Recycling Centers",
+      description: "Recycling facilities powering operations with renewable energy",
+      icon: <TruckIcon className="w-6 h-6" />,
+      href: "/case-studies/recycling-centers"
     }
-    acc[resource.category].push(resource);
-    return acc;
-  }, {} as Record<string, typeof resources>);
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -56,30 +80,67 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Resources Grid */}
+      {/* Two Column Layout */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {Object.entries(groupedResources).map(([category, categoryResources]) => (
-            <div key={category} className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-                {category}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {categoryResources.map((resource, index) => (
-                  <Card key={index} className="border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <CardHeader className="pb-4">
-                      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
-                        {resource.icon}
-                      </div>
-                      <CardTitle className="text-xl font-semibold text-foreground">
-                        {resource.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {resource.description}
-                      </p>
-                      {resource.external ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Left Column: Contracts & Agreements + Tools */}
+            <div className="space-y-12">
+              {/* Contracts & Agreements Section */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                  Contracts & Agreements
+                </h2>
+                <div className="space-y-6">
+                  {contractsAndAgreements.map((resource, index) => (
+                    <Card key={index} className="border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <CardHeader className="pb-4">
+                        <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                          {resource.icon}
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-foreground">
+                          {resource.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground leading-relaxed">
+                          {resource.description}
+                        </p>
+                        <Link href={resource.href}>
+                          <Button 
+                            variant="outline" 
+                            className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                          >
+                            Learn More
+                          </Button>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tools Section */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                  Tools
+                </h2>
+                <div className="space-y-6">
+                  {tools.map((resource, index) => (
+                    <Card key={index} className="border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <CardHeader className="pb-4">
+                        <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                          {resource.icon}
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-foreground">
+                          {resource.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground leading-relaxed">
+                          {resource.description}
+                        </p>
                         <a 
                           href={resource.href} 
                           target="_blank" 
@@ -93,22 +154,53 @@ export default function ResourcesPage() {
                             Visit External Tool
                           </Button>
                         </a>
-                      ) : (
-                        <Link href={resource.href} passHref>
-                          <Button 
-                            variant="outline" 
-                            className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                          >
-                            Learn More
-                          </Button>
-                        </Link>
-                      )}
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
+
+            {/* Right Column: Industries We Serve */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Industries We Serve
+              </h2>
+              <Card className="border-border bg-card">
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    {industries.map((industry, index) => (
+                      <div key={index} className="border-b border-border/50 pb-4 last:border-b-0 last:pb-0">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                            {industry.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-semibold text-foreground mb-1">
+                              {industry.name}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-3">
+                              {industry.description}
+                            </p>
+                            <Link href={industry.href}>
+                              <Button 
+                                size="sm" 
+                                variant="outline" 
+                                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                              >
+                                Learn More
+                              </Button>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+          </div>
         </div>
       </section>
 
