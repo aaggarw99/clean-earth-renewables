@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Clean Earth Renewables",
     images: [
       {
-        url: "/assets/logos/Favicon - Primary.png",
+        url: "/assets/logos/logo_opengraph.png",
         width: 1200,
         height: 630,
         alt: "Clean Earth Renewables Logo",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Clean Earth Renewables - Powering Your Future with Clean Energy",
     description: "Clean Earth Renewables helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.",
-    images: ["/assets/logos/Favicon - Primary.png"],
+    images: ["/assets/logos/logo_opengraph.png"],
   },
 };
 
