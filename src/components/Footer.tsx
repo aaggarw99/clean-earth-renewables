@@ -70,7 +70,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Company Info */}
-          <div className="space-y-4 md:col-span-2">
+          <div className="space-y-4 md:col-span-3">
             <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/assets/logos/Symbol - Primary.svg"
@@ -176,32 +176,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Trustpilot */}
-          <div className="space-y-4 md:col-span-2">
-            <h3 className="text-lg font-semibold text-foreground">Customer Reviews</h3>
-            <p className="text-muted-foreground text-sm">
-              See what our customers say about us.
-            </p>
-            <div className="flex justify-start">
-              <a 
-                href="https://www.trustpilot.com/review/clean-earth.org" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/assets/icons/trustpilot/trustpilot.png"
-                  alt="Trustpilot Reviews - 4.0 out of 5 stars"
-                  width={160}
-                  height={60}
-                  className="h-16 w-auto"
-                />
-              </a>
-            </div>
-          </div>
-
           {/* Newsletter */}
-          <div className="space-y-4 md:col-span-2">
+          <div className="space-y-4 md:col-span-3">
             <h3 className="text-lg font-semibold text-foreground">Stay Informed</h3>
             <p className="text-muted-foreground text-sm">
               Get the latest updates on energy trends and renewable solutions.
