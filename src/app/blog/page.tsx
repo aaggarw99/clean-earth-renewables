@@ -16,13 +16,20 @@ import { getPublishedPosts, getAllCategories } from "@/data/blog-posts";
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
   
-    const blogPosts = getPublishedPosts();
+  const blogPosts = getPublishedPosts();
   const categories = ["All Posts", ...getAllCategories()];
+
+  // Sort blog posts by date (most recent first)
+  const sortedPosts = blogPosts.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime(); // Descending order (newest first)
+  });
 
   // Filter blog posts based on selected category
   const filteredPosts = selectedCategory === "All Posts" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+    ? sortedPosts 
+    : sortedPosts.filter(post => post.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
