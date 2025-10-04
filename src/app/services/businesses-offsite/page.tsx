@@ -121,7 +121,7 @@ export default function CommunitySolarBusinessesPage() {
       height: 50
     },
     {
-      src: "/assets/images/clients/hamptoninn.png",
+      src: "/assets/images/clients/hilton.png",
       alt: "Hampton Inn",
       width: 100,
       height: 50
