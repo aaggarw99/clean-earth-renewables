@@ -16,6 +16,250 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "maple-and-ash-restaurant-case-study",
+    title: "From Fire to Sunlight: Maple & Ash Brings Sustainability to Chicago's Gold Coast",
+    excerpt: "Chicago's premier steakhouse offsets 100% of electricity with community solar, achieving $10,547 in annual savings and avoiding 7,455 tons of CO₂ emissions over 15 years.",
+    content: `
+      <p>In the heart of Chicago's Gold Coast, Maple & Ash has redefined what a modern steakhouse can be. Known for its wood-fired steaks, impeccable wine list, and lavish dining experiences, the restaurant has become one of the city's most sought-after culinary destinations. But now, Maple & Ash is proving that luxury and sustainability can go hand in hand — by embracing clean, renewable energy to power its flagship location.</p>
+      
+      <p>Through a transformative partnership with Clean Earth Renewables (CER), Maple & Ash is offsetting 100% of its annual electricity consumption with local community solar projects, achieving significant environmental impact and financial savings without any need for on-site solar panels.</p>
+      
+      <h2>Clean Energy Meets Culinary Excellence</h2>
+      
+      <p>For a restaurant built around fire, it's fitting that Maple & Ash is now leading the charge into a cleaner, brighter energy future. By subscribing to a local community solar project through Clean Earth Renewables — the largest operator of community solar projects in the nation — the Gold Coast location has aligned its operations with renewable energy generated right here in Illinois.</p>
+      
+      <p>This partnership matches Maple & Ash's annual electricity use with solar energy distributed to the local utility grid. As a result, the restaurant now enjoys up to 10% savings on its monthly electricity bills — totaling $10,547.82 per year — while dramatically lowering its Scope 2 emissions.</p>
+      
+      <h2>Big Energy, Bigger Impact</h2>
+      
+      <p>The scale of this clean energy match is as impressive as the dining experience itself. Over the course of its 15-year community solar subscription, Maple & Ash will receive the equivalent of 15,591,750 kilowatt-hours (kWh) of renewable energy. That's enough to power more than 1,500 homes annually, and it will help the restaurant avoid 7,455 tons of carbon dioxide emissions — a powerful contribution to Illinois' clean energy goals.</p>
+      
+      <p>For Maple & Ash, sustainability is no longer an add-on. It's an integral part of the restaurant's commitment to excellence, responsibility, and community.</p>
+      
+      <h2>Sustainable Dining, Local Benefits</h2>
+      
+      <p>Community solar delivers more than environmental progress — it's a catalyst for local economic growth. By sourcing power from Illinois-based solar farms, Maple & Ash helps:</p>
+      
+      <ul>
+        <li><strong>Create local clean energy jobs</strong> in construction, maintenance, and project management.</li>
+        <li><strong>Support Illinois landowners</strong> who lease property for solar development.</li>
+        <li><strong>Keep energy spending local,</strong> strengthening the regional economy and reducing dependence on fossil fuels.</li>
+      </ul>
+      
+      <p>And because community solar requires no on-site panels or infrastructure, Maple & Ash was able to join this renewable energy movement at no cost — proving that sustainability can be as seamless as it is impactful.</p>
+      
+      <h2>A New Era for Sustainable Hospitality</h2>
+      
+      <p>Maple & Ash's solar commitment is more than a sustainability milestone — it's a signal of what's possible in the restaurant and hospitality industry. It shows that even energy-intensive businesses can dramatically reduce emissions, lower operating costs, and contribute to a cleaner grid without compromising on luxury or quality.</p>
+      
+      <p>By choosing Clean Earth Renewables, Maple & Ash is setting a new standard for Chicago's fine dining scene: one where exceptional experiences are powered not just by fire and flavor, but by sunlight and sustainability.</p>
+      
+      <h2>Community Solar by the Numbers</h2>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">Maple & Ash's Clean Energy Impact</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><strong>Annual Electricity Match:</strong> 100%</div>
+          <div><strong>Annual Savings:</strong> $10,547.82</div>
+          <div><strong>Subscription Duration:</strong> 15 years</div>
+          <div><strong>Total Renewable Energy:</strong> 15,591,750 kWh</div>
+          <div><strong>CO₂ Emissions Avoided:</strong> 7,455 tons</div>
+          <div><strong>Homes Powered Annually:</strong> 1,500+</div>
+        </div>
+        <p style="margin-bottom: 0; font-weight: 600; color: #059669;">Monthly savings of up to 10% on electricity bills—at no upfront cost</p>
+      </div>
+      
+      <h2>Your Business Can Do the Same</h2>
+      
+      <p>If Maple & Ash's story proves anything, it's that any business — from restaurants and retailers to offices and manufacturers — can benefit from community solar. With no upfront costs, guaranteed savings, and immediate environmental impact, the transition to clean energy has never been easier.</p>
+      
+      <blockquote style="background-color: #f8f9fa; border-left: 4px solid #059669; padding: 16px; margin: 20px 0; font-style: italic;">
+        "For a restaurant built around fire, it's fitting that Maple & Ash is now leading the charge into a cleaner, brighter energy future."
+      </blockquote>
+      
+      <p>To learn how to lower your business's Scope 2 emissions and reduce electricity costs at no risk, contact us or visit our website to speak with a member of the Clean Earth Renewables team.</p>
+    `,
+    author: "David Emsheimer",
+    authorTitle: "CEO & Founder",
+    authorBio: "David Emsheimer is the founder and CEO of Clean Earth Renewables, with over 10 years of experience in renewable energy development.",
+    date: "Oct 10, 2025",
+    readTime: "7 min read",
+    category: "Case Study",
+    featuredImage: "/assets/images/blog/thumbnails/maple-and-ash-case-study.png",
+    tags: ["Maple & Ash", "Community Solar", "Hospitality", "Restaurant", "Chicago", "Gold Coast"],
+    published: true
+  },
+  {
+    slug: "humans-at-help-foundation-case-study",
+    title: "CER x Humans at Help: Powering Communities Through Solar Savings and Sustainability",
+    excerpt: "Humans at Help Foundation partners with Clean Earth Renewables to deliver $8,500 in monthly savings and 5,103 tons of CO₂ reduction to 59 low-to-moderate income households in Skokie-Evanston.",
+    content: `
+      <p>In the heart of the greater Skokie-Evanston area, the Humans at Help Foundation (HAHF) has long been committed to one mission: creating opportunities for success among low-to-moderate income residents so they can thrive. Now, through a powerful new partnership with Clean Earth Renewables (CER) and Solstice, HAHF is combining humanitarian action with clean energy to deliver both economic and environmental impact to local households.</p>
+      
+      <h2>Bringing Community Solar to Those Who Need It Most</h2>
+      
+      <p>Community solar is revolutionizing access to clean energy. Unlike traditional rooftop solar, participants do not need to purchase or install panels. Instead, their electricity consumption is matched at a local community solar project, and they enjoy up to 20% off their monthly electric bills through on-utility bill credits.</p>
+      
+      <p>For HAHF, this model offered a perfect solution: empowering residents while reducing electricity costs and carbon emissions—at no cost to participants.</p>
+      
+      <h2>Unlocking Savings and Sustainability</h2>
+      
+      <p>Through its community action campaign, HAHF partnered with CER x Solstice to unlock $8,500 in monthly savings for 59 low-to-moderate income households across Evanston and Skokie. These savings are generated through on-bill credits from their community solar subscriptions, providing tangible financial relief while supporting clean energy adoption.</p>
+      
+      <p>In addition, HAHF's campaign has raised $1,475 through local outreach, awareness-building, and enrollment assistance—an effort that lays the groundwork for scaling the initiative to 500 residents by the end of 2025.</p>
+      
+      <h2>Environmental Impact at the Community Level</h2>
+      
+      <p>The campaign goes beyond financial benefits. By matching subscribers' annual electricity consumption at local solar projects, HAHF has delivered 386,000 kWh of renewable energy annually over the life of the 15-year subscriptions.</p>
+      
+      <p>The result? A dramatic reduction in emissions: 5,103 tons of carbon dioxide avoided, a measurable step toward a greener, healthier community. HAHF's efforts are a prime example of how localized community solar programs can tackle Scope 2 emissions while directly benefiting households that need it most.</p>
+      
+      <h2>A Campaign with a Vision</h2>
+      
+      <p>HAHF's collaboration with CER x Solstice is more than an energy program—it's a community action campaign. By spreading awareness, providing local education, and assisting residents with enrollment, HAHF is empowering individuals to make decisions that lower energy costs and environmental impact.</p>
+      
+      <p>The campaign demonstrates that clean energy can be inclusive, equitable, and accessible, offering a blueprint for other nonprofits and municipalities to follow.</p>
+      
+      <h2>Scaling for Greater Impact</h2>
+      
+      <p>With a target of reaching 500 local residents by the end of 2025, the HAHF community solar campaign shows how small-scale programs can grow into transformative initiatives. Every new subscriber expands the environmental and economic benefits—lowering emissions, reducing electricity bills, and keeping clean energy dollars circulating in local communities.</p>
+      
+      <h2>Community Solar by the Numbers</h2>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">Impact So Far</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><strong>Residents Reached:</strong> 59</div>
+          <div><strong>Monthly Electricity Savings:</strong> $8,500</div>
+          <div><strong>Funds Raised via Campaign:</strong> $1,475</div>
+          <div><strong>Annual Renewable Energy:</strong> 386,000 kWh</div>
+          <div><strong>Carbon Dioxide Avoided:</strong> 5,103 tons</div>
+          <div><strong>Project Duration:</strong> 15 years</div>
+        </div>
+        <p style="margin-bottom: 0; font-weight: 600; color: #059669;"><strong>Target for 2025:</strong> 500 residents</p>
+      </div>
+      
+      <h3>How It Works</h3>
+      
+      <ul>
+        <li>Residents' electricity consumption is matched at local community solar projects</li>
+        <li>Participants enjoy up to 20% savings on their monthly electric bills</li>
+        <li>Solar energy is generated locally and delivered to the utility grid, benefiting the entire community</li>
+        <li>No installation or upfront costs required for households</li>
+      </ul>
+      
+      <h3>Community Benefits</h3>
+      
+      <ul>
+        <li><strong>Economic Relief:</strong> Reduces electricity bills for households that need it most</li>
+        <li><strong>Environmental Impact:</strong> Avoids thousands of tons of CO₂ emissions</li>
+        <li><strong>Education & Awareness:</strong> Campaign spreads knowledge about clean energy and sustainable practices</li>
+      </ul>
+      
+      <h3>Scaling for Greater Change</h3>
+      
+      <p>HAHF aims to reach 500 residents by the end of 2025, expanding both the financial and environmental benefits of community solar. Each new subscriber helps:</p>
+      
+      <ul>
+        <li>Lower Scope 2 emissions in the community</li>
+        <li>Provide residents with direct electricity savings</li>
+        <li>Strengthen local economic resilience through renewable energy infrastructure</li>
+      </ul>
+      
+      <h2>How You Can Get Involved</h2>
+      
+      <p>To learn how your community can lower Scope 2 emissions and electricity costs at no risk, connect with a CER x Solstice representative today. By leveraging the power of community solar, local organizations and residents alike can enjoy financial savings, renewable energy, and a tangible impact on climate change.</p>
+      
+      <blockquote style="background-color: #f8f9fa; border-left: 4px solid #059669; padding: 16px; margin: 20px 0; font-style: italic;">
+        "Clean energy is not just about technology—it's about empowering people, strengthening communities, and creating a sustainable future."
+      </blockquote>
+      
+      <p>HAHF's partnership with CER x Solstice is proof that clean energy is not just about technology—it's about empowering people, strengthening communities, and creating a sustainable future.</p>
+    `,
+    author: "David Emsheimer",
+    authorTitle: "CEO & Founder",
+    authorBio: "David Emsheimer is the founder and CEO of Clean Earth Renewables, with over 10 years of experience in renewable energy development.",
+    date: "Oct 09, 2025",
+    readTime: "8 min read",
+    category: "Case Study",
+    featuredImage: "/assets/images/blog/thumbnails/humans-at-help-case-study.png",
+    tags: ["Humans at Help Foundation", "Community Solar", "Non-Profit", "Skokie", "Evanston", "Low Income"],
+    published: true
+  },
+  {
+    slug: "ks-tire-recycling-case-study",
+    title: "K&S Tire Recycling Turns Up the Power on Sustainability with 100% Community Solar Match",
+    excerpt: "Midwest's largest independent tire recycler matches 100% of annual electricity use with local community solar, saving over $250,000 while powering sustainable operations.",
+    content: `
+      <p>For decades, K&S Tire Recycling has stood as the Midwest's largest independent tire recycler, turning millions of discarded tires into reusable, high-value materials every year. From rubber mulch and asphalt additives to tire-derived fuels, K&S has been at the forefront of closing the loop in the circular economy long before "sustainability" became a buzzword.</p>
+      
+      <p>Now, the company is redefining what industrial sustainability means—this time through clean energy. K&S Tire Recycling has officially matched 100% of its annual electricity use with renewable power from local community solar farms across Illinois, marking a powerful step forward in both environmental and economic leadership.</p>
+      
+      <h2>Powering Progress: Clean Energy Meets Circular Industry</h2>
+      
+      <p>Every year, K&S processes millions of tires that would otherwise end up in landfills or illegal dumps. This work already prevents thousands of tons of carbon emissions, but K&S wanted to take it further—by addressing the energy footprint of its own operations.</p>
+      
+      <p>Through Illinois' community solar program, K&S is now sourcing the equivalent of 2,000,000 kilowatt-hours (kWh) of renewable electricity annually. Over the course of its 15-year subscription, this adds up to 30,000,000 kWh—enough clean energy to power 3,000 average Illinois homes. This renewable match ensures that the electricity driving K&S's recycling machinery, conveyors, and facilities is backed by solar generation right here in the state.</p>
+      
+      <p>For a company built on sustainability, this move completes the loop.</p>
+      
+      <h2>Real Savings, Real Impact</h2>
+      
+      <p>While the environmental value is clear, the economic benefits are just as compelling. By going solar through local community projects, K&S Tire Recycling will save an average of $17,058 per year, adding up to over a quarter-million dollars in savings across 15 years.</p>
+      
+      <p>Those funds can be channeled back into equipment upgrades, job creation, and new innovations in tire recycling technology—proving that sustainability isn't just an environmental win, it's a smart financial strategy.</p>
+      
+      <h2>Driving Local Growth Through Clean Energy</h2>
+      
+      <p>K&S's partnership with Illinois-based community solar projects does more than lower energy bills—it directly fuels local economic growth.</p>
+      
+      <p>By sourcing energy locally, K&S helps:</p>
+      
+      <ul>
+        <li>Generate skilled jobs in solar construction and operations</li>
+        <li>Provide stable income streams to Illinois landowners hosting solar arrays</li>
+        <li>Keep millions of dollars circulating within the state economy</li>
+      </ul>
+      
+      <p>For every kilowatt-hour produced, community solar strengthens the link between clean power and local prosperity—a relationship that mirrors the same community values K&S has upheld for decades.</p>
+      
+      <h2>A Model for the Recycling Industry</h2>
+      
+      <p>The implications go far beyond one company. If every recycling and materials recovery facility in Illinois embraced community solar the way K&S has, the results would be transformative:</p>
+      
+      <ul>
+        <li>Over 100 million kWh of renewable energy could be produced annually</li>
+        <li>The sector could collectively save millions of dollars in operating costs</li>
+        <li>Emissions reductions would rival removing tens of thousands of cars from the road every year</li>
+      </ul>
+      
+      <p>K&S's example demonstrates that clean energy isn't just compatible with heavy industry—it's the next frontier for it.</p>
+      
+      <h2>A Historic Step Toward Renewable Recycling</h2>
+      
+      <p>This initiative represents a landmark moment for renewable adoption in the recycling sector. By powering its operations with solar energy generated locally, K&S is proving that industrial-scale sustainability can be achieved without compromise—balancing environmental responsibility, economic sense, and operational reliability.</p>
+      
+      <p>K&S has built its reputation on turning waste into value. Now, it's doing the same with energy—turning sunlight into savings, progress, and purpose.</p>
+      
+      <h2>From Tires to Tomorrow</h2>
+      
+      <p>The story of K&S Tire Recycling has always been about innovation. From its early days processing used tires by hand to its present-day role as a Midwest sustainability leader, K&S has never stopped finding better ways to do the right thing for people and the planet.</p>
+      
+      <p>By embracing community solar, K&S is closing the sustainability circle—ensuring that every tire recycled, every watt consumed, and every job created contributes to a cleaner, stronger, and more sustainable Illinois.</p>
+      
+      <p>And that's a future worth driving toward.</p>
+    `,
+    author: "David Emsheimer",
+    authorTitle: "CEO & Founder",
+    authorBio: "David Emsheimer is the founder and CEO of Clean Earth Renewables, with over 10 years of experience in renewable energy development.",
+    date: "Oct 10, 2025",
+    readTime: "6 min read",
+    category: "Case Study",
+    featuredImage: "/assets/images/blog/thumbnails/kands-case-study.png",
+    tags: ["K&S Tire Recycling", "Community Solar", "Recycling Industry", "Sustainability", "Illinois"],
+    published: true
+  },
+  {
     slug: "dairy-queen-clean-energy-community-solar",
     title: "Dairy Queen Brings Clean Energy to Ice Cream Shops with Clean Earth Renewables",
     excerpt: "Illinois Dairy Queen franchise owner Bob Patel enrolls nine locations in Clean Earth Renewables' community solar program, demonstrating how businesses can save money while supporting clean energy.",
@@ -135,7 +379,7 @@ export const blogPosts: BlogPost[] = [
     date: "Mar 09, 2025",
     readTime: "6 min read",
     category: "Educational",
-    featuredImage: "/assets/images/blog/thumbnails/common-myths.jpg",
+    featuredImage: "/assets/images/blog/thumbnails/common-myths.png",
     tags: ["Community Solar", "Solar Myths", "Renewable Energy", "Solar Education", "Environmental Impact"],
     published: true
   },
@@ -286,7 +530,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 30, 2024",
     readTime: "12 min read",
     category: "Community Solar",
-    featuredImage: "/assets/images/blog/thumbnails/panels-bg.png",
+    featuredImage: "/assets/images/blog/thumbnails/landowners-thumbnail.png",
     tags: ["Community Solar", "Landowners", "Solar Development", "Renewable Energy", "Illinois"],
     published: true
   },

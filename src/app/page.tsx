@@ -55,15 +55,17 @@ export default function Home() {
       <Hero />
       <BenefitsSection />
       <ServicesSection />
-      <FeaturedProject 
-        backgroundImage="/assets/images/backgrounds/panels-grass-overview.png"
-        title="Solar for All Subscriber in Skokie"
-        description="Projected to save $480 per year when their community solar project goes live"
-        readStoryLink="/contact"
+      <FeaturedProject
+        sectionTitle="Featured Subscriber"
+        sectionSubtitle="See how one of Chicago&apos;s leading hospitality brand is advancing its sustainability goals while reducing its cost of electricity with zero changes to its business operations"
+        backgroundImage="/assets/images/backgrounds/maple-and-ash-bg.png"
+        title="Maple & Ash in Gold Coast, Chicago"
+        description="Unlocked $10,500 in annual electricity savings by supporting Illinois-backed Community Solar program with CER"
+        readStoryLink="/blog/maple-and-ash-restaurant-case-study"
         metrics={[
-          { value: "$200", label: "Monthly Electric Bill" },
-          { value: "$40", label: "Monthly Credits (20%)" },
-          { value: "$480", label: "Annual Savings" }
+          { value: "$18,000", label: "Monthly Electric Bill" },
+          { value: "$900", label: "Monthly Credits" },
+          { value: "$11,000", label: "Annual Savings" }
         ]}
       />
       <StatsSection />

@@ -113,12 +113,12 @@ export default function CommunitySolarResidentialPage() {
                 <Button 
                   size="lg" 
                   className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-                  onClick={() => window.open('https://app.solstice.us/ref/cleanearth/humansathelp', '_blank')}
+                  onClick={() => window.open('https://www.arcadia.com/community-solar/ceril?utm_source=isolar_usa&utm_medium=digital&promo=ceril&dealer_id=CER&rep_id=CER001&inviteCode=ceril', '_blank')}
                 >
                   Enroll Now
                 </Button>
                 <p className="text-sm text-muted-foreground mt-2">
-                  We partner with Solstice to provide enhanced LMI programs and support.
+                  We partner with Arcadia to provide enhanced LMI programs and support.
                 </p>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function CommunitySolarResidentialPage() {
           <div className="text-center">
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-              onClick={() => window.open('https://www.arcadia.com/community-solar/ceril', '_blank')}
+              onClick={() => window.open('https://www.arcadia.com/community-solar/ceril?utm_source=isolar_usa&utm_medium=digital&promo=ceril&dealer_id=CER&rep_id=CER001&inviteCode=ceril', '_blank')}
             >
               Enroll Now
             </Button>

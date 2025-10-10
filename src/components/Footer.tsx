@@ -97,7 +97,7 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div className="space-y-4 md:col-span-2">
+          <div className="space-y-4 md:col-span-3">
             <h3 className="text-lg font-semibold text-foreground">Services</h3>
             <ul className="space-y-2">
               <li>
@@ -123,42 +123,22 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="space-y-4 md:col-span-2">
-            <h3 className="text-lg font-semibold text-foreground">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Resources
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Information */}
-          <div className="space-y-4 md:col-span-2">
+          <div className="space-y-4 md:col-span-3">
             <h3 className="text-lg font-semibold text-foreground">Contact</h3>
-            <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start space-x-2">
-                <MapPinIcon className="w-4 h-4 mt-0.5" />
+                <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
                   <div>77 W Wacker Dr #4500</div>
                   <div>Chicago, IL 60601</div>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2">
+                <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <div>1 Marina Park Drive, Suite 1410</div>
+                  <div>Boston, MA 02210</div>
                 </div>
               </div>
               <div className="flex items-center space-x-2">

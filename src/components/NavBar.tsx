@@ -28,22 +28,27 @@ export function NavBar() {
       ]
     },
     {
-      category: "Lease Your Rooftop",
+      category: "Host a Solar Farm",
       items: [
         {
           title: "Commercial Buildings",
           description: "Earn money from your business roof",
           href: "/services/businesses-onsite"
-        }
-      ]
-    },
-    {
-      category: "Host a Solar Farm",
-      items: [
+        },
         {
           title: "Landowners",
           description: "Convert unused land into profit",
           href: "/services/landowners"
+        }
+      ]
+    },
+    {
+      category: "Purchase Plan Agreements",
+      items: [
+        {
+          title: "PPAs",
+          description: "Fixed-price solar with zero upfront costs",
+          href: "/resources/ppa"
         }
       ]
     }

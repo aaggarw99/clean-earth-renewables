@@ -11,6 +11,8 @@ import Image from "next/image";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ContactForm, FieldConfig } from "@/components/ContactForm";
+import { IndustryPartners } from "@/components/IndustryPartners";
+import { scrollToSectionWithNavbar } from "@/utils/navigation";
 
 export default function AboutPage() {
 
@@ -54,41 +56,53 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <NavBar />
       {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/backgrounds/chicago-overview.png"
+            src="/assets/images/backgrounds/chicago.jpeg"
             alt="Solar panels with city background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Empowering Communities Through Clean Energy
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            250+ customers served across residential, commercial and community solar.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
-          >
-            Connect with Us
-          </Button>
+        <div className="relative z-10 text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
+              Welcome to Clean Earth Renewables!
+            </h1>
+            <p className="text-lg md:text-xl mb-8 leading-relaxed">
+              Clean Earth Renewables is a community solar provider serving all major community solar markets across the US, unlocking access to clean energy savings for electricity consumers. By subscribing to a local community solar project, electricity consumers of all sizes can meet their sustainability goals while saving money, with no investment or installation of solar panels required. Community solar is the future of the grid, and by trusting Clean Earth Renewables as your community solar provider we can Power a Clean Earth Together.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
+              onClick={() => scrollToSectionWithNavbar('contact-section')}
+            >
+              Connect with Us
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Founders Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/images/backgrounds/chicago-michigan.jpeg"
+            alt="Chicago Michigan background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our Founders
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
               With over a decade of experience, our founders lead Clean Earth Renewables with a shared belief: that clean energy should benefit everyone.
             </p>
           </div>
@@ -105,10 +119,10 @@ export default function AboutPage() {
                   className="rounded-lg object-cover w-80 h-80 mx-auto"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Diana Krytsak
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
               Diana is the co-founder of Clean Earth Renewables, a native Ukrainian turned local Chicagoan, Diana is a clean energy executive with over 8 years of renewable energy deal execution & sustainable advisory experience. She specializes in the hospitality and industrial sectors, unlocking millions of dollars in operating income for businesses across the midwest and northeast regions. Diana is responsible for partnerships with Hilton branded hotels, Dunkin&apos; Donuts, Subway, and Dairy Queen, among many other notable subscriber partnerships at CER.
               </p>
             </div>
@@ -124,10 +138,10 @@ export default function AboutPage() {
                   className="rounded-lg object-cover w-80 h-80 mx-auto"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 David Emsheimer
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
               Under David&apos;s leadership, CER has evolved from an early-stage greenfield & subscriber aggregator to deploying scalable, construction-ready solar solutions in land-constrained urban and suburban environments. By partnering with both building and landowners, CER unlocks new revenue streams for its real estate partners while expanding access to affordable, renewable energy for local communities and businesses.
               </p>
             </div>
@@ -191,7 +205,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -204,8 +218,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Industry Partners Section */}
+      <IndustryPartners />
+
       {/* Contact Form Section */}
-      <section className="py-20">
+      <section id="contact-section" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ContactForm
             title="Let's Build a Cleaner Future Together"
