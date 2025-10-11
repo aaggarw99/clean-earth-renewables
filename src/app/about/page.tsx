@@ -56,24 +56,14 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <NavBar />
       {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/assets/images/backgrounds/chicago.jpeg"
-            alt="Solar panels with city background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative z-10 text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              Welcome to Clean Earth Renewables!
+      <section className="pt-32 pb-16 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              About Clean Earth Renewables
             </h1>
-            <p className="text-lg md:text-xl mb-8 leading-relaxed">
-              Clean Earth Renewables is a community solar provider serving all major community solar markets across the US, unlocking access to clean energy savings for electricity consumers. By subscribing to a local community solar project, electricity consumers of all sizes can meet their sustainability goals while saving money, with no investment or installation of solar panels required. Community solar is the future of the grid, and by trusting Clean Earth Renewables as your community solar provider we can Power a Clean Earth Together.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
+              Clean Earth Renewables is a community solar provider serving all major community solar markets across the US, unlocking access to clean energy savings for electricity consumers.
             </p>
             <Button 
               size="lg" 
