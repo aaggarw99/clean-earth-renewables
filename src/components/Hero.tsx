@@ -13,7 +13,7 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <VideoBackground 
           src="/assets/videos/hero/main.mp4"
-          poster="/assets/images/hero/hero-poster.svg"
+          poster="/assets/images/backgrounds/hero-poster.png"
           className="w-full h-full"
           overlayOpacity={0.4}
         >
