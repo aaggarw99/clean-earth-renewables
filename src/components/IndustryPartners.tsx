@@ -26,6 +26,12 @@ export function IndustryPartners() {
       width: 200,
       height: 80,
     },
+    {
+      name: "Chicago Innovation",
+      logo: "/assets/images/partners/chicago-innovation.jpeg",
+      width: 200,
+      height: 80,
+    }
   ];
 
   return (
@@ -40,7 +46,7 @@ export function IndustryPartners() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center max-w-5xl mx-auto">
           {partners.map((partner, index) => (
             <div
               key={index}
