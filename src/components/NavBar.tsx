@@ -47,7 +47,7 @@ export function NavBar() {
       items: [
         {
           title: "PPA's",
-          description: "No-Cost Solar & Financing",
+          description: "Large-scale on-site solar financing for corporates and public entities",
           href: "/resources/ppa"
         }
       ]
