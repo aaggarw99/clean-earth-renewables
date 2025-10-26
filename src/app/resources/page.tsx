@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,10 +11,34 @@ import {
   BuildingOfficeIcon,
   HomeIcon,
   TruckIcon,
-  HeartIcon
+  HeartIcon,
+  SunIcon,
+  BuildingOffice2Icon,
+  CogIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
+
+interface SubBrand {
+  name: string;
+  caseStudyHref: string | null;
+}
+
+interface Company {
+  name: string;
+  logo: string;
+  caseStudyHref: string | null;
+  featured: boolean;
+  subBrands?: SubBrand[];
+}
+
+interface Industry {
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+  companies: Company[];
+  comingSoon: boolean;
+}
 
 export default function ResourcesPage() {
   const contractsAndAgreements = [
@@ -36,39 +61,135 @@ export default function ResourcesPage() {
     }
   ];
 
-  const industries = [
-    {
-      name: "Recycling Centers",
-      description: "Recycling facilities powering operations with renewable energy",
-      icon: <TruckIcon className="w-6 h-6" />,
-      companyName: "K&S Tire Recycling",
-      companyLogo: "/assets/images/clients/kands.png",
-      caseStudyHref: "/blog/ks-tire-recycling-case-study"
-    },
-    {
-      name: "Non-Profits",
-      description: "Non-profit organizations maximizing savings for their missions",
-      icon: <HeartIcon className="w-6 h-6" />,
-      companyName: "Humans at Help Foundation",
-      companyLogo: "/assets/images/clients/humansathelp.jpg",
-      caseStudyHref: "/blog/humans-at-help-foundation-case-study"
-    },
+  const industries: Industry[] = [
     {
       name: "Franchise",
       description: "Franchise operations scaling clean energy across multiple locations",
       icon: <BuildingOfficeIcon className="w-6 h-6" />,
-      companyName: "Dairy Queen",
-      companyLogo: "/assets/images/clients/dq.png",
-      caseStudyHref: "/blog/dairy-queen-clean-energy-community-solar"
+      companies: [
+        {
+          name: "Dairy Queen",
+          logo: "/assets/images/clients/dq.png",
+          caseStudyHref: "/blog/dairy-queen-clean-energy-community-solar",
+          featured: true
+        },
+        {
+          name: "Subway",
+          logo: "/assets/images/clients/subway.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "Dunkin Donuts",
+          logo: "/assets/images/clients/dunkindonuts.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "BP",
+          logo: "/assets/images/clients/bp.png",
+          caseStudyHref: null,
+          featured: false
+        }
+      ],
+      comingSoon: false
     },
     {
       name: "Hospitality",
       description: "Hotels, restaurants, and hospitality businesses reducing energy costs",
       icon: <HomeIcon className="w-6 h-6" />,
-      companyName: "Maple & Ash",
-      companyLogo: "/assets/images/clients/mapleandash.png",
-      caseStudyHref: "/blog/maple-and-ash-restaurant-case-study"
-    }
+      companies: [
+        {
+          name: "Choice Hotels",
+          logo: "/assets/images/clients/choice-hotels.png",
+          caseStudyHref: null,
+          featured: false,
+          subBrands: [
+            { name: "Comfort Inn", caseStudyHref: "/blog/comfort-inn-rockford-case-study" },
+            { name: "EconoLodge", caseStudyHref: null },
+            { name: "Quality Inn", caseStudyHref: null },
+            { name: "Sleep Inn", caseStudyHref: null }
+          ]
+        },
+        {
+          name: "Wyndham",
+          logo: "/assets/images/clients/wyndham.png",
+          caseStudyHref: null,
+          featured: false,
+          subBrands: [
+            { name: "AmericInn", caseStudyHref: null },
+            { name: "Baymont Inn", caseStudyHref: null },
+            { name: "Days Inn", caseStudyHref: null },
+            { name: "Super 8", caseStudyHref: null }
+          ]
+        },
+        {
+          name: "Hilton",
+          logo: "/assets/images/clients/hilton.png",
+          caseStudyHref: null,
+          featured: false,
+          subBrands: [
+            { name: "Hampton Inn", caseStudyHref: "/blog/hampton-inn-rockford-case-study" }
+          ]
+        },
+        {
+          name: "Maple & Ash",
+          logo: "/assets/images/clients/mapleandash.png",
+          caseStudyHref: "/blog/maple-and-ash-restaurant-case-study",
+          featured: true
+        }
+      ],
+      comingSoon: false
+    },
+    {
+      name: "Non-Profits",
+      description: "Non-profit organizations maximizing savings for their missions",
+      icon: <HeartIcon className="w-6 h-6" />,
+      companies: [
+        {
+          name: "Humans at Help Foundation",
+          logo: "/assets/images/clients/humansathelp.jpg",
+          caseStudyHref: "/blog/humans-at-help-foundation-case-study",
+          featured: true
+        }
+      ],
+      comingSoon: false
+    },
+    {
+      name: "Recycling Centers",
+      description: "Recycling facilities powering operations with renewable energy",
+      icon: <TruckIcon className="w-6 h-6" />,
+      companies: [
+        {
+          name: "K&S Tire Recycling",
+          logo: "/assets/images/clients/kands.png",
+          caseStudyHref: "/blog/ks-tire-recycling-case-study",
+          featured: true
+        }
+      ],
+      comingSoon: false
+    },
+    {
+      name: "Agriculture Producers & Operators",
+      description: "Farms and agricultural operations harnessing renewable energy",
+      icon: <SunIcon className="w-6 h-6" />,
+      companies: [],
+      comingSoon: true
+    },
+    {
+      name: "Industrial",
+      description: "Manufacturing facilities and industrial operations",
+      icon: <CogIcon className="w-6 h-6" />,
+      companies: [],
+      comingSoon: true
+    },
+    {
+      name: "Multi-Family",
+      description: "Apartment complexes and multi-family housing developments",
+      icon: <BuildingOffice2Icon className="w-6 h-6" />,
+      companies: [],
+      comingSoon: true
+    },
   ];
 
   return (
@@ -175,59 +296,108 @@ export default function ResourcesPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
                 Industries We Serve
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {industries.map((industry, index) => (
-                  <Card key={index} className="border-border bg-card hover:shadow-lg transition-shadow">
-                    <CardContent className="px-6 py-0">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                  <Card key={index} className="border-border bg-card hover:shadow-md transition-shadow">
+                    <CardContent className="px-4 py-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
                           {industry.icon}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-lg font-semibold text-foreground mb-2">
+                          <h3 className="text-lg font-semibold text-foreground mb-1">
                             {industry.name}
                           </h3>
-                          <p className="text-sm text-muted-foreground mb-4">
+                          <p className="text-sm text-muted-foreground mb-3">
                             {industry.description}
                           </p>
                           
-                          {/* Company Logo and Case Study Section */}
-                          {industry.companyLogo && industry.caseStudyHref ? (
-                            <div className="bg-muted/30 rounded-lg p-4 border border-border/50">
-                              <div className="flex items-center gap-4">
-                                <div className="bg-background rounded-lg p-3 flex items-center justify-center h-16 w-20 flex-shrink-0">
-                                  <Image
-                                    src={industry.companyLogo}
-                                    alt={industry.companyName}
-                                    width={80}
-                                    height={60}
-                                    className="max-h-12 w-auto object-contain"
-                                  />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <h4 className="font-semibold text-foreground mb-1">
-                                    {industry.companyName}
-                                  </h4>
-                                  <p className="text-xs text-muted-foreground">
-                                    Featured Case Study
-                                  </p>
-                                </div>
-                                <Link href={industry.caseStudyHref}>
-                                  <Button 
-                                    size="sm"
-                                    variant="outline"
-                                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground whitespace-nowrap"
-                                  >
-                                    Read More
-                                  </Button>
-                                </Link>
-                              </div>
+                          {/* Companies Section */}
+                          {industry.comingSoon ? (
+                            <div className="bg-muted/20 rounded-md p-3 border border-border/30 text-center">
+                              <p className="text-sm text-muted-foreground italic">
+                                Coming Soon!
+                              </p>
                             </div>
                           ) : (
-                            <div className="bg-muted/30 rounded-lg p-4 border border-border/50 text-center">
-                              <p className="text-sm text-muted-foreground italic">
-                                Case study coming soon
-                              </p>
+                            <div className="space-y-3">
+                              {/* Featured Company */}
+                              {industry.companies.filter(company => company.featured).map((company, companyIndex) => (
+                                <div key={companyIndex} className="bg-muted/20 rounded-md p-3 border border-border/30">
+                                  <div className="flex items-center gap-3 mb-2">
+                                    <div className="bg-background rounded-md p-2 flex items-center justify-center h-12 w-14 flex-shrink-0">
+                                      <Image
+                                        src={company.logo}
+                                        alt={company.name}
+                                        width={56}
+                                        height={48}
+                                        className="max-h-10 w-auto object-contain"
+                                      />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <h4 className="font-semibold text-foreground text-sm mb-0.5">
+                                        {company.name}
+                                      </h4>
+                                      <p className="text-xs text-muted-foreground">
+                                        Featured Case Study
+                                      </p>
+                                    </div>
+                                    {company.caseStudyHref && (
+                                      <Link href={company.caseStudyHref}>
+                                        <Button 
+                                          size="sm"
+                                          variant="outline"
+                                          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground whitespace-nowrap text-xs px-3 py-1 h-7"
+                                        >
+                                          Read More
+                                        </Button>
+                                      </Link>
+                                    )}
+                                  </div>
+                                  
+                                  {/* Sub-brands for Hospitality */}
+                                  {company.subBrands && company.subBrands.length > 0 && (
+                                    <div className="mt-2 pt-2 border-t border-border/20">
+                                      <p className="text-xs text-muted-foreground mb-1.5">Sub-brands:</p>
+                                      <div className="flex flex-wrap gap-1.5">
+                                        {company.subBrands.map((subBrand, subIndex) => (
+                                          <span key={subIndex} className="text-xs bg-background px-2 py-1 rounded border text-xs">
+                                            {subBrand.name}
+                                            {subBrand.caseStudyHref && (
+                                              <Link href={subBrand.caseStudyHref} className="ml-1 text-primary hover:underline text-xs">
+                                                (Case Study)
+                                              </Link>
+                                            )}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                              
+                              {/* Other Companies Grid */}
+                              {industry.companies.filter(company => !company.featured).length > 0 && (
+                                <div className="bg-muted/10 rounded-md p-3 border border-border/20">
+                                  <p className="text-xs text-muted-foreground mb-2">Other Partners:</p>
+                                  <div className="grid grid-cols-2 gap-2">
+                                    {industry.companies.filter(company => !company.featured).map((company, companyIndex) => (
+                                      <div key={companyIndex} className="flex items-center gap-2">
+                                        <div className="bg-background rounded p-1.5 flex items-center justify-center h-8 w-10 flex-shrink-0">
+                                          <Image
+                                            src={company.logo}
+                                            alt={company.name}
+                                            width={40}
+                                            height={32}
+                                            className="max-h-6 w-auto object-contain"
+                                          />
+                                        </div>
+                                        <span className="text-xs text-foreground truncate">{company.name}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
                             </div>
                           )}
                         </div>
