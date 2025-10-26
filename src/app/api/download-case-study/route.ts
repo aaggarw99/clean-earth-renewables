@@ -51,6 +51,10 @@ export async function POST(request: NextRequest) {
         path: '/assets/pdfs/CER Case Study Web Download - Subscriber Spotlight - Hilton.pdf',
         filename: 'CER Case Study Web Download - Subscriber Spotlight - Hilton.pdf'
       },
+      'firstservice-residential-jefferson-tower-case-study': {
+        path: '/assets/pdfs/CER Case Study Web Download - Subscriber Spotlight - FirstService Residential.pdf',
+        filename: 'CER Case Study Web Download - Subscriber Spotlight - FirstService Residential.pdf'
+      },
     };
 
     const pdfMapping = pdfMappings[caseStudySlug];

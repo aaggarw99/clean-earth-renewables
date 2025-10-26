@@ -16,6 +16,80 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "firstservice-residential-jefferson-tower-case-study",
+    title: "FirstService Residential Powers Chicago's West Loop Condo High Rise Building with Clean Energy Savings Through Community Solar",
+    excerpt: "Jefferson Tower Condominiums managed by FirstService Residential saves $5,280 annually with community solar, offsetting 12M kWh over 15 years and avoiding 10,577 tons of CO₂ emissions.",
+    content: `
+      <p>As America's leading multi-family property manager, FirstService Residential has spent decades shaping the future of urban living — delivering quality, comfort, and innovation to the communities it serves. Today, that leadership extends beyond the walls of its properties and into the energy that powers them.</p>
+      
+      <p>In a landmark move for sustainable property management, Jefferson Tower Condominiums, a long-standing residential tower managed by FirstService Residential in Chicago's vibrant West Loop, has partnered with Clean Earth Renewables (CER) to tap into the power of community solar. This partnership is lowering the building's electricity costs, shrinking its carbon footprint, and setting a new standard for sustainability in multi-family real estate.</p>
+      
+      <h2>Bringing Renewable Energy to Property Management</h2>
+      
+      <p>Community solar is transforming how residential and commercial properties access clean energy. By subscribing to a local solar project, buildings can offset their electricity use with renewable power without installing rooftop panels or paying upfront costs. Instead, their electricity consumption is matched by energy generated from a nearby solar farm, and they receive on-utility bill credits that reduce their monthly expenses.</p>
+      
+      <p>For Jefferson Tower Condominiums, this means $5,280 in annual savings — money that can now be reinvested into building improvements, resident services, and community programs. And because the subscription covers common area electricity, the benefits ripple throughout the entire condominium community.</p>
+      
+      <h2>Clean Energy with a Powerful Impact</h2>
+      
+      <p>The environmental results are as significant as the financial savings. Through its partnership with Clean Earth Renewables — the leading provider of community solar across the Midwest — Jefferson Tower Condominiums will receive 12,000,000 kilowatt-hours (kWh) of renewable electricity over the course of a 15-year subscription.</p>
+      
+      <p>That's enough clean energy to power over 83 homes annually, and it will help avoid 10,577 tons of carbon dioxide emissions — equivalent to removing more than 2,300 gasoline-powered cars from the road each year.</p>
+      
+      <p>These measurable results show how community solar can turn sustainability commitments into concrete outcomes for property managers and residents alike.</p>
+      
+      <h2>Community Solar by the Numbers</h2>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">Jefferson Tower's Clean Energy Impact</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><strong>Annual Savings:</strong> $5,280</div>
+          <div><strong>Subscription Duration:</strong> 15 years</div>
+          <div><strong>Total Renewable Energy:</strong> 12,000,000 kWh</div>
+          <div><strong>Homes Powered Annually:</strong> 83+</div>
+          <div><strong>CO₂ Emissions Avoided:</strong> 10,577 tons</div>
+          <div><strong>Cars Removed from Road:</strong> 2,300+ annually</div>
+        </div>
+        <p style="margin-bottom: 0; font-weight: 600; color: #059669;">Clean energy savings with guaranteed renewable power—at no upfront cost</p>
+      </div>
+      
+      <h2>A Smarter, Simpler Path to Sustainability</h2>
+      
+      <p>For FirstService Residential, embracing community solar isn't just about lowering costs — it's about leading the industry toward a cleaner, more resilient future. The program aligns with growing resident demand for sustainability and reflects the company's commitment to improving the quality of life in every property it manages.</p>
+      
+      <p>And because community solar requires no rooftop installations or major infrastructure changes, it's a seamless solution that delivers immediate benefits without disruption to building operations.</p>
+      
+      <h2>A New Standard for Multi-Family Living</h2>
+      
+      <p>Jefferson Tower Condominiums' leadership in sustainability offers a powerful example for the entire property management sector. As more multi-family buildings adopt community solar, the combined impact could transform how urban neighborhoods are powered — cutting emissions, strengthening the grid, and saving millions of dollars in utility costs each year.</p>
+      
+      <p>This initiative shows that clean energy isn't just for single-family homes or large corporations — it's an accessible, scalable solution for the multi-family communities where millions of Americans live.</p>
+      
+      <h2>Join the Clean Energy Movement</h2>
+      
+      <p>By choosing community solar, FirstService Residential and Clean Earth Renewables are proving that sustainability and savings can go hand-in-hand. Together, they're powering Jefferson Tower Condominiums, one of West Loop's leading High Rise Condo Towers — and the future of property management — with clean, affordable energy.</p>
+      
+      <blockquote style="background-color: #f8f9fa; border-left: 4px solid #059669; padding: 16px; margin: 20px 0; font-style: italic;">
+        "This initiative shows that clean energy isn't just for single-family homes or large corporations — it's an accessible, scalable solution for the multi-family communities where millions of Americans live."
+      </blockquote>
+      
+      <h2>Your Building Can Follow Jefferson Tower's Lead</h2>
+      
+      <p>If Jefferson Tower's story proves anything, it's that any multi-family building—from condominiums and apartments to commercial properties—can benefit from community solar. With no upfront costs, guaranteed savings, and immediate environmental impact, the transition to clean energy has never been easier.</p>
+      
+      <p>To learn how your building or community can lower Scope 2 emissions and reduce electricity costs at no risk, contact us or visit our website to speak with a member of the Clean Earth Renewables team.</p>
+    `,
+    author: "David Emsheimer",
+    authorTitle: "CEO & Founder",
+    authorBio: "David Emsheimer is the founder and CEO of Clean Earth Renewables, with over 10 years of experience in renewable energy development.",
+    date: "Oct 12, 2025",
+    readTime: "7 min read",
+    category: "Case Study",
+    featuredImage: "/assets/images/blog/thumbnails/jefferson-towers.png",
+    tags: ["FirstService Residential", "Jefferson Tower", "Community Solar", "Multi-Family", "Chicago", "West Loop"],
+    published: true
+  },
+  {
     slug: "hampton-inn-rockford-case-study",
     title: "From Hospitality to Sustainability: Hilton's Bright Future Powered by Community Solar",
     excerpt: "Hilton hotels across Illinois offset 441,000 kWh annually with community solar, saving $6,840 per year per property while powering the future of sustainable hospitality.",
