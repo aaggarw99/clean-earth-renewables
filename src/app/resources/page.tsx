@@ -197,6 +197,20 @@ export default function ResourcesPage() {
       comingSoon: false
     },
     {
+      name: "Multi-Family",
+      description: "Apartment complexes and multi-family housing developments",
+      icon: <BuildingOffice2Icon className="w-6 h-6" />,
+      companies: [
+        {
+          name: "FirstService Residential",
+          logo: "/assets/images/clients/firstserviceresidential.png",
+          caseStudyHref: "/blog/firstservice-residential-jefferson-tower-case-study",
+          featured: true
+        }
+      ],
+      comingSoon: false
+    },
+    {
       name: "Agriculture Producers & Operators",
       description: "Farms and agricultural operations harnessing renewable energy",
       icon: <SunIcon className="w-6 h-6" />,
@@ -207,13 +221,6 @@ export default function ResourcesPage() {
       name: "Industrial",
       description: "Manufacturing facilities and industrial operations",
       icon: <CogIcon className="w-6 h-6" />,
-      companies: [],
-      comingSoon: true
-    },
-    {
-      name: "Multi-Family",
-      description: "Apartment complexes and multi-family housing developments",
-      icon: <BuildingOffice2Icon className="w-6 h-6" />,
       companies: [],
       comingSoon: true
     },
