@@ -43,11 +43,11 @@ export function NavBar() {
       ]
     },
     {
-      category: "Purchase Plan Agreements",
+      category: "Power Purchase Agreements",
       items: [
         {
-          title: "PPAs",
-          description: "Fixed-price solar with zero upfront costs",
+          title: "PPA's",
+          description: "Large-scale on-site solar financing for corporates and public entities",
           href: "/resources/ppa"
         }
       ]
