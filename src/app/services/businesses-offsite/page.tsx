@@ -195,7 +195,7 @@ export default function CommunitySolarBusinessesPage() {
         backgroundImage="/assets/images/backgrounds/hamptoninn.png"
         title="Hilton Hotel Subscriber in Colombia, IL"
         description="Projected to save $6,840+ per year from local community solar farm in Ameren Illinois utility service area"
-        readStoryLink="/contact"
+        readStoryLink="/blog/hampton-inn-rockford-case-study"
         metrics={[
           { value: "$11,400", label: "Monthly Electric Bill" },
           { value: "$570", label: "Monthly Credits (10%)" },

@@ -5,12 +5,14 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { PDFDownloadModal } from "@/components/PDFDownloadModal";
 import { 
   CalendarIcon,
   ClockIcon,
   UserIcon,
   ArrowLeftIcon,
-  ShareIcon
+  ShareIcon,
+  DocumentArrowDownIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,7 +25,11 @@ export default function BlogPostPage() {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [shareStatus, setShareStatus] = useState<'idle' | 'sharing' | 'copied' | 'error'>('idle');
+  const [isPDFModalOpen, setIsPDFModalOpen] = useState(false);
   const { addToast } = useToast();
+
+  // Check if this is a case study post
+  const isCaseStudy = post?.category === 'Case Study' || post?.slug?.includes('case-study');
 
   useEffect(() => {
     const slug = params.slug as string;
@@ -167,6 +173,16 @@ export default function BlogPostPage() {
               </div>
 
               <div className="flex items-center gap-2 ml-auto">
+                {isCaseStudy && (
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={() => setIsPDFModalOpen(true)}
+                  >
+                    <DocumentArrowDownIcon className="w-4 h-4 mr-2" />
+                    Download PDF
+                  </Button>
+                )}
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -304,6 +320,16 @@ export default function BlogPostPage() {
             </div>
           </div>
         </section>
+      )}
+
+      {/* PDF Download Modal */}
+      {post && isCaseStudy && (
+        <PDFDownloadModal
+          isOpen={isPDFModalOpen}
+          onClose={() => setIsPDFModalOpen(false)}
+          caseStudyTitle={post.title}
+          caseStudySlug={post.slug}
+        />
       )}
 
       <Footer />

@@ -16,6 +16,100 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "hampton-inn-rockford-case-study",
+    title: "From Hospitality to Sustainability: Hilton's Bright Future Powered by Community Solar",
+    excerpt: "Hilton hotels across Illinois offset 441,000 kWh annually with community solar, saving $6,840 per year per property while powering the future of sustainable hospitality.",
+    content: `
+      <p>Few names define American hospitality quite like Hilton. Founded in 1919 by Conrad Hilton with a vision to "fill the earth with the light and warmth of hospitality," the company has grown from a single Texas hotel into one of the most recognized and respected brands in the world. With more than 7,000 properties across 120 countries, Hilton has set the gold standard for service, comfort, and innovation in the hotel industry.</p>
+      
+      <p>Now, over a century later, Hilton is carrying that same spirit of leadership into a new era—one defined not only by comfort and care, but by clean energy and climate action. In Illinois, Hilton hotels are matching their annual electricity consumption with local community solar projects, powering the future of hospitality through renewable energy while delivering measurable economic benefits to both the brand and the communities they serve.</p>
+      
+      <h2>A Legacy of Hospitality—Now Powered by the Sun</h2>
+      
+      <p>From the first air-conditioned hotel in Texas to the introduction of digital room keys and global sustainability goals, Hilton has long stood at the intersection of innovation and care. Today, that legacy continues through an ambitious commitment to reduce carbon emissions and champion renewable energy.</p>
+      
+      <p>Across Illinois, Hilton hotels are now offsetting approximately 441,000 kilowatt-hours (kWh) of electricity per year through local community solar partnerships. That's enough clean energy to power nearly 40 average Illinois homes annually—a powerful example of how the hospitality industry can lead the charge toward a sustainable future.</p>
+      
+      <h2>Economic Savings with Purpose</h2>
+      
+      <p>Beyond environmental leadership, Hilton's solar initiative delivers significant economic value. Each participating hotel is expected to save an average of $6,840 per year on electricity costs, or more than $100,000 over the course of a 15-year subscription.</p>
+      
+      <p>For hotel owners, these savings mean more capital to reinvest in workforce development, property upgrades, and community initiatives that enhance the guest experience. For Illinois communities, it means local dollars stay local—circulating through payroll, small business partnerships, and neighborhood revitalization.</p>
+      
+      <p>It's a win-win model where sustainability meets sound business sense.</p>
+      
+      <h2>Strengthening Local Economies Across Illinois</h2>
+      
+      <p>Hilton's participation in community solar doesn't just benefit its properties—it powers opportunity for the entire state. By subscribing to solar farms built right here in Illinois, Hilton is helping to:</p>
+      
+      <ul>
+        <li><strong>Create high-quality local jobs</strong> in solar construction, maintenance, and energy management.</li>
+        <li><strong>Support Illinois landowners</strong> who lease their property for solar development.</li>
+        <li><strong>Stabilize energy costs</strong> and reduce reliance on fossil fuels for surrounding communities.</li>
+      </ul>
+      
+      <p>These projects represent the next generation of energy independence, where clean power and community growth go hand-in-hand—just as Hilton has long paired hospitality with social responsibility.</p>
+      
+      <h2>Scaling Impact Across the Hilton Network</h2>
+      
+      <p>The momentum is just beginning. If all 100+ Hilton hotels across Illinois were to participate in community solar, the results would be transformative:</p>
+      
+      <ul>
+        <li><strong>Over 44 million kilowatt-hours</strong> of renewable energy could be generated each year—enough to power more than 4,000 Illinois homes annually.</li>
+        <li><strong>Collectively, Hilton properties</strong> could save nearly $700,000 per year, driving millions of dollars in local economic benefit over the life of the program.</li>
+        <li><strong>The statewide carbon offset</strong> would equal removing over 6,000 passenger cars from the road each year.</li>
+      </ul>
+      
+      <p>This scale of impact demonstrates what's possible when the hospitality industry aligns with clean energy innovation—an inspiring model for others to follow.</p>
+      
+      <h2>Community Solar by the Numbers</h2>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">Hilton's Clean Energy Impact</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><strong>Annual Electricity Offset:</strong> 441,000 kWh</div>
+          <div><strong>Annual Savings per Hotel:</strong> $6,840</div>
+          <div><strong>Subscription Duration:</strong> 15 years</div>
+          <div><strong>Homes Powered Annually:</strong> 40+</div>
+          <div><strong>Total Savings (15 years):</strong> $100,000+</div>
+          <div><strong>Carbon Reduction:</strong> Significant</div>
+        </div>
+        <p style="margin-bottom: 0; font-weight: 600; color: #059669;">Monthly savings with guaranteed renewable energy—at no upfront cost</p>
+      </div>
+      
+      <h2>A Historic Moment for Sustainable Hospitality</h2>
+      
+      <p>Hilton's renewable energy commitment represents more than just operational efficiency—it's a historic milestone for the hospitality sector. By joining Illinois' community solar movement, Hilton has proven that major hotel brands can take meaningful action toward a carbon-free future while strengthening the very communities they serve.</p>
+      
+      <p>This initiative cements Hilton's place as a sustainability leader—continuing its century-old mission of care, this time for both people and the planet.</p>
+      
+      <h2>The Light and Warmth of a Cleaner Tomorrow</h2>
+      
+      <p>As Hilton lights up its hotels across Illinois with clean, locally generated solar energy, it redefines what it means to be a global leader in hospitality. From serving guests with excellence to serving the planet with purpose, Hilton's journey is a testament to innovation, responsibility, and hope for a brighter tomorrow.</p>
+      
+      <blockquote style="background-color: #f8f9fa; border-left: 4px solid #059669; padding: 16px; margin: 20px 0; font-style: italic;">
+        "Because in the new age of hospitality, the true measure of luxury isn't just comfort—it's conscience. And Hilton is leading the way, one solar-powered stay at a time."
+      </blockquote>
+      
+      <p>Because in the new age of hospitality, the true measure of luxury isn't just comfort—it's conscience. And Hilton is leading the way, one solar-powered stay at a time.</p>
+      
+      <h2>Your Business Can Follow Hilton's Lead</h2>
+      
+      <p>If Hilton's story proves anything, it's that any business—from hotels and restaurants to offices and manufacturers—can benefit from community solar. With no upfront costs, guaranteed savings, and immediate environmental impact, the transition to clean energy has never been easier.</p>
+      
+      <p>To learn how to lower your business's Scope 2 emissions and reduce electricity costs at no risk, contact us or visit our website to speak with a member of the Clean Earth Renewables team.</p>
+    `,
+    author: "David Emsheimer",
+    authorTitle: "CEO & Founder",
+    authorBio: "David Emsheimer is the founder and CEO of Clean Earth Renewables, with over 10 years of experience in renewable energy development.",
+    date: "Oct 11, 2025",
+    readTime: "8 min read",
+    category: "Case Study",
+    featuredImage: "/assets/images/backgrounds/hamptoninn.png",
+    tags: ["Hilton", "Hampton Inn", "Community Solar", "Hospitality", "Illinois", "Rockford"],
+    published: true
+  },
+  {
     slug: "maple-and-ash-restaurant-case-study",
     title: "From Fire to Sunlight: Maple & Ash Brings Sustainability to Chicago's Gold Coast",
     excerpt: "Chicago's premier steakhouse offsets 100% of electricity with community solar, achieving $10,547 in annual savings and avoiding 7,455 tons of CO₂ emissions over 15 years.",
@@ -261,64 +355,73 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "dairy-queen-clean-energy-community-solar",
-    title: "Dairy Queen Brings Clean Energy to Ice Cream Shops with Clean Earth Renewables",
-    excerpt: "Illinois Dairy Queen franchise owner Bob Patel enrolls nine locations in Clean Earth Renewables' community solar program, demonstrating how businesses can save money while supporting clean energy.",
+    title: "From Soft-Serve to Solar Power: Dairy Queen's Sweet Leap into Sustainability",
+    excerpt: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering nearly 1,966 homes and strengthening local economies.",
     content: `
-      <h2>How Dairy Queen Went Green with Clean Earth Renewables and saved big</h2>
+      <p>Few American brands are as iconic as Dairy Queen. From its humble beginnings in Joliet, Illinois, in 1938—where the world first tasted soft-serve ice cream—to becoming a household name with over 7,000 locations worldwide, Dairy Queen has always been a pioneer in both innovation and community spirit.</p>
       
-      <p>In a landmark move towards sustainability and operational efficiency, Bob Patel, an Illinois Dairy Queen franchise owner has enrolled nine of his Dairy Queen locations into Clean Earth Renewables' community solar program. The partnership spans from Rockford to Champaign, connecting beloved DQ storefronts across the state to Clean Earth's local community solar projects, providing clean, cost-effective energy without the need for on-site solar panels.</p>
+      <p>Now, nearly a century after revolutionizing frozen desserts, Dairy Queen is doing it again—this time by leading a new revolution in clean energy. Across Illinois, local Dairy Queen franchisees are embracing community solar, matching their annual electricity consumption with renewable energy generated from local solar farms. The result? A greener grid, stronger local economies, and significant savings for shop owners statewide.</p>
       
-      <p>This strategic decision aligns with the franchise owner's long-standing philosophy of running efficient, forward-thinking businesses. "As a business franchise, it's my duty to ensure I am operating my business as efficiently as possible," a representative of the franchise explained. "That means I'm always finding ways to reduce costs and ensure a reliable service quality to my customers. And with Clean Earth, I've been able to lower my electricity costs at scale with their community solar program. Not only are we contributing to a cleaner economy, we are also earning cost savings for our business as a reward for supporting Illinois' clean energy goals."</p>
+      <h2>A Legacy of Innovation—Now Powered by the Sun</h2>
       
-      <h2>Community Solar: Clean Energy for All</h2>
+      <p>In 1938, Dairy Queen's founders introduced the world's first soft-serve formula, forever changing how Americans enjoy dessert. Today, that same spirit of innovation drives their commitment to sustainability.</p>
       
-      <p>Unlike traditional solar installations, community solar allows residents and businesses to benefit from local solar farms without installing solar panels on their rooftops. Subscribers receive credits on their utility bills for their portion of the solar energy produced, resulting in both cost savings and environmental benefits.</p>
+      <p>By subscribing to local community solar projects, nine participating Dairy Queen locations across Illinois are now offsetting a combined 875,000 kilowatt-hours (kWh) of electricity each year—roughly 97,000 kWh per store. That's the equivalent of powering nearly 1,966 average Illinois homes over the 15-year period of the solar project's minimum operating period. This renewable match drastically reduces the brand's carbon footprint while reinforcing Dairy Queen's reputation as a forward-thinking franchise.</p>
       
-      <p>For business owners like Patel, the advantages are clear. With energy costs being one of the largest operational expenses, enrolling in a community solar program provides a hedge against fluctuating utility rates, while also helping reduce carbon emissions. Clean Earth Renewables offers a streamlined experience, managing the subscriber process from enrollment to activation—making clean energy adoption accessible and hassle-free for commercial and residential users alike.</p>
+      <h2>Sweet Savings for Local Franchisees</h2>
       
-      <p>Patel's decision is particularly significant given the scale of his commitment: nine Dairy Queen locations simultaneously enrolled. This demonstrates the viability of community solar for franchise chains and small-to-medium-sized businesses across Illinois.</p>
+      <p>Beyond the environmental good, the economic impact is equally impressive. Each Dairy Queen shop is expected to save an average of $5,000 per year on electricity costs—or up to $75,000 over a 15-year community solar subscription.</p>
       
-      <h2>Driving Business Value Through Sustainability</h2>
+      <p>Those savings aren't just numbers—they represent more resources to invest in employees, local suppliers, and community events that keep these neighborhood landmarks thriving. In essence, solar savings help keep the "community" in community solar.</p>
       
-      <p>Community solar isn't just an environmental win—it's a sound business decision. Dairy Queen's partnership with Clean Earth Renewables underscores how sustainability initiatives can drive direct economic benefits. Each of Patel's DQ stores will benefit from lower energy costs without compromising on daily operations or requiring new infrastructure investments.</p>
+      <h2>Boosting Local Economies Across Illinois</h2>
       
-      <p>In fact, the decision to enroll all nine locations at once was driven by Patel's desire to lock in available capacity before it disappears. Community solar projects operate on a limited-capacity basis, and availability is allocated on a first-come, first-serve model.</p>
+      <p>Community solar isn't just good for the environment—it's a local economic multiplier. By sourcing clean energy from solar farms located within Illinois, Dairy Queen helps:</p>
       
-      <p>"I think every eligible person and business should take advantage of this while it lasts," Patel emphasized. "There's no telling when the next round of openings will be available once these projects fill up. It's a rare opportunity to do something good for the planet and good for your business at the same time."</p>
+      <ul>
+        <li><strong>Create local jobs</strong> in construction, maintenance, and renewable energy operations.</li>
+        <li><strong>Keep energy dollars in-state,</strong> supporting Illinois farmers and landowners who host solar projects.</li>
+        <li><strong>Strengthen community resilience</strong> by reducing dependency on fossil fuel-based utilities and volatile energy prices.</li>
+      </ul>
       
-      <h2>The Clock Is Ticking: Limited Capacity Left in Illinois for 2025</h2>
+      <p>In towns across Illinois—from Rockford to Peoria to Joliet—Dairy Queen's solar participation helps power both ice cream machines and a clean-energy future.</p>
       
-      <p>Patel's call to action comes at a critical time. Clean Earth Renewables expects that only 200 megawatts (MW) of community solar capacity will remain available across Illinois for the rest of 2025. That's enough to power roughly 30,000 homes—or far fewer businesses with higher energy consumption rates.</p>
+      <h2>Community Solar by the Numbers</h2>
       
-      <p>This means competition for available subscriptions is heating up fast. Once a project reaches full subscription, new customers must wait for future developments or for current subscribers to move, cancel, or otherwise vacate their space—an infrequent occurrence given the clear financial benefits.</p>
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">Dairy Queen's Clean Energy Impact</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><strong>Participating Locations:</strong> 9 stores</div>
+          <div><strong>Annual Electricity Offset:</strong> 875,000 kWh</div>
+          <div><strong>Per Store Annual Offset:</strong> 97,000 kWh</div>
+          <div><strong>Annual Savings per Store:</strong> $5,000</div>
+          <div><strong>Total Savings (15 years):</strong> $75,000 per store</div>
+          <div><strong>Homes Powered:</strong> 1,966 Illinois homes</div>
+        </div>
+        <p style="margin-bottom: 0; font-weight: 600; color: #059669;">Sweet savings with guaranteed renewable energy—at no upfront cost</p>
+      </div>
       
-      <p>Clean Earth recommends that interested parties act quickly. The fastest way to enroll is to contact their origination team directly at <strong>origination@clean-earth.org</strong> to begin the eligibility check and enrollment process.</p>
+      <h2>A Landmark Moment for Renewable Franchises</h2>
       
-      <p>For added value, Clean Earth even provides an estimated savings reports to all subscribers once their annual energy footprint is allocated to a community solar project.</p>
+      <p>This initiative marks a historic milestone in renewable energy adoption among national franchises. While many corporations talk about sustainability, Dairy Queen is turning its commitment into tangible action—project by project, kilowatt-hour by kilowatt-hour.</p>
       
-      <h2>A Vision for a Clean Energy Future</h2>
+      <p>By leveraging community solar, Dairy Queen proves that even small retail footprints can have a big environmental impact without the need for rooftop panels or upfront costs. The brand's leadership sets a new standard for other restaurant and retail chains to follow—demonstrating how America's most beloved soft-serve can now help serve a cleaner, brighter planet.</p>
       
-      <p>The significance of Bob Patel's enrollment decision goes beyond dollars and kilowatts. It sets a precedent for other franchise owners and commercial operators to follow. Clean Earth Renewables is optimistic that more businesses will take similar steps as awareness of the program and its benefits continue to spread.</p>
+      <h2>A Future as Bright as the Summer Sun</h2>
       
-      <p>"Community solar is a key part of Illinois' path to a cleaner energy future," said a spokesperson for Clean Earth Renewables. "When business leaders like Bob Patel step up and bring their operations into the fold, it creates a ripple effect that influences their customers, their communities, and their peers."</p>
+      <p>As Dairy Queen continues to evolve, its journey from soft-serve pioneer to solar champion represents something much bigger than dessert—it's a story of renewal, resilience, and responsibility. By embracing community solar, Dairy Queen is not only saving money but helping pave the way for a sustainable future in Illinois and beyond.</p>
       
-      <p>By leveraging community solar, businesses aren't just saving money—they're becoming part of the state's broader clean energy mission. Illinois has made strong policy commitments to expand renewable energy access through programs like community solar, and participation from both residential and commercial sectors is critical to reaching those goals.</p>
+      <blockquote style="background-color: #f8f9fa; border-left: 4px solid #059669; padding: 16px; margin: 20px 0; font-style: italic;">
+        "Because in 2025, the sweetest treat isn't just a Blizzard or a cone—it's a cleaner, brighter future powered by the sun."
+      </blockquote>
       
-      <h2>A Simple, Powerful Choice</h2>
+      <p>Because in 2025, the sweetest treat isn't just a Blizzard or a cone—it's a cleaner, brighter future powered by the sun.</p>
       
-      <p>For Illinois residents and businesses, the message is clear: community solar is an immediate and tangible way to support renewable energy without upfront investment or risk. With limited capacity available and growing demand, early action is the only way to secure a spot.</p>
+      <h2>Your Business Can Follow Dairy Queen's Lead</h2>
       
-      <p>Bob Patel's decision to enroll his Dairy Queen locations into Clean Earth Renewables' projects is a compelling case study in how sustainability and sound business strategy go hand in hand.</p>
+      <p>If Dairy Queen's story proves anything, it's that any business—from restaurants and retailers to offices and manufacturers—can benefit from community solar. With no upfront costs, guaranteed savings, and immediate environmental impact, the transition to clean energy has never been easier.</p>
       
-      <p>"We're proud to serve our customers their favorite treats, and now we're proud to do it with cleaner, more affordable energy," said Patel. "This is what smart business looks like today."</p>
-      
-      <h2>Get Involved Today</h2>
-      
-      <p>If you own a business, manage a franchise, or simply want to support clean energy while lowering your utility bill, now is the time to explore community solar. Availability is limited and rapidly declining as more residents and businesses join the movement.</p>
-      
-      <p>Reach out today to <strong>origination@clean-earth.org</strong> and take the first step toward powering your future with community solar.</p>
-      
-      <p>Together, with forward-thinking business leaders like Bob Patel, Clean Earth Renewables is helping to build a more sustainable, affordable, and resilient energy future for Illinois.</p>
+      <p>To learn how to lower your business's Scope 2 emissions and reduce electricity costs at no risk, contact us or visit our website to speak with a member of the Clean Earth Renewables team.</p>
     `,
     author: "David Emsheimer",
     authorTitle: "CEO & Founder",
