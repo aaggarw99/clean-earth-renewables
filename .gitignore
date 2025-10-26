@@ -109,6 +109,3 @@ dist
 # Temporary folders
 tmp/
 temp/
-
-# PDF files (case studies)
-/public/assets/pdfs/
