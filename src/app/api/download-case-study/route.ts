@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
 
 // Email service configuration (same as contact form)
 const EMAIL_SERVICE_URL = process.env.EMAIL_SERVICE_URL || 'https://api.resend.com/emails';
@@ -61,9 +63,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Read the PDF file
-    const fs = require('fs');
-    const path = require('path');
-    
     try {
       const pdfBuffer = fs.readFileSync(path.join(process.cwd(), 'public', pdfMapping.path));
       
