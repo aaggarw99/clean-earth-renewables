@@ -19,17 +19,11 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-interface SubBrand {
-  name: string;
-  caseStudyHref: string | null;
-}
-
 interface Company {
   name: string;
   logo: string;
   caseStudyHref: string | null;
   featured: boolean;
-  subBrands?: SubBrand[];
 }
 
 interface Industry {
@@ -103,34 +97,67 @@ export default function ResourcesPage() {
           name: "Choice Hotels",
           logo: "/assets/images/clients/choice-hotels.png",
           caseStudyHref: null,
-          featured: false,
-          subBrands: [
-            { name: "Comfort Inn", caseStudyHref: "/blog/comfort-inn-rockford-case-study" },
-            { name: "EconoLodge", caseStudyHref: null },
-            { name: "Quality Inn", caseStudyHref: null },
-            { name: "Sleep Inn", caseStudyHref: null }
-          ]
+          featured: false
+        },
+        {
+          name: "Comfort Inn",
+          logo: "/assets/images/clients/comfortinn.png",
+          caseStudyHref: "/blog/comfort-inn-rockford-case-study",
+          featured: false
+        },
+        {
+          name: "EconoLodge",
+          logo: "/assets/images/clients/econolodge.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "Quality Inn",
+          logo: "/assets/images/clients/qualityinn.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "Sleep Inn",
+          logo: "/assets/images/clients/sleepinn.png",
+          caseStudyHref: null,
+          featured: false
         },
         {
           name: "Wyndham",
           logo: "/assets/images/clients/wyndham.png",
           caseStudyHref: null,
-          featured: false,
-          subBrands: [
-            { name: "AmericInn", caseStudyHref: null },
-            { name: "Baymont Inn", caseStudyHref: null },
-            { name: "Days Inn", caseStudyHref: null },
-            { name: "Super 8", caseStudyHref: null }
-          ]
+          featured: false
+        },
+        {
+          name: "AmericInn",
+          logo: "/assets/images/clients/americinn.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "Baymont Inn",
+          logo: "/assets/images/clients/baymontinn.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "Days Inn",
+          logo: "/assets/images/clients/daysinn.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
+          name: "Super 8",
+          logo: "/assets/images/clients/super8.png",
+          caseStudyHref: null,
+          featured: false
         },
         {
           name: "Hilton",
           logo: "/assets/images/clients/hilton.png",
-          caseStudyHref: null,
-          featured: false,
-          subBrands: [
-            { name: "Hampton Inn", caseStudyHref: "/blog/hampton-inn-rockford-case-study" }
-          ]
+          caseStudyHref: "/blog/hampton-inn-rockford-case-study",
+          featured: true
         },
         {
           name: "Maple & Ash",
@@ -355,24 +382,6 @@ export default function ResourcesPage() {
                                     )}
                                   </div>
                                   
-                                  {/* Sub-brands for Hospitality */}
-                                  {company.subBrands && company.subBrands.length > 0 && (
-                                    <div className="mt-2 pt-2 border-t border-border/20">
-                                      <p className="text-xs text-muted-foreground mb-1.5">Sub-brands:</p>
-                                      <div className="flex flex-wrap gap-1.5">
-                                        {company.subBrands.map((subBrand, subIndex) => (
-                                          <span key={subIndex} className="text-xs bg-background px-2 py-1 rounded border text-xs">
-                                            {subBrand.name}
-                                            {subBrand.caseStudyHref && (
-                                              <Link href={subBrand.caseStudyHref} className="ml-1 text-primary hover:underline text-xs">
-                                                (Case Study)
-                                              </Link>
-                                            )}
-                                          </span>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  )}
                                 </div>
                               ))}
                               
