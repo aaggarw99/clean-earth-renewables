@@ -56,7 +56,7 @@ export function Hero() {
 
           {/* Trust Indicators */}
           <div className="mt-12 pt-8 border-t border-white/20">
-            <p className="text-sm text-white/70 mb-4">Trusted by America&apos;s leading companies</p>
+            <p className="text-sm text-white/70 mb-4">Powering America&apos;s Leading Companies with Clean Energy</p>
             <div className="flex justify-center items-center space-x-12 opacity-80">
             <Image src="/assets/images/clients/hilton.png" alt="Hampton Inn" width={100} height={100} />
             <Image src="/assets/images/clients/dq.png" alt="Dairy Queen" width={100} height={100} />

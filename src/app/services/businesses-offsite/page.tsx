@@ -206,7 +206,7 @@ export default function CommunitySolarBusinessesPage() {
       {/* Client Logo Carousel */}
       <ClientLogoCarousel 
         logos={clientLogos}
-        title="Trusted by Leading Businesses"
+        title="Powering America's Leading Companies with Clean Energy"
         subtitle="Join hundreds of businesses already saving with community solar"
         speed={15}
         gap={64}
