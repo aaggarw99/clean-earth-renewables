@@ -10,10 +10,10 @@ const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@clean-earth.org';
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, caseStudySlug, caseStudyTitle } = await request.json();
+    const { name, email, customerType, organizationName, caseStudySlug, caseStudyTitle } = await request.json();
 
     // Validate required fields
-    if (!name || !email || !caseStudySlug || !caseStudyTitle) {
+    if (!name || !email || !customerType || !caseStudySlug || !caseStudyTitle) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
       // Send email notification to dev team
       if (EMAIL_API_KEY) {
         try {
-          const emailResponse = await sendEmailNotification(name, email, caseStudyTitle);
+          const emailResponse = await sendEmailNotification(name, email, customerType, organizationName, caseStudyTitle);
           
           if (!emailResponse.ok) {
             console.error('Email service error:', await emailResponse.text());
@@ -88,6 +88,8 @@ export async function POST(request: NextRequest) {
           caseStudy: caseStudyTitle,
           downloadedBy: name,
           email: email,
+          customerType: customerType,
+          organizationName: organizationName,
           date: new Date().toLocaleString()
         });
       }
@@ -119,7 +121,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-async function sendEmailNotification(name: string, email: string, caseStudyTitle: string) {
+async function sendEmailNotification(name: string, email: string, customerType: string, organizationName: string, caseStudyTitle: string) {
   const emailData = {
     from: FROM_EMAIL,
     to: TO_EMAIL,
@@ -155,6 +157,18 @@ async function sendEmailNotification(name: string, email: string, caseStudyTitle
           </div>
           
           <div class="field">
+            <div class="label">Customer Type</div>
+            <div class="value">${customerType}</div>
+          </div>
+          
+          ${organizationName ? `
+          <div class="field">
+            <div class="label">Organization Name</div>
+            <div class="value">${organizationName}</div>
+          </div>
+          ` : ''}
+          
+          <div class="field">
             <div class="label">Download Date</div>
             <div class="value">${new Date().toLocaleString()}</div>
           </div>
@@ -173,6 +187,8 @@ Case Study PDF Download Notification
 Case Study: ${caseStudyTitle}
 Downloaded by: ${name}
 Email: ${email}
+Customer Type: ${customerType}
+${organizationName ? `Organization Name: ${organizationName}` : ''}
 Download Date: ${new Date().toLocaleString()}
 
 This is an automated notification from the Clean Earth Renewables website.

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { XMarkIcon, DocumentArrowDownIcon } from "@heroicons/react/24/outline";
 import { useToast } from "@/components/ui/toast";
@@ -18,7 +19,9 @@ interface PDFDownloadModalProps {
 export function PDFDownloadModal({ isOpen, onClose, caseStudyTitle, caseStudySlug }: PDFDownloadModalProps) {
   const [formData, setFormData] = useState({
     name: "",
-    email: ""
+    email: "",
+    customerType: "",
+    organizationName: ""
   });
   const [isLoading, setIsLoading] = useState(false);
   const { addToast } = useToast();
@@ -26,11 +29,11 @@ export function PDFDownloadModal({ isOpen, onClose, caseStudyTitle, caseStudySlu
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name.trim() || !formData.email.trim()) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.customerType) {
       addToast({
         type: 'error',
         title: 'Missing Information',
-        message: 'Please fill in both name and email fields.',
+        message: 'Please fill in all required fields.',
       });
       return;
     }
@@ -46,6 +49,8 @@ export function PDFDownloadModal({ isOpen, onClose, caseStudyTitle, caseStudySlu
         body: JSON.stringify({
           name: formData.name.trim(),
           email: formData.email.trim(),
+          customerType: formData.customerType,
+          organizationName: formData.organizationName.trim(),
           caseStudySlug,
           caseStudyTitle
         }),
@@ -75,7 +80,7 @@ export function PDFDownloadModal({ isOpen, onClose, caseStudyTitle, caseStudySlu
       });
 
       // Reset form and close modal
-      setFormData({ name: "", email: "" });
+      setFormData({ name: "", email: "", customerType: "", organizationName: "" });
       onClose();
 
     } catch (error) {
@@ -94,6 +99,13 @@ export function PDFDownloadModal({ isOpen, onClose, caseStudyTitle, caseStudySlu
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      customerType: value
     }));
   };
 
@@ -148,6 +160,39 @@ export function PDFDownloadModal({ isOpen, onClose, caseStudyTitle, caseStudySlu
                 onChange={handleInputChange}
                 placeholder="Enter your email address"
                 required
+                disabled={isLoading}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="customerType">Customer Type *</Label>
+              <Select value={formData.customerType} onValueChange={handleSelectChange} disabled={isLoading}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select your customer type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Renter / Homeowner">Renter / Homeowner</SelectItem>
+                  <SelectItem value="Small Business / Non-profit">Small Business / Non-profit</SelectItem>
+                  <SelectItem value="Landowner">Landowner</SelectItem>
+                  <SelectItem value="Large Enterprise">Large Enterprise</SelectItem>
+                  <SelectItem value="Municipality">Municipality</SelectItem>
+                  <SelectItem value="University">University</SelectItem>
+                  <SelectItem value="School">School</SelectItem>
+                  <SelectItem value="Hospital">Hospital</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="organizationName">Organization Name (if applicable)</Label>
+              <Input
+                id="organizationName"
+                name="organizationName"
+                type="text"
+                value={formData.organizationName}
+                onChange={handleInputChange}
+                placeholder="Enter your organization name"
                 disabled={isLoading}
               />
             </div>

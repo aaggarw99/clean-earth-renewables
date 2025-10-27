@@ -55,7 +55,8 @@ const customerTypes = [
   "Municipality",
   "University",
   "School",
-  "Hospital"
+  "Hospital",
+  "Other"
 ];
 
 const utilities = [
