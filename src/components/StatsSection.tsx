@@ -2,28 +2,28 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { 
-  UsersIcon, 
-  BoltIcon, 
-  GlobeAltIcon 
+  UserGroupIcon,
+  BoltIcon,
+  CurrencyDollarIcon, 
 } from "@heroicons/react/24/outline";
 
 const stats = [
   {
-    icon: <UsersIcon className="w-10 h-10" />,
+    icon: <BoltIcon className="w-10 h-10" />,
     value: 500,
     prefix: "",
     suffix: "+",
     label: "local community solar projects in the marketplace"
   },
   {
-    icon: <BoltIcon className="w-8 h-8" />,
+    icon: <CurrencyDollarIcon className="w-8 h-8" />,
     value: 3,
     prefix: "$",
     suffix: "M+",
     label: "subscribers' estimated annual savings"
   },
   {
-    icon: <GlobeAltIcon className="w-8 h-8" />,
+    icon: <UserGroupIcon className="w-8 h-8" />,
     value: 250,
     prefix: "",
     suffix: "+",
