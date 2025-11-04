@@ -436,7 +436,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "dairy-queen-clean-energy-community-solar",
     title: "From Soft-Serve to Solar Power: Dairy Queen's Sweet Leap into Sustainability",
-    excerpt: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering nearly 1,966 homes and strengthening local economies.",
+    excerpt: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering the equivalent of 1,966 homes and strengthening local economies.",
     metaDescription: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering the equivalent of 1,966 homes and strengthening local economies.",
     content: `
       <p>Few American brands are as iconic as Dairy Queen. From its humble beginnings in Joliet, Illinois, in 1938—where the world first tasted soft-serve ice cream—to becoming a household name with over 7,000 locations worldwide, Dairy Queen has always been a pioneer in both innovation and community spirit.</p>
