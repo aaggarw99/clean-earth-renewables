@@ -2,6 +2,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  metaDescription: string;
   content: string;
   author: string;
   authorTitle: string;
@@ -19,6 +20,7 @@ export const blogPosts: BlogPost[] = [
     slug: "firstservice-residential-jefferson-tower-case-study",
     title: "FirstService Residential Powers Chicago's West Loop Condo High Rise Building with Clean Energy Savings Through Community Solar",
     excerpt: "Jefferson Tower Condominiums managed by FirstService Residential saves $5,280 annually with community solar, offsetting 12M kWh over 15 years and avoiding 10,577 tons of CO₂ emissions.",
+    metaDescription: "FirstService Residential Powers Chicago's West Loop Condo High Rise Building with Clean Energy Savings Through Clean Earth Renewables' Community Solar Program.",
     content: `
       <p>As America's leading multi-family property manager, FirstService Residential has spent decades shaping the future of urban living — delivering quality, comfort, and innovation to the communities it serves. Today, that leadership extends beyond the walls of its properties and into the energy that powers them.</p>
       
@@ -93,6 +95,7 @@ export const blogPosts: BlogPost[] = [
     slug: "hampton-inn-rockford-case-study",
     title: "From Hospitality to Sustainability: Hilton's Bright Future Powered by Community Solar",
     excerpt: "Hilton hotels across Illinois offset 441,000 kWh annually with community solar, saving $6,840 per year per property while powering the future of sustainable hospitality.",
+    metaDescription: "From Hospitality to Sustainability: Hilton's Bright Future Powered by Community Solar with Clean Earth Renewables.",
     content: `
       <p>Few names define American hospitality quite like Hilton. Founded in 1919 by Conrad Hilton with a vision to "fill the earth with the light and warmth of hospitality," the company has grown from a single Texas hotel into one of the most recognized and respected brands in the world. With more than 7,000 properties across 120 countries, Hilton has set the gold standard for service, comfort, and innovation in the hotel industry.</p>
       
@@ -187,6 +190,7 @@ export const blogPosts: BlogPost[] = [
     slug: "maple-and-ash-restaurant-case-study",
     title: "From Fire to Sunlight: Maple & Ash Brings Sustainability to Chicago's Gold Coast",
     excerpt: "Chicago's premier steakhouse offsets 100% of electricity with community solar, achieving $10,547 in annual savings and avoiding 7,455 tons of CO₂ emissions over 15 years.",
+    metaDescription: "From Fire to Sunlight: Maple & Ash Brings Sustainability to Chicago's Gold Coast with Clean Earth Renewables.",
     content: `
       <p>In the heart of Chicago's Gold Coast, Maple & Ash has redefined what a modern steakhouse can be. Known for its wood-fired steaks, impeccable wine list, and lavish dining experiences, the restaurant has become one of the city's most sought-after culinary destinations. But now, Maple & Ash is proving that luxury and sustainability can go hand in hand — by embracing clean, renewable energy to power its flagship location.</p>
       
@@ -261,6 +265,7 @@ export const blogPosts: BlogPost[] = [
     slug: "humans-at-help-foundation-case-study",
     title: "CER x Humans at Help: Powering Communities Through Solar Savings and Sustainability",
     excerpt: "Humans at Help Foundation partners with Clean Earth Renewables to deliver $8,500 in monthly savings and 5,103 tons of CO₂ reduction to 59 low-to-moderate income households in Skokie-Evanston.",
+    metaDescription: "Clean Earth Renewables x Humans at Help: Powering Skokie, Evanston Residents Through Solar Savings and Sustainability.",
     content: `
       <p>In the heart of the greater Skokie-Evanston area, the Humans at Help Foundation (HAHF) has long been committed to one mission: creating opportunities for success among low-to-moderate income residents so they can thrive. Now, through a powerful new partnership with Clean Earth Renewables (CER) and Solstice, HAHF is combining humanitarian action with clean energy to deliver both economic and environmental impact to local households.</p>
       
@@ -358,6 +363,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ks-tire-recycling-case-study",
     title: "K&S Tire Recycling Turns Up the Power on Sustainability with 100% Community Solar Match",
     excerpt: "Midwest's largest independent tire recycler matches 100% of annual electricity use with local community solar, saving over $250,000 while powering sustainable operations.",
+    metaDescription: "K&S Tire Recycling Turns Up the Power on Sustainability with 100% Community Solar Match with Clean Earth Renewables.",
     content: `
       <p>For decades, K&S Tire Recycling has stood as the Midwest's largest independent tire recycler, turning millions of discarded tires into reusable, high-value materials every year. From rubber mulch and asphalt additives to tire-derived fuels, K&S has been at the forefront of closing the loop in the circular economy long before "sustainability" became a buzzword.</p>
       
@@ -430,7 +436,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "dairy-queen-clean-energy-community-solar",
     title: "From Soft-Serve to Solar Power: Dairy Queen's Sweet Leap into Sustainability",
-    excerpt: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering nearly 1,966 homes and strengthening local economies.",
+    excerpt: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering the equivalent of 1,966 homes and strengthening local economies.",
+    metaDescription: "Dairy Queen franchisees across Illinois offset 875,000 kWh annually with community solar, saving $5,000 per store while powering the equivalent of 1,966 homes and strengthening local economies.",
     content: `
       <p>Few American brands are as iconic as Dairy Queen. From its humble beginnings in Joliet, Illinois, in 1938—where the world first tasted soft-serve ice cream—to becoming a household name with over 7,000 locations worldwide, Dairy Queen has always been a pioneer in both innovation and community spirit.</p>
       
@@ -511,6 +518,7 @@ export const blogPosts: BlogPost[] = [
     slug: "common-misconceptions-community-solar",
     title: "Common Misconceptions About Community Solar",
     excerpt: "Dispelling myths about community solar farms, including land use concerns, wildlife impact, efficiency in cloudy regions, and maintenance costs.",
+    metaDescription: "Dispelling myths about community solar farms, including land use concerns, wildlife impact, efficiency in cloudy regions, and maintenance costs.",
     content: `
       <h2>Understanding Community Solar</h2>
       
@@ -564,6 +572,7 @@ export const blogPosts: BlogPost[] = [
     slug: "illinois-solar-for-all-skokie-savings",
     title: "Illinois Solar for All Subscriber in Skokie Projected to Save $480 per Year without Installing Solar Panels",
     excerpt: "Local Skokie resident joins Illinois Solar for All program through Humans at Help Foundation, saving up to 20% on electricity bills through community solar participation.",
+    metaDescription: "Local Skokie resident joins Illinois Solar for All program through Humans at Help Foundation, saving up to 20% on electricity bills through community solar participation.",
     content: `
       <p>A local community action agency in Skokie, IL, Humans at Help Foundation launched a community solar program with Clean Earth Renewables for income-eligible residents in the Greater Skokie area. The program's first subscriber, is now scheduled to start contributing to a local community solar project and saving up to 20% off of their home's electric bill when this community solar project becomes operational in the early winter of 2025.</p>
       
@@ -593,6 +602,7 @@ export const blogPosts: BlogPost[] = [
     slug: "7-reasons-solar-trump-administration-2024",
     title: "7 Reasons Why Solar is Only Going To Soar Under The '24 Trump Administration",
     excerpt: "Discover why solar energy is positioned to thrive under the Trump Administration's second term, with economic advantages, policy support, and market dynamics favoring solar growth.",
+    metaDescription: "Discover why solar energy is positioned to thrive under the Trump Administration's second term, with economic advantages, policy support, and market dynamics favoring solar growth.",
     content: `
       <p>The energy landscape in the United States is shifting — and solar is poised to lead the charge under the Trump Administration's second term. While the former President has been vocal about his skepticism toward certain renewable technologies, solar energy has emerged as a key player in the domestic energy market. With new policies, technological advancements, and economic incentives aligning in solar's favor, the future looks bright. Here are seven compelling reasons why solar energy is only going to soar under a renewed Trump Administration.</p>
       
@@ -644,6 +654,7 @@ export const blogPosts: BlogPost[] = [
     slug: "community-solar-farm-hosting-guide-2025",
     title: "Landowner, Industrial Property Owner, & Municipality Guide To Hosting A Community Solar Farm in 2025",
     excerpt: "Complete guide for landowners, industrial property owners, and municipalities on how to host community solar farms.",
+    metaDescription: "Complete guide for landowners, industrial property owners, and municipalities on how to host community solar farms.",
     content: `
       <p><strong>Community Solar is a policy that was first signed into law in Massachusetts under the 2008 Governor Patrick and President Obama Administration, and has since swept the nation with over 6.5 Gigawatts installed to date,</strong> allowing states and electric utilities to adopt, participate, and further advance Net Metering and <strong>Community Solar Net Energy Billing</strong> programs in their respective regions.</p>
       
@@ -715,6 +726,7 @@ export const blogPosts: BlogPost[] = [
     slug: "investing-solar-chicago-residents",
     title: "Investing in Solar: A Smart Financial Move for Chicago Residents",
     excerpt: "Discover how Chicago residents can cut energy costs, boost property value, and support a greener future by investing in solar power.",
+    metaDescription: "Discover how Chicago residents can cut energy costs, boost property value, and support a greener future by investing in solar power.",
     content: `
       <p>Chicago residents are increasingly turning to solar energy as a smart investment strategy. With rising electricity costs and generous state incentives, solar panels offer an attractive return on investment that can pay for themselves in as little as 5-7 years.</p>
       
@@ -781,6 +793,7 @@ export const blogPosts: BlogPost[] = [
     slug: "debunking-solar-myths-chicago",
     title: "Debunking Solar Energy Myths: What Chicagoans Should Know",
     excerpt: "Debunking the top myths about solar in Chicago—learn why sunlight, cost, and roof concerns aren't barriers to going solar.",
+    metaDescription: "Debunking the top myths about solar in Chicago—learn why sunlight, cost, and roof concerns aren't barriers to going solar.",
     content: `
       <p>Despite Chicago's reputation for cloudy weather, solar energy is more viable than ever. However, many homeowners still hold misconceptions that prevent them from considering solar. Let's address the most common myths and set the record straight.</p>
       
@@ -836,6 +849,7 @@ export const blogPosts: BlogPost[] = [
     slug: "future-solar-farms-urban-areas",
     title: "Expert Insights: The Future of Solar Farms in Urban Areas",
     excerpt: "How cities are transforming rooftops, parking lots, and unused land into solar farms that power urban life and drive a greener economy.",
+    metaDescription: "How cities are transforming rooftops, parking lots, and unused land into solar farms that power urban life and drive a greener economy.",
     content: `
       <p>Urban solar farms represent the next frontier in renewable energy development. Cities across the country are discovering innovative ways to integrate solar energy into the urban landscape, transforming underutilized spaces into clean energy generators.</p>
       
