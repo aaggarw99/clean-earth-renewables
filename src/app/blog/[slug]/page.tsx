@@ -6,9 +6,10 @@ import BlogPostClient from "./BlogPostClient";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -24,7 +25,7 @@ export async function generateMetadata({
         : `https://clean-earth.org${post.featuredImage}`)
     : 'https://clean-earth.org/assets/logos/logo_opengraph.png';
 
-  const url = `https://clean-earth.org/blog/${post.slug}`;
+  const url = `https://clean-earth.org/blog/${slug}`;
 
   const metaDescription = post.metaDescription || post.excerpt;
 
@@ -62,12 +63,13 @@ export async function generateMetadata({
 }
 
 // Server component that fetches data and passes to client component
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
-  return <BlogPostClient post={post} slug={params.slug} />;
+  return <BlogPostClient post={post} slug={slug} />;
 }
