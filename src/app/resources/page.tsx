@@ -92,6 +92,23 @@ export default function ResourcesPage() {
     }
   ];
 
+  const landownerResources = [
+    {
+      title: "Solar Energy Is Powering Our Nation's Future",
+      description: "Learn how solar energy is transforming America's energy landscape and creating opportunities for landowners, municipalities, and real estate operators.",
+      icon: <SunIcon className="w-8 h-8" />,
+      href: "https://cleangridalliance.org/blog/235/solar-energy-is-powering-our-nations-future",
+      external: true
+    },
+    {
+      title: "American Clean Power Association: Solar Facts",
+      description: "Access comprehensive facts and data about solar power from the American Clean Power Association to inform your renewable energy decisions.",
+      icon: <InformationCircleIcon className="w-8 h-8" />,
+      href: "https://cleanpower.org/facts/solar-power/",
+      external: true
+    }
+  ];
+
   const industries: Industry[] = [
     {
       name: "Franchise",
@@ -461,6 +478,52 @@ export default function ResourcesPage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Landowners, Municipalities, & Real Estate Operators Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Landowners, Municipalities, & Real Estate Operators
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Resources and information to help landowners, municipalities, and real estate operators understand the benefits and opportunities of solar energy.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {landownerResources.map((resource, index) => (
+              <Card key={index} className="border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <CardHeader className="pb-4">
+                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                    {resource.icon}
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-foreground">
+                    {resource.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {resource.description}
+                  </p>
+                  <a 
+                    href={resource.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      Learn More
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
