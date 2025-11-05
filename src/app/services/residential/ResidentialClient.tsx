@@ -8,6 +8,7 @@ import { FeaturedProject } from "@/components/FeaturedProject";
 import { StatsSection } from "@/components/StatsSection";
 import { Footer } from "@/components/Footer";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
+import { LMIQualificationPrograms } from "@/components/LMIQualificationPrograms";
 import { scrollToSectionWithNavbar } from "@/utils/navigation";
 import { 
   CurrencyDollarIcon, 
@@ -69,6 +70,7 @@ export default function ResidentialClient() {
               Enhanced savings and support designed specifically for low-to-moderate income households.
             </p>
           </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left side - LMI content */}
             <div className="space-y-6">
@@ -107,6 +109,10 @@ export default function ResidentialClient() {
                     <span className="text-muted-foreground">Dedicated support team for LMI subscribers</span>
                   </div>
                 </div>
+              </div>
+              
+              <div className="text-center">
+                <LMIQualificationPrograms />
               </div>
               
               <div className="pt-4 text-center">
