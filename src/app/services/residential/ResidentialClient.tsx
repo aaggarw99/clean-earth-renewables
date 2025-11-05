@@ -311,18 +311,23 @@ export default function ResidentialClient() {
         subtitle="See how community solar is transforming homes across Illinois"
         stats={[
           {
-            icon: <BoltIcon className="w-8 h-8" />,
-            value: 3000,
-            prefix: "",
-            suffix: " MWh",
-            label: "LMI savings over 20 years"
-          },
-          {
             icon: <BuildingOfficeIcon className="w-8 h-8" />,
             value: 1,
             prefix: "$",
             suffix: "M",
             label: "in annual savings for local residents"
+          },
+          {
+            icon: <BoltIcon className="w-8 h-8" />,
+            value: 3000000,
+            prefix: "",
+            suffix: " kWh",
+            label: "LMI savings over 20 years",
+            rotatingDescriptions: [
+              "equivalent to avoiding 2,937,139 pounds of coal burned (annual)",
+              "equivalent to adding 1,922 electric power cars to the road (annual)",
+              "equivalent to removing 617 gas-powered cars off the road (annual)"
+            ]
           },
           {
             icon: <GlobeAltIcon className="w-8 h-8" />,

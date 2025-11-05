@@ -6,8 +6,16 @@ import {
   BoltIcon,
   CurrencyDollarIcon, 
 } from "@heroicons/react/24/outline";
+import { RotatingText } from "./RotatingText";
 
-const stats = [
+const stats: Array<{
+  icon: React.ReactNode;
+  value: number;
+  prefix: string;
+  suffix: string;
+  label: string;
+  rotatingDescriptions?: string[];
+}> = [
   {
     icon: <BoltIcon className="w-10 h-10" />,
     value: 500,
@@ -40,6 +48,7 @@ interface StatsSectionProps {
     prefix: string;
     suffix: string;
     label: string;
+    rotatingDescriptions?: string[];
   }>;
 }
 
@@ -116,9 +125,13 @@ export function StatsSection({
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {stat.prefix}{counts[index].toLocaleString()}{stat.suffix}
               </div>
-              <div className="text-lg text-muted-foreground">
-                {stat.label}
-              </div>
+              {stat.rotatingDescriptions ? (
+                <RotatingText texts={stat.rotatingDescriptions} />
+              ) : (
+                <div className="text-lg text-muted-foreground">
+                  {stat.label}
+                </div>
+              )}
             </div>
           ))}
         </div>
