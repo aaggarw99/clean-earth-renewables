@@ -14,7 +14,9 @@ import {
   HeartIcon,
   SunIcon,
   BuildingOffice2Icon,
-  CogIcon
+  CogIcon,
+  CalculatorIcon,
+  InformationCircleIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,6 +53,41 @@ export default function ResourcesPage() {
       description: "Convert emissions or energy data into concrete terms you can understand using the EPA's official calculator.",
       icon: <GlobeAltIcon className="w-8 h-8" />,
       href: "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator",
+      external: true
+    },
+    {
+      title: "Illinois Shines",
+      description: "Explore community solar opportunities in Illinois and learn how the Illinois Shines program supports renewable energy adoption.",
+      icon: <SunIcon className="w-8 h-8" />,
+      href: "https://illinoisshines.com/exploring-community-solar/",
+      external: true
+    },
+    {
+      title: "ComEd's Community Solar Savings Calculator",
+      description: "Calculate your potential savings with community solar through ComEd's interactive savings calculator tool.",
+      icon: <CalculatorIcon className="w-8 h-8" />,
+      href: "https://secure.comed.com/solar/MarketEnablement",
+      external: true
+    },
+    {
+      title: "Coalition for Community Solar Access",
+      description: "Learn the basics of community solar and access comprehensive resources from the Coalition for Community Solar Access.",
+      icon: <InformationCircleIcon className="w-8 h-8" />,
+      href: "https://communitysolaraccess.org/community-solar-101",
+      external: true
+    },
+    {
+      title: "Illinois Solar Education Association Community Solar Resources",
+      description: "Access educational resources and information about community solar programs available in Illinois.",
+      icon: <SunIcon className="w-8 h-8" />,
+      href: "https://www.illinoissolar.org/Community-Solar-Resources-IL",
+      external: true
+    },
+    {
+      title: "Solar Energy Industries Association - Community Solar",
+      description: "Explore industry resources and information about community solar initiatives from SEIA, the national solar trade association.",
+      icon: <SunIcon className="w-8 h-8" />,
+      href: "https://seia.org/initiatives/community-solar/",
       external: true
     }
   ];
@@ -288,7 +325,7 @@ export default function ResourcesPage() {
               {/* Tools Section */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-                  Tools
+                  Consumer Resources
                 </h2>
                 <div className="space-y-6">
                   {tools.map((resource, index) => (
@@ -315,7 +352,7 @@ export default function ResourcesPage() {
                             variant="outline" 
                             className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                           >
-                            Visit External Tool
+                            Learn More
                           </Button>
                         </a>
                       </CardContent>
