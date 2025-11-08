@@ -47,48 +47,79 @@ export default function ResourcesPage() {
     }
   ];
 
-  const tools = [
+  const consumerResourceGroups = [
     {
-      title: "EPA GHG Equivalencies Calculator",
-      description: "Convert emissions or energy data into concrete terms you can understand using the EPA's official calculator.",
-      icon: <GlobeAltIcon className="w-8 h-8" />,
-      href: "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator",
-      external: true
-    },
-    {
-      title: "Illinois Shines",
-      description: "Explore community solar opportunities in Illinois and learn how the Illinois Shines program supports renewable energy adoption.",
+      title: "Illinois Community Solar Programs",
+      description: "Discover Illinois-backed community solar initiatives and guidance tailored for residents and businesses across the state.",
       icon: <SunIcon className="w-8 h-8" />,
-      href: "https://illinoisshines.com/exploring-community-solar/",
-      external: true
+      links: [
+        {
+          label: "Illinois Shines",
+          href: "https://illinoisshines.com/exploring-community-solar/",
+          external: true
+        },
+        {
+          label: "Illinois Solar Education Association Community Solar Resources",
+          href: "https://www.illinoissolar.org/Community-Solar-Resources-IL",
+          external: true
+        }
+      ]
     },
     {
-      title: "ComEd's Community Solar Savings Calculator",
-      description: "Calculate your potential savings with community solar through ComEd's interactive savings calculator tool.",
+      title: "ComEd Community Solar Tools",
+      description: "Leverage ComEd's customer resources to estimate savings and understand how community solar credits appear on your bill.",
       icon: <CalculatorIcon className="w-8 h-8" />,
-      href: "https://secure.comed.com/solar/MarketEnablement",
-      external: true
+      links: [
+        {
+          label: "ComEd's Community Solar Savings Calculator",
+          href: "https://secure.comed.com/solar/MarketEnablement",
+          external: true
+        }
+      ]
     },
     {
-      title: "Coalition for Community Solar Access",
-      description: "Learn the basics of community solar and access comprehensive resources from the Coalition for Community Solar Access.",
+      title: "National Community Solar Education",
+      description: "Stay up to date on community solar best practices, policy developments, and impact metrics nationwide.",
       icon: <InformationCircleIcon className="w-8 h-8" />,
-      href: "https://communitysolaraccess.org/community-solar-101",
-      external: true
+      links: [
+        {
+          label: "Coalition for Community Solar Access",
+          href: "https://communitysolaraccess.org/community-solar-101",
+          external: true
+        },
+        {
+          label: "Solar Energy Industries Association - Community Solar",
+          href: "https://seia.org/initiatives/community-solar/",
+          external: true
+        },
+        {
+          label: "EPA GHG Equivalencies Calculator",
+          href: "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator",
+          external: true
+        }
+      ]
     },
     {
-      title: "Illinois Solar Education Association Community Solar Resources",
-      description: "Access educational resources and information about community solar programs available in Illinois.",
-      icon: <SunIcon className="w-8 h-8" />,
-      href: "https://www.illinoissolar.org/Community-Solar-Resources-IL",
-      external: true
-    },
-    {
-      title: "Solar Energy Industries Association - Community Solar",
-      description: "Explore industry resources and information about community solar initiatives from SEIA, the national solar trade association.",
-      icon: <SunIcon className="w-8 h-8" />,
-      href: "https://seia.org/initiatives/community-solar/",
-      external: true
+      title: "New York Electricity Customers",
+      description: "Explore turnkey community solar enrollment options and incentives available to National Grid New York customers.",
+      icon: <BuildingOfficeIcon className="w-8 h-8" />,
+      links: [
+        {
+          label: "National Grid Community Solar with Net Crediting",
+          href: "https://www.nationalgridus.com/solar-hub/Solar-for-Your-Home/UNY-Home/UNY-Community-Solar-with-Net-Crediting-Bill",
+          external: true
+        },
+        {
+          label: "National Grid Community Solar Hub",
+          href: "https://www.nationalgridus.com/solar-hub/Solar-for-Your-Home/CommunitySolar",
+          external: true
+        },
+        {
+          label: "NYSERDA NY-Sun Community Solar",
+          href: "https://www.nyserda.ny.gov/All-Programs/NY-Sun/Community-Solar",
+          external: true
+        }
+      ]
     }
   ];
 
@@ -345,7 +376,7 @@ export default function ResourcesPage() {
                   Consumer Resources
                 </h2>
                 <div className="space-y-6">
-                  {tools.map((resource, index) => (
+                  {consumerResourceGroups.map((resource, index) => (
                     <Card key={index} className="border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       <CardHeader className="pb-4">
                         <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
@@ -359,19 +390,24 @@ export default function ResourcesPage() {
                         <p className="text-muted-foreground leading-relaxed">
                           {resource.description}
                         </p>
-                        <a 
-                          href={resource.href} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="block"
-                        >
-                          <Button 
-                            variant="outline" 
-                            className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                          >
-                            Learn More
-                          </Button>
-                        </a>
+                        <div className="space-y-3">
+                          {resource.links.map((link) => (
+                            <a
+                              key={link.href}
+                              href={link.href}
+                              target={link.external ? "_blank" : undefined}
+                              rel={link.external ? "noopener noreferrer" : undefined}
+                              className="block"
+                            >
+                              <Button
+                                variant="outline"
+                                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                              >
+                                {link.label}
+                              </Button>
+                            </a>
+                          ))}
+                        </div>
                       </CardContent>
                     </Card>
                   ))}
