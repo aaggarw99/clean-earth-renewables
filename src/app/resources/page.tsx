@@ -401,7 +401,7 @@ export default function ResourcesPage() {
                             >
                               <Button
                                 variant="outline"
-                                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground whitespace-normal text-sm h-auto py-3 leading-snug"
                               >
                                 {link.label}
                               </Button>
