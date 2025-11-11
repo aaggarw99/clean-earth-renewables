@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     apple: "/assets/logos/Favicon - Primary.png",
   },
   openGraph: {
-    title: "Clean Earth Renewables - Powering Your Future with Clean Energy",
+    title: "Clean Earth Renewables - Clean Energy Solutions",
     description: "Clean Earth Renewables helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.",
     url: "https://clean-earth.org",
     siteName: "Clean Earth Renewables",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clean Earth Renewables - Powering Your Future with Clean Energy",
+    title: "Clean Earth Renewables - Clean Energy Solutions",
     description: "Clean Earth Renewables helps businesses, landowners, and individuals unlock clean energy savings through solar development, financing, and subscriptions.",
     images: ["/assets/logos/logo_opengraph.png"],
   },
