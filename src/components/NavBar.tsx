@@ -82,20 +82,20 @@ export function NavBar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
             <Image
               src="/assets/logos/Symbol - Primary.svg"
               alt="Clean Earth Renewables Symbol"
               width={32}
               height={32}
-              className="h-8 w-8"
+              className="h-8 w-8 flex-shrink-0"
               priority
             />
-            <span className="text-xl font-bold text-foreground">Clean Earth Renewables</span>
+            <span className="text-xl font-bold text-foreground whitespace-nowrap">Clean Earth Renewables</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {/* Services Dropdown */}
             <div 
               className="relative"
@@ -165,7 +165,7 @@ export function NavBar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -179,7 +179,7 @@ export function NavBar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border/20 bg-background/95 backdrop-blur">
+          <div className="lg:hidden border-t border-border/20 bg-background/95 backdrop-blur">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 href="/"
