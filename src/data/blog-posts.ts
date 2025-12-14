@@ -360,6 +360,147 @@ export const blogPosts: BlogPost[] = [
     published: true
   },
   {
+    slug: "field-school-case-study",
+    title: "The Field School's Journey: From a Neighborhood Dream to a Renewable Energy Leader in Chicago",
+    excerpt: "The Field School transitions into a sustainable academy by matching 100% of annual electricity consumption with community solar, offsetting 550,000 kWh annually and saving $2,000 per year while avoiding 486 metric tons of CO₂ emissions.",
+    metaDescription: "The Field School's Journey: From a Neighborhood Dream to a Renewable Energy Leader in Chicago with Clean Earth Renewables.",
+    content: `
+      <p>When The Field School opened its doors in 2017, it did so with a bold and simple mission: provide an excellent, accessible, and nurturing education to children who have historically lacked access to strong educational opportunities. Intentionally located on Chicago's West Side, the school began serving a small but hopeful community eager for something better.</p>
+      
+      <p>Today, The Field School is home to 300 students from Pre-K through 8th grade, and its purpose remains unwavering. What has evolved is the school's growing role as an innovator—not only in education, but now in sustainability and community impact.</p>
+      
+      <p>This year marks one of its most forward-looking milestones yet.</p>
+      
+      <h2>A New Chapter: Becoming a Sustainable Academy</h2>
+      
+      <p>In a landmark move, The Field School is transitioning into a sustainable academy by matching 100% of its annual electricity consumption in Illinois with local community solar projects.</p>
+      
+      <p>Through this partnership, the school will:</p>
+      
+      <ul>
+        <li>Offset more than 550,000 kilowatt-hours of renewable energy each year</li>
+        <li>Avoid approximately 486 metric tons of CO₂ emissions annually</li>
+        <li>Save an average of $2,000 per year for up to 15 years, strengthening its financial resilience</li>
+        <li>Participate in Illinois' expanding clean-energy economy—without requiring on-site solar panels</li>
+      </ul>
+      
+      <p>For a mission-centered school operating with limited resources, this transition is not just environmentally conscious—it is strategically transformative.</p>
+      
+      <h2>Economic Benefits to the West Side Community</h2>
+      
+      <p>Community solar is one of Illinois' most dynamic renewable energy engines, generating jobs, cost savings, and long-term local investment. The Field School's participation brings concrete value to the communities it serves:</p>
+      
+      <h3>1. Strengthening the Local Green Economy</h3>
+      
+      <p>By subscribing to community solar, The Field School supports:</p>
+      
+      <ul>
+        <li>Illinois clean-energy construction and maintenance jobs</li>
+        <li>Growing workforce pathways in STEM and renewable energy fields</li>
+        <li>A sustainable energy marketplace that keeps economic activity local</li>
+      </ul>
+      
+      <p>These are future-oriented, long-term jobs that help build a resilient regional workforce.</p>
+      
+      <h3>2. Reinvesting Savings Directly Into Students</h3>
+      
+      <p>With savings estimated at $30,000 over 15 years, The Field School can redirect funds into:</p>
+      
+      <ul>
+        <li>Classroom materials</li>
+        <li>Enrichment programs</li>
+        <li>Teacher development</li>
+        <li>Facility enhancements</li>
+      </ul>
+      
+      <p>Dollars that previously covered utility costs now directly strengthen student learning and community growth.</p>
+      
+      <h3>3. Making Renewable Energy Accessible</h3>
+      
+      <p>Many schools—especially in under-resourced neighborhoods—lack the roof space, structural feasibility, or staff bandwidth for on-site solar. Community solar removes those barriers, enabling The Field School to lead by example and demonstrate a replicable sustainability model for other schools across Chicago.</p>
+      
+      <h2>Environmental Impact: Clean Energy for a Healthier Chicago</h2>
+      
+      <p>The Field School's renewable energy commitment delivers meaningful, measurable benefits:</p>
+      
+      <h3>🌱 Annual Environmental Impact</h3>
+      
+      <ul>
+        <li><strong>486 metric tons of CO₂ emissions avoided</strong> (equivalent to taking over 100 cars off the road each year)</li>
+        <li><strong>Clean, renewable energy production</strong> equal to powering 84 Illinois homes annually</li>
+      </ul>
+      
+      <h3>🌎 Cleaner Air for the West Side</h3>
+      
+      <p>For communities disproportionately affected by industrial pollution, every reduced ton of emissions matters. By matching its energy use with renewable generation, The Field School contributes to improved air quality and a healthier environment for its students and neighbors.</p>
+      
+      <h2>Community Solar by the Numbers</h2>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">The Field School's Clean Energy Impact</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><strong>Annual Renewable Energy:</strong> 550,000+ kWh</div>
+          <div><strong>Annual Savings:</strong> $2,000</div>
+          <div><strong>Subscription Duration:</strong> 15 years</div>
+          <div><strong>Total Savings (15 years):</strong> $30,000</div>
+          <div><strong>CO₂ Emissions Avoided:</strong> 486 metric tons annually</div>
+          <div><strong>Cars Removed from Road:</strong> 100+ annually</div>
+          <div><strong>Homes Powered Annually:</strong> 84 Illinois homes</div>
+          <div><strong>Students Served:</strong> 300 (Pre-K through 8th grade)</div>
+        </div>
+        <p style="margin-bottom: 0; font-weight: 600; color: #059669;">Clean energy savings with guaranteed renewable power—at no upfront cost</p>
+      </div>
+      
+      <h2>A Historic Milestone for Private Schools in Chicagoland</h2>
+      
+      <p>Many private schools in Chicago strive for sustainability but face significant obstacles:</p>
+      
+      <ul>
+        <li>Limited land or roof capacity</li>
+        <li>Tight operational budgets</li>
+        <li>Insufficient staff time to manage on-site infrastructure</li>
+      </ul>
+      
+      <p>By adopting community solar, The Field School overcomes these challenges and becomes one of the first private schools in Chicagoland to achieve renewable energy integration at this scale without on-site solar panels. This marks a new precedent for how schools can adopt clean energy despite physical or resource constraints.</p>
+      
+      <p>The Field School is demonstrating that sustainability solutions can—and should—be accessible to the schools and communities that need them most.</p>
+      
+      <h2>Looking Ahead</h2>
+      
+      <p>From its founding in 2017 to its current transformation into a sustainable academy, The Field School has remained committed to building a future where every child has the chance to thrive.</p>
+      
+      <p>Now, with its bold embrace of renewable energy, the school is:</p>
+      
+      <ul>
+        <li>Supporting a cleaner, healthier West Side</li>
+        <li>Strengthening the local economy</li>
+        <li>Saving resources to invest directly back into students</li>
+        <li>Leading Chicago's private school sector toward a more sustainable future</li>
+      </ul>
+      
+      <p>This is more than an energy decision—it is a declaration of what responsible, community-centered leadership looks like.</p>
+      
+      <blockquote style="background-color: #f8f9fa; border-left: 4px solid #059669; padding: 16px; margin: 20px 0; font-style: italic;">
+        "The Field School is demonstrating that sustainability solutions can—and should—be accessible to the schools and communities that need them most."
+      </blockquote>
+      
+      <h2>Your School Can Follow The Field School's Lead</h2>
+      
+      <p>If The Field School's story proves anything, it's that any school—from private academies and public institutions to charter schools and early childhood centers—can benefit from community solar. With no upfront costs, guaranteed savings, and immediate environmental impact, the transition to clean energy has never been easier.</p>
+      
+      <p>To learn how your school can lower Scope 2 emissions and reduce electricity costs at no risk, contact us or visit our website to speak with a member of the Clean Earth Renewables team.</p>
+    `,
+    author: "David Emsheimer",
+    authorTitle: "CEO & Founder",
+    authorBio: "David Emsheimer is the founder and CEO of Clean Earth Renewables, with over 10 years of experience in renewable energy development.",
+    date: "Dec 6, 2025",
+    readTime: "9 min read",
+    category: "Case Study",
+    featuredImage: "/assets/images/blog/thumbnails/field-school.png",
+    tags: ["The Field School", "Community Solar", "Non-Profit", "Chicago", "West Side", "Education", "Private School"],
+    published: true
+  },
+  {
     slug: "ks-tire-recycling-case-study",
     title: "K&S Tire Recycling Turns Up the Power on Sustainability with 100% Community Solar Match",
     excerpt: "Midwest's largest independent tire recycler matches 100% of annual electricity use with local community solar, saving over $250,000 while powering sustainable operations.",
