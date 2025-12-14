@@ -137,6 +137,12 @@ export default function BusinessesOffsiteClient() {
       alt: "BP",
       width: 120,
       height: 60
+    },
+    {
+      src: "/assets/images/clients/bwh-hotels.png",
+      alt: "BWH Hotels",
+      width: 120,
+      height: 60
     }
   ];
 
