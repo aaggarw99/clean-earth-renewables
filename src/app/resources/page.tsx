@@ -259,6 +259,12 @@ export default function ResourcesPage() {
       icon: <HeartIcon className="w-6 h-6" />,
       companies: [
         {
+          name: "The Field School",
+          logo: "/assets/images/blog/thumbnails/field-school.png",
+          caseStudyHref: "/blog/field-school-case-study",
+          featured: true
+        },
+        {
           name: "Humans at Help Foundation",
           logo: "/assets/images/clients/humansathelp.jpg",
           caseStudyHref: "/blog/humans-at-help-foundation-case-study",
