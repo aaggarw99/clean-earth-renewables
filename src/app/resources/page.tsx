@@ -239,6 +239,12 @@ export default function ResourcesPage() {
           featured: false
         },
         {
+          name: "BWH Hotels",
+          logo: "/assets/images/clients/bwh-hotels.png",
+          caseStudyHref: null,
+          featured: false
+        },
+        {
           name: "Hilton",
           logo: "/assets/images/clients/hilton.png",
           caseStudyHref: "/blog/hampton-inn-rockford-case-study",
