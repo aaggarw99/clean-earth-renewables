@@ -16,13 +16,13 @@ export function NavBar() {
       category: "Community Solar",
       items: [
         {
-          title: "Residential",
-          description: "Save on your home energy bills",
+          title: "For Home",
+          description: "Access clean energy and savings for your home",
           href: "/services/residential"
         },
         {
-          title: "Businesses",
-          description: "Off-site solar for your business",
+          title: "For Business",
+          description: "Lower electricity costs and support clean energy",
           href: "/services/businesses-offsite"
         }
       ]
@@ -31,8 +31,8 @@ export function NavBar() {
       category: "Host a Solar Farm",
       items: [
         {
-          title: "Commercial Buildings",
-          description: "Earn money from your business roof",
+          title: "Commercial Real Estate Operators",
+          description: "Add a solar tenant on your roof and unlock ",
           href: "/services/businesses-onsite"
         },
         {
